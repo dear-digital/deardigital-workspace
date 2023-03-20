@@ -1,0 +1,7 @@
+{
+  "name": "@deardigital/shared/ui",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/d3": "^7.4.0"
+  }
+}
