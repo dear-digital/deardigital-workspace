@@ -1,0 +1,19 @@
+h1,
+.h1 {
+    margin-bottom: map-get($map: $spacers, $key: 6);
+}
+
+h2,
+.h2 {
+    margin-bottom: map-get($map: $spacers, $key: 5);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.fs-body-md {
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
+}

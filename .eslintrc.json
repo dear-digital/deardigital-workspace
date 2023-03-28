@@ -13,8 +13,40 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "type:enums",
+                "onlyDependOnLibsWithTags": ["type:enums", "type:utilities"]
+              },
+              {
+                "sourceTag": "type:interfaces",
+                "onlyDependOnLibsWithTags": ["type:interfaces", "type:enums", "type:utilities", "type:queries"]
+              },
+              {
+                "sourceTag": "type:queries",
+                "onlyDependOnLibsWithTags": ["type:queries"]
+              },
+              {
+                "sourceTag": "type:mappers",
+                "onlyDependOnLibsWithTags": ["type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:icons", "type:queries"]
+              },
+              {
+                "sourceTag": "type:services",
+                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:queries"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities"]
+              },
+              {
+                "sourceTag": "type:utilities",
+                "onlyDependOnLibsWithTags": ["type:utilities", "type:queries", "type:constants", "type:types", "type:enums", "type:interfaces"]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:web",
+                "onlyDependOnLibsWithTags": ["scope:web", "scope:shared"]
               }
             ]
           }

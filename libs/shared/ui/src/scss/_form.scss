@@ -1,0 +1,67 @@
+// Used to style hubspot forms
+//
+.form label {
+  @extend .form-label;
+}
+
+.form .input {
+  @extend .mb-3;
+  margin-right: 0 !important;
+}
+
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form textarea {
+  @extend .form-control;
+  width: 100% !important;
+}
+
+.form input[type='checkbox'] {
+  @extend .form-check-input;
+  @extend .me-2;
+}
+
+.form input[type='text'].invalid.error,
+.form input[type='email'].invalid.error,
+.form input[type='password'].invalid.error {
+  @extend .is-invalid;
+}
+
+.form select {
+  @extend .form-select;
+  width: 100% !important;
+}
+
+.form .legal-consent-container {
+  @extend .small;
+}
+
+.form .legal-consent-container .input,
+.form .legal-consent-container .inputs-list,
+.form .legal-consent-container .inputs-list label {
+  @extend .mb-0;
+}
+
+.form input[type='submit'] {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .mt-6;
+}
+
+.form .no-list {
+  @extend .list-unstyled;
+}
+
+.form .inputs-list {
+  @extend .list-unstyled;
+}
+
+.hs-error-msg {
+  @extend .invalid-feedback;
+  display: block;
+}
+
+.form textarea {
+  resize: none;
+}

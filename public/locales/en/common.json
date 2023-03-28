@@ -1,0 +1,12 @@
+{
+  "error.generic.text": "An error {{statusCode}} occurred on the server.",
+  "error.notfound.title": "Oops page not found...",
+  "error.notfound.text": "This page does not exist (anymore).",
+  "error.cta.label": "Let's start over again",
+  "form.validation.required": "{{fieldLabel}} is a required field",
+  "form.validation.email.invalid": "Is not a valid email address",
+  "form.validation.file.required": "A {{fieldLabel}} is required",
+  "form.validation.file.unsupportedFormat": "Unsupported file format",
+  "form.validation.file.unsupportedExtension": "Unsupported file extension",
+  "form.validation.file.size": "File size too large (max 5MB)"
+}

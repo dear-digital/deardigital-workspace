@@ -1,0 +1,43 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    'icon-size': (
+      property: height,
+      values: $icons,
+      class: 'icon-size',
+    ),
+    'img-fit': (
+      property: object-fit,
+      class: 'img-fit',
+      values: (
+        cover,
+      ),
+    ),
+    'width':
+      map-merge(
+        map-get($utilities, 'width'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'width'), 'values'),
+              (
+                10: 6rem,
+              )
+            ),
+        )
+      ),
+    'rounded':
+      map-merge(
+        map-get($utilities, 'rounded'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'rounded'), 'values'),
+              (
+                inherit: inherit,
+              )
+            ),
+        )
+      ),
+  )
+);

@@ -1,0 +1,198 @@
+.navbar-nav .nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include media-breakpoint-only(lg) {
+    font-size: 14px;
+  }
+}
+
+.navbar-nav .nav-link.active span {
+  border-bottom: 2px solid $primary;
+}
+
+// Nav tabs
+//
+.nav-tabs {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 1px;
+    height: calc(100% - 1px);
+    border-radius: 1px;
+    background: $gray-100;
+  }
+}
+.nav-tabs .nav-link {
+  color: $body-color;
+}
+
+.nav-tabs .nav-link.active {
+  position: relative;
+  color: $gray-900;
+  font-weight: $font-weight-medium;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: calc(100% - 1px);
+    border-radius: 1px;
+    background: $gray-900;
+  }
+}
+
+.nav-tabs .nav-tab-num {
+  display: inline-block;
+  width: 1.375rem;
+  height: 1.375rem;
+  text-align: center;
+  line-height: 1.45;
+  border-radius: 0.75rem;
+  background-color: $white;
+  margin-right: map-get($map: $spacers, $key: 2);
+  color: $gray-600;
+}
+
+.nav-tabs .nav-link.active .nav-tab-num {
+  color: $white;
+  background-color: $gray-900;
+}
+
+// Toggler
+.navbar-toggler {
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: $gray-300;
+  border-radius: 1.125rem;
+}
+.navbar-toggler .navbar-toggler-icon {
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 2px;
+  top: 0;
+  left: 0.5625rem;
+  background-image: none;
+  background-color: transparent;
+  border-radius: 1px;
+  transform: translateY(1rem);
+  transition: transform 0.5s ease, background-color 0.5s ease 0.3s;
+}
+.navbar-toggler.collapsed .navbar-toggler-icon {
+  background-color: $black;
+}
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: $black;
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-fill-mode: forwards;
+}
+.navbar-toggler.collapsed:not(.toggler-default) .navbar-toggler-icon::before {
+  animation-name: topLineBurger;
+}
+.navbar-toggler.collapsed:not(.toggler-default) .navbar-toggler-icon::after {
+  animation-name: bottomLineBurger;
+}
+
+// Default
+.navbar-toggler.collapsed.toggler-default .navbar-toggler-icon::before {
+  animation-name: topLineBurgerDefault;
+}
+.navbar-toggler.collapsed.toggler-default .navbar-toggler-icon::after {
+  animation-name: bottomLineBurgerDefault;
+}
+
+// Open state
+.navbar-toggler .navbar-toggler-icon {
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+  }
+  .navbar-toggler .navbar-toggler-icon::before {
+    animation-name: topLineCross;
+  }
+  .navbar-toggler .navbar-toggler-icon::after {
+  animation-name: bottomLineCross;
+}
+
+// Keyframes
+@keyframes topLineCross {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+
+@keyframes bottomLineCross {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
+@keyframes topLineBurgerDefault {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bottomLineBurgerDefault {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes topLineBurger {
+  0% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+}
+
+@keyframes bottomLineBurger {
+  0% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateY(5px) rotate(0deg);
+  }
+}

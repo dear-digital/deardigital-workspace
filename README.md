@@ -19,3 +19,8 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+## Connect localhost with 
+
+https://www.youtube.com/watch?v=fvTWZCACDVQ&ab_channel=Storyblok
+https://www.storyblok.com/docs/plugins/plugin-create-a-new-plugin

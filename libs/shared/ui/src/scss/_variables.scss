@@ -1,0 +1,198 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+//
+$gray-100: #f7f7f7;
+$gray-200: #ebebeb;
+$gray-300: #d9d9d9;
+$gray-400: #bababa;
+$gray-500: #969696;
+$gray-600: #737373;
+$gray-700: #666666;
+$gray-800: #404040;
+$gray-900: #1c1c1c;
+
+$green: #062b25;
+$yellow: #f9d60f;
+
+$primary: $green;
+$secondary: $yellow;
+
+$body-color: $gray-700;
+$light: $gray-100;
+$dark: $gray-900;
+
+$headings-color: $gray-900;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'light': $light,
+  'dark': $dark,
+);
+
+// Fonts
+//
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+$small-font-size: 0.75em;
+
+$line-height-base: 1.75;
+
+// Type
+//
+$h5-font-size: 1.125rem;
+
+// Spacers
+//
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  2: $spacer * 0.75,
+  3: $spacer,
+  4: $spacer * 1.25,
+  5: $spacer * 1.5,
+  6: $spacer * 2,
+  7: $spacer * 2.5,
+  8: $spacer * 4,
+  9: $spacer * 5,
+  10: $spacer * 6,
+  11: $spacer * 7.5,
+);
+
+// Grid columns
+//
+$grid-gutter-width: 2.5rem;
+
+// Transition
+//
+$transition-base: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// Icons
+//
+$icons: (
+  1: $spacer * 0.75,
+  2: $spacer * 0.875,
+  3: $spacer * 1,
+  4: $spacer * 1.25,
+  5: $spacer * 1.5,
+  6: $spacer * 2,
+  7: $spacer * 4,
+  8: $spacer * 6,
+  9: $spacer * 8,
+  10: $spacer * 10,
+);
+
+// Badge
+//
+$badge-font-weight: $font-weight-normal;
+$badge-padding-y: map-get(
+  $map: $spacers,
+  $key: 1,
+);
+$badge-padding-x: $spacer;
+$badge-color: $gray-800;
+
+// Box Shadow
+//
+$box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.04);
+
+// Breadcrumbs
+//
+$breadcrumb-divider-color: $gray-100;
+$breadcrumb-active-color: $gray-500;
+$breadcrumb-padding-y: map-get(
+  $map: $spacers,
+  $key: 4,
+);
+$breadcrumb-margin-bottom: 0;
+
+// Button
+//
+$btn-padding-x: map-get(
+  $map: $spacers,
+  $key: 4,
+);
+$btn-padding-y: map-get(
+  $map: $spacers,
+  $key: 1,
+);
+$btn-font-weight: $font-weight-semibold;
+$btn-border-radius: 2rem;
+
+$btn-border-radius-sm: 2rem;
+$btn-padding-x-sm: map-get(
+  $map: $spacers,
+  $key: 3,
+);
+$btn-link-color: $primary;
+
+// Border radius
+//
+// values are synced up with the spacers
+// spacer-3 === rounded-3 or 1rem
+// spacer-4 === rounded-4 or 1.25rem
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.25rem;
+
+// Card
+//
+$card-spacer-y: map-get(
+  $map: $spacers,
+  $key: 6,
+);
+$card-spacer-x: map-get(
+  $map: $spacers,
+  $key: 6,
+);
+$card-border-radius: 1.25rem;
+
+// Modal
+//
+$modal-inner-padding: map-get(
+  $map: $spacers,
+  $key: 7,
+);
+$modal-content-border-radius: map-get(
+  $map: $spacers,
+  $key: 4,
+);
+$modal-content-border-width: 0;
+
+// Navbar
+//
+$navbar-nav-link-padding-x: map-get(
+  $map: $spacers,
+  $key: 2,
+);
+$navbar-light-color: $gray-600;
+$navbar-light-hover-color: $gray-600;
+$navbar-light-active-color: $gray-900;
+$navbar-light-toggler-border-color: transparent;
+
+$navbar-brand-padding-y: 1rem;
+$navbar-toggler-focus-width: 0;
+
+// Nav tabs
+//
+$nav-tabs-border-width: 0px;
+$nav-tabs-link-active-bg: transparent;
+
+// Ratio
+//
+$aspect-ratios: (
+  '1x1': 100%,
+  '4x3': calc(3 / 4 * 100%),
+  '4x5': calc(5 / 4 * 100%),
+  '5x3': calc(3 / 5 * 100%),
+  '16x9': calc(9 / 16 * 100%),
+  '21x9': calc(9 / 21 * 100%),
+);

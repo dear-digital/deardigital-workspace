@@ -1,0 +1,7 @@
+.list-gutter-6 .list-inline-item:not(:last-child) {
+    margin-right: map-get($map: $spacers, $key: 6);
+}
+
+.text-image ol {
+    padding-left: 1em;
+}

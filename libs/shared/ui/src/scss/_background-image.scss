@@ -1,0 +1,15 @@
+.bg-img {
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    right: 0;
+    padding: 48px;
+    top: 0;
+    object-fit: contain;
+    @include media-breakpoint-up(lg) {
+        width: 75%;
+    }
+    @include media-breakpoint-up(md) {
+        width: 50%; 
+    }
+}

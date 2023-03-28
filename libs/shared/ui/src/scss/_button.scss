@@ -1,0 +1,14 @@
+.btn-link {
+  padding: 0 0 .2rem 0;
+  border-radius: 0;
+  border-bottom: 1px solid $blue-100;
+  text-decoration: none;
+}
+
+.btn-close {
+  z-index: 1;
+}
+
+.btn-outline-primary {
+  border-color: $blue-100;
+}

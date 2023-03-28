@@ -1,0 +1,42 @@
+.card {
+  @include transition($btn-transition);
+}
+
+// Image
+//
+.card-img-end {
+  border-top-right-radius: $card-border-radius;
+  border-bottom-right-radius: $card-border-radius;
+}
+
+.card-hover-dark:hover,
+.card-hover-dark:focus {
+  background-color: $dark;
+}
+
+.card-badge {
+  background: $blue-100;
+}
+
+.card-hover-dark:hover .card-title,
+.card-hover-dark:focus .card-title,
+.card-hover-dark:hover .card-link,
+.card-hover-dark:focus .card-link {
+  color: $white;
+}
+
+.card-cta .card-cta-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-cta:hover .card-cta-icon {
+  transform: translateX(0.5rem);
+}
+
+// Brand
+//
+.card-brand-border {
+  position: relative;
+  border: 4px solid $secondary;
+  border-radius: $card-border-radius;
+}

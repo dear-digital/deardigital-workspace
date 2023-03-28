@@ -15,7 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@deardigital/shared/ui": ["libs/shared/ui/src/index.ts"]
+      "@deardigital/shared/constants": ["libs/shared/constants/src/index.ts"],
+      "@deardigital/shared/interfaces": ["libs/shared/interfaces/src/index.ts"],
+      "@deardigital/shared/mapper": ["libs/shared/mapper/src/index.ts"],
+      "@deardigital/shared/schema": ["libs/shared/schema/src/index.ts"],
+      "@deardigital/shared/services": ["libs/shared/services/src/index.ts"],
+      "@deardigital/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@deardigital/shared/ui-styles": ["libs/shared/ui/src/scss/screen.scss"]
     }
   },
   "exclude": ["node_modules", "tmp"]

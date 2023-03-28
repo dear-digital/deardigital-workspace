@@ -1,0 +1,13 @@
+.section {
+  position: relative;
+}
+
+@each $color, $value in $theme-colors {
+  .section.bg-#{$color} + .bg-#{$color} {
+    padding-top: 0 !important;
+  }
+}
+
+.section.bg-white + .bg-white {
+  padding-top: 0 !important;
+}

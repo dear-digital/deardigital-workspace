@@ -14,8 +14,6 @@ const Document: FC = (): JSX.Element => {
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
-        <meta name="last-update" content={process.env.CURRENT_TIMESTAMP} />
-
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
       </Head>
       <body>
