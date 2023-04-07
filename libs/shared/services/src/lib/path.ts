@@ -6,6 +6,7 @@ export const fetchPagePaths = async (pageType: string, locale: string, preview: 
   const path = "cdn/stories";
 
   const pages = await getStoryblokApi().get(path, {
+      token: process.env['STORYBLOK_API_TOKEN'],
       version: preview ? 'draft' : 'published',
       starts_with: pageType,
       resolve_relations: resolveRelations,
