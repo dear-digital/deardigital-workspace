@@ -5,6 +5,7 @@ import { useStoryblokState } from '@storyblok/react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../next-i18next.config';
+import { PageTypeConstant } from '@deardigital/shared/constants';
 
 export interface HomeProps {
   data: PageInterface
@@ -13,17 +14,19 @@ export interface HomeProps {
 export function Index({ data }: HomeProps) {
   useStoryblokState(data as any);
 
-  // const sbBridge = new window.StoryblokBridge();
+  // useEffect(() => {
+  //   if (window !== undefined) {
+  //     const sbBridge = new window.StoryblokBridge();
+  //     console.log("sbBridge");
+  //     sbBridge.on(["input"], function (event) {
+  //       console.log(event);
+  //       location.reload();
+  //       // router.reload()
+  //     });
+  //   }
+  // })
 
-  // sbBridge.on(["input", "published", "change"], (event) => {
-  //   console.log(event)
-  // });
-
-  return (
-    <div>
-      <PageView {...data} />
-    </div>
-  );
+  return <PageView {...data} />;
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
@@ -32,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await fetchPageBySlug(slug, true),
+      data: await fetchPageBySlug(PageTypeConstant.home, slug, true),
     },
     revalidate: 3600,
   };

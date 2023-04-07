@@ -10,6 +10,7 @@ import { storyblokInit, apiPlugin } from '@storyblok/react';
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_API_TOKEN,
+  // bridge: process.env.NODE_ENV !== "production",
   use: [apiPlugin],
   apiOptions: {
     cache: {
