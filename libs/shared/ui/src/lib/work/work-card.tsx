@@ -5,7 +5,7 @@ import ImageRenderer from '../image-renderer/image-renderer';
 /* eslint-disable-next-line */
 export interface WorkCardProps extends WorkPostInterface {}
 
-export function WorkCard({thumbnail, name, client, services }: WorkCardProps) {
+export function WorkCard({thumbnail, title: name, client, services }: WorkCardProps) {
   return (
     <Card className="h-100 border-0 shadow shadow-hover card-cta">
       {thumbnail && (
@@ -15,8 +15,8 @@ export function WorkCard({thumbnail, name, client, services }: WorkCardProps) {
         <div className="mb-3">
           {client && <span className="d-block h5 mb-1">{client.name}</span>}
           {name && <h4 className="card-title">{name}</h4>}
-          {services.map(item => (
-            <span className='badge rounded-pill text-bg-primary'>{item.name}</span>
+          {services.map((item, key) => (
+            <span key={key} className='badge rounded-pill text-bg-primary'>{item.name}</span>
           ))}
         </div>
       </Card.Body>
