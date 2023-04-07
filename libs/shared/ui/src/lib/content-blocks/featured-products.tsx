@@ -1,5 +1,5 @@
 import { ContentFeaturedProductsInterface } from '@deardigital/shared/interfaces';
-import { storyblokEditable } from '@storyblok/react';
+import { renderRichText, storyblokEditable } from '@storyblok/react';
 import ProductCard from '../product/product-card';
 import Section from '../section/section';
 
@@ -9,11 +9,9 @@ export interface ContentFeaturedProductsProps extends ContentFeaturedProductsInt
 export function ContentFeaturedProducts(props: ContentFeaturedProductsProps) {
   return (
     <Section {...props.section}>
-      <div className="container" {...storyblokEditable(props)}>
-        <div className="row justify-content-center">          
-          {props.text && (
-            <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />
-          )}
+      <div className="container" {...storyblokEditable(props as any)}>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />
         </div>
         <div className="row">
           {props.products.map((product, key) => (

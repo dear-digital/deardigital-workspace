@@ -9,11 +9,9 @@ export interface ContentFeaturedWorkProps extends ContentFeaturedWorkInterface {
 export function ContentFeaturedWork(props: ContentFeaturedWorkProps) {
   return (
     <Section {...props.section}>
-      <div className="container" {...storyblokEditable(props)}>
+      <div className="container" {...storyblokEditable(props as any)}>
         <div className="row justify-content-center">
-          {props.text && (
-            <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />
-          )}
+          <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />
         </div>
         <div className="row">
           {props.work.map((work, key) => (

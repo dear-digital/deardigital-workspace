@@ -13,12 +13,12 @@ export function ImageRenderer({ image, className = '' }: ImageRendererProps) {
   if (image.ratio) {
     return (
       <div className={image.ratio}>
-        <img src={image?.url} className={className} alt={image?.alt} />
+        <img src={image?.url} className={className} alt={image?.alt ?? ''} />
       </div>
     );
   }
 
-  return <img src={image?.url} className={className} alt={image?.alt} />;
+  return <img src={image?.url} className={className} alt={image?.alt ?? ''} />;
 }
 
 export default ImageRenderer;

@@ -11,7 +11,7 @@ export function ContentImage(props: ContentImageProps) {
 
   return (
     <Section {...props.section}>
-      <div className={props.fullWidth ? '' : 'container'} {...storyblokEditable(props)}>
+      <div className={props.fullWidth ? '' : 'container'} {...storyblokEditable(props as any)}>
         <ImageRenderer image={props.image} className="img-fluid w-100" />
       </div>
     </Section>
