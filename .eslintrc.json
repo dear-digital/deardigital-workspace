@@ -25,20 +25,24 @@
                 "onlyDependOnLibsWithTags": ["type:schema"]
               },
               {
+                "sourceTag": "type:queries",
+                "onlyDependOnLibsWithTags": ["type:queries"]
+              },
+              {
                 "sourceTag": "type:mappers",
-                "onlyDependOnLibsWithTags": ["type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:icons", "type:schema"]
+                "onlyDependOnLibsWithTags": ["type:mappers", "type:interfaces", "type:constants", "type:utilities", "type:icons", "type:schema","type:queries"]
               },
               {
                 "sourceTag": "type:services",
-                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:schema"]
+                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:utilities", "type:schema"]
               },
               {
                 "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities"]
+                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:utilities"]
               },
               {
                 "sourceTag": "type:utilities",
-                "onlyDependOnLibsWithTags": ["type:utilities", "type:schema", "type:constants", "type:types", "type:enums", "type:interfaces"]
+                "onlyDependOnLibsWithTags": ["type:utilities", "type:schema", "type:constants", "type:types", "type:interfaces"]
               },
               {
                 "sourceTag": "scope:shared",
