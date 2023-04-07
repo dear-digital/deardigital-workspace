@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "postbuild": "npm run sitemap",
+    "sitemap": "next-sitemap --config next-sitemap.config.js",
     "g:t": "npm run g:sb && npm run g:spy",
     "g:spy": "graphql-codegen -c codegen.shopify.js",
     "g:sb": "npm run storyblok-json-schema && npm run storyblok-json-types",
@@ -23,6 +25,7 @@
     "lodash.isempty": "^4.4.0",
     "next": "13.1.1",
     "next-i18next": "^13.2.2",
+    "next-sitemap": "^4.0.6",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
