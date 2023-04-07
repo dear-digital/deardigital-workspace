@@ -1,9 +1,9 @@
 import { ContentImageInterface } from '@deardigital/shared/interfaces';
-import { ContentBlock } from '@deardigital/shared/schema';
+import { ImageStoryblok } from '@deardigital/shared/schema';
 import { imageMapper } from '../image';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockImage(content: ContentBlock): ContentImageInterface {
+export function mapContentBlockImage(content: ImageStoryblok): ContentImageInterface {
   return {
     // @ts-ignore
     _editable: content._editable,

@@ -1,14 +1,15 @@
 import { PageInterface } from '@deardigital/shared/interfaces';
-import { StoryblokTypes } from '@deardigital/shared/schema';
+import { MetaType, PageStoryblok } from '@deardigital/shared/schema';
+import { StoryblokStory } from 'storyblok-generate-ts';
 import { contentBlocksMapper } from '../content-blocks';
 
-export function pageMapper(res: StoryblokTypes): PageInterface {
+export function pageMapper(page: StoryblokStory<PageStoryblok>, meta: MetaType): PageInterface {
   return {
-    id: res.story.id,
+    id: page.id,
+    globals: meta.globals,
     // breadcrumbs: breadcrumbMapper(res.renderNavigation, page?.slug),
-    contentBlocks: contentBlocksMapper(res.story.content.contentBlocks, { rels: res.rels }),
+    contentBlocks: contentBlocksMapper(page.content.contentBlocks, meta),
     // disclaimerNavigation: navigationMapper(disclaimerNav),
-    // globals: globalsMapper(globals),
     // heroBlock: heroBlocksMapper(page?.hero, meta),
     // locations: mapLocation(res.locations, meta.domain),
     // navigation: navigationMapper(nav),

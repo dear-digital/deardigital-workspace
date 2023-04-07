@@ -6,7 +6,7 @@ import { clientMapper } from '../client/client';
 
 
 export function workPostMapper(items: any, meta: MetaType): WorkPostInterface[] {
-    return items.map((work: any) => {
+    return items?.map((work: any) => {
         const client = meta.rels.find(item => item.uuid === work.content.client);
         const services = work.content.services.map((service: any) => meta.rels.find(item => item.uuid === service));
 

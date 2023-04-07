@@ -1,10 +1,10 @@
 import { SectionThemesConstant, SpacingConstant } from '@deardigital/shared/constants';
 import { SectionInterface } from '@deardigital/shared/interfaces';
-import { Section } from '@deardigital/shared/schema';
+import { SectionStoryblok } from '@deardigital/shared/schema';
 import { spacingMapper } from './spacing';
 import { themeMapper } from './theme';
 
-export function sectionMapper(section: Section | undefined): SectionInterface {
+export function sectionMapper(section: SectionStoryblok | undefined): SectionInterface {
   if (!section) {
     return {
       theme: SectionThemesConstant.light,

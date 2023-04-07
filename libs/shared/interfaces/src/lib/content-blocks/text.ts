@@ -1,8 +1,7 @@
-import { ContentBlockText } from '@deardigital/shared/schema';
-import { SbBlokData } from '@storyblok/react';
 import { SectionInterface } from '../section';
+import { StoryblockStoryBaseInterface } from '../storyblok-story';
 
-export interface ContentTextInterface extends SbBlokData {
-  text: ContentBlockText | undefined;
+export interface ContentTextInterface extends StoryblockStoryBaseInterface {
+  text: string | undefined;
   section: SectionInterface;
 }

@@ -1,11 +1,7 @@
-import { SbBlokData } from '@storyblok/react';
+import { ContentFeaturedProductsInterface } from './featured-products';
+import { ContentFeaturedWorkInterface } from './featured-work';
 import { ContentImageInterface } from './image';
 import { ContentTextInterface } from './text';
+import { ContentTextImageInterface } from './text-image';
 
-export interface ContentBlockBaseInterface extends SbBlokData {
-    _uid: string;
-    component: string;
-    _editable?: string;
-};
-
-export type ContentBlockInterface = ContentTextInterface | ContentImageInterface;
+export type ContentBlockInterface = ContentFeaturedWorkInterface | ContentFeaturedProductsInterface | ContentImageInterface | ContentTextImageInterface | ContentTextInterface;

@@ -3,7 +3,7 @@ import { MediaInterface } from '../media';
 import { ServiceInterface } from '../service/service';
 
 export interface WorkPostInterface {
-    name: string;
+    title: string;
     slug: string;
     client: ClientInterface;
     services: ServiceInterface[];
