@@ -3,8 +3,8 @@ import { imageMapper } from '../image';
 
 
 export function clientMapper(item: any): ClientInterface {
-    return {
-        name: item.name,
-        logo: imageMapper(item.logo)
-    }
+  return {
+    name: item.name,
+    logo: imageMapper(item.logo)
+  }
 }

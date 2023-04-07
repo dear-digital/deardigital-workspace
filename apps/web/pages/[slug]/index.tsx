@@ -15,7 +15,7 @@ export interface SlugProps {
 export function Slug({ data }: SlugProps) {
   useStoryblokState(data as any);
 
-  return <PageView {...data} />;    
+  return <PageView {...data} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {

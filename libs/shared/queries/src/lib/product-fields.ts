@@ -1,4 +1,4 @@
-export const productFields = ` 
+export const productFields = `
   __typename
   title
   description
@@ -36,5 +36,5 @@ export const productFields = `
         handle
       }
     }
-  }  
+  }
 `;

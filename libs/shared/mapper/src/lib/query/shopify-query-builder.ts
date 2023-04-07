@@ -6,7 +6,7 @@ export function shopifyLinkedDataQueryBuilder(data: ShopifyCollectionsProductsIn
   const collections = data.collections
     .map(
       (collection) =>
-        `${removeForbiddenIdChars(collection)}: collection(id: "${collection}") {          
+        `${removeForbiddenIdChars(collection)}: collection(id: "${collection}") {
           ${collectionFields}
         }`
     )

@@ -1,7 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // import the ScrollTrigger plugin
+import { useRef } from 'react';
 
 export function ScrollAnimatedText() {
   // gsap.registerPlugin(ScrollTrigger); // register the ScrollTrigger plugin

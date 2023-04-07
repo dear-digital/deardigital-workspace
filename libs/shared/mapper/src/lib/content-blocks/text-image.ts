@@ -9,7 +9,7 @@ export function mapContentBlockTextImage(content: TextImageStoryblok): ContentTe
   return {
     // @ts-ignore
     _editable: content._editable,
-    _uid: content._uid,    
+    _uid: content._uid,
     component: content.component,
     text: content.text ?? null,
     cta: null,

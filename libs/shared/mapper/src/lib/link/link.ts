@@ -3,42 +3,42 @@ import { LinkInterface } from '@deardigital/shared/interfaces';
 import { MultilinkStoryblok } from '@deardigital/shared/schema';
 
 const mapLinkTypeToLinkInterface = new Map<string, (link: MultilinkStoryblok, label?: string) => LinkInterface>([
-    ["story", mapPage],
-    ["asset", mapUrl],
-    ["url", mapUrl],
-    ["email", mapEmail],
+  ["story", mapPage],
+  ["asset", mapUrl],
+  ["url", mapUrl],
+  ["email", mapEmail],
 ]);
 
 export function linkMapper(link: MultilinkStoryblok, label?: string): LinkInterface {
-    const mapper = mapLinkTypeToLinkInterface.get(link.linktype ?? "");
-    if (!mapper) {
-        throw new Error(`Link type "${link.linktype}" not supported`);
-    }
-    return mapper(link, label);
+  const mapper = mapLinkTypeToLinkInterface.get(link.linktype ?? "");
+  if (!mapper) {
+    throw new Error(`Link type "${link.linktype}" not supported`);
+  }
+  return mapper(link, label);
 }
 
 
 function mapPage(link: MultilinkStoryblok, label?: string): LinkInterface {
-    return {
-        type: LinkTypeConstant.page,
-        link: link.story?.slug ?? "",
-        label: label ?? link.story?.name ?? "",
-    };
+  return {
+    type: LinkTypeConstant.page,
+    link: link.story?.slug ?? "",
+    label: label ?? link.story?.name ?? "",
+  };
 }
 
 function mapUrl(link: MultilinkStoryblok, label?: string): LinkInterface {
-    return {
-        type: LinkTypeConstant.web,
-        link: link.url ?? "",
-        label: label ?? "",
-        target: link?.['target'] ?? "_self",
-    };
+  return {
+    type: LinkTypeConstant.web,
+    link: link.url ?? "",
+    label: label ?? "",
+    target: link?.['target'] ?? "_self",
+  };
 }
 
 function mapEmail(link: MultilinkStoryblok, label?: string): LinkInterface {
-    return {
-        type: LinkTypeConstant.email,
-        link: link.email ?? "",
-        label: label ?? link.email ?? "",
-    };
+  return {
+    type: LinkTypeConstant.email,
+    link: link.email ?? "",
+    label: label ?? link.email ?? "",
+  };
 }

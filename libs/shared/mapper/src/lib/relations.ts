@@ -1,8 +1,8 @@
 
 export function RelationsMapper(res: any): any {
-    // featuredWork(story);
+  // featuredWork(story);
 
-    return res
+  return res
 }
 
 // @TODO
