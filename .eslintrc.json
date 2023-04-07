@@ -13,24 +13,24 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "type:enums",
-                "onlyDependOnLibsWithTags": ["type:enums", "type:utilities"]
+                "sourceTag": "type:constants",
+                "onlyDependOnLibsWithTags": ["type:constants", "type:utilities"]
               },
               {
                 "sourceTag": "type:interfaces",
-                "onlyDependOnLibsWithTags": ["type:interfaces", "type:enums", "type:utilities", "type:queries"]
+                "onlyDependOnLibsWithTags": ["type:interfaces", "type:constants", "type:utilities", "type:schema"]
               },
               {
-                "sourceTag": "type:queries",
-                "onlyDependOnLibsWithTags": ["type:queries"]
+                "sourceTag": "type:schema",
+                "onlyDependOnLibsWithTags": ["type:schema"]
               },
               {
                 "sourceTag": "type:mappers",
-                "onlyDependOnLibsWithTags": ["type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:icons", "type:queries"]
+                "onlyDependOnLibsWithTags": ["type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:icons", "type:schema"]
               },
               {
                 "sourceTag": "type:services",
-                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:queries"]
+                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:enums", "type:utilities", "type:schema"]
               },
               {
                 "sourceTag": "type:ui",
@@ -38,7 +38,7 @@
               },
               {
                 "sourceTag": "type:utilities",
-                "onlyDependOnLibsWithTags": ["type:utilities", "type:queries", "type:constants", "type:types", "type:enums", "type:interfaces"]
+                "onlyDependOnLibsWithTags": ["type:utilities", "type:schema", "type:constants", "type:types", "type:enums", "type:interfaces"]
               },
               {
                 "sourceTag": "scope:shared",

@@ -18,10 +18,12 @@
       "@deardigital/shared/constants": ["libs/shared/constants/src/index.ts"],
       "@deardigital/shared/interfaces": ["libs/shared/interfaces/src/index.ts"],
       "@deardigital/shared/mapper": ["libs/shared/mapper/src/index.ts"],
+      "@deardigital/shared/queries": ["libs/shared/queries/src/index.ts"],
       "@deardigital/shared/schema": ["libs/shared/schema/src/index.ts"],
       "@deardigital/shared/services": ["libs/shared/services/src/index.ts"],
       "@deardigital/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@deardigital/shared/ui-styles": ["libs/shared/ui/src/scss/screen.scss"]
+      "@deardigital/shared/ui-styles": ["libs/shared/ui/src/scss/screen.scss"],
+      "@deardigital/shared/utilities": ["libs/shared/utilities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

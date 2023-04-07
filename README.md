@@ -22,5 +22,7 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 ## Connect localhost with 
 
+local-ssl-proxy --source 3010 --target 4200 --cert localhost.pem --key localhost-key.pem
+
 https://www.youtube.com/watch?v=fvTWZCACDVQ&ab_channel=Storyblok
 https://www.storyblok.com/docs/plugins/plugin-create-a-new-plugin
