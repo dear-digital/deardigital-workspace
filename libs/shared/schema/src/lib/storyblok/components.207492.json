@@ -1,0 +1,632 @@
+{
+  "components": [
+    {
+      "name": "client",
+      "display_name": null,
+      "created_at": "2023-03-28T07:52:00.676Z",
+      "updated_at": "2023-03-28T14:50:08.778Z",
+      "id": 3680404,
+      "schema": {
+        "name": {
+          "type": "text",
+          "key": "Name",
+          "pos": 0
+        },
+        "logo": {
+          "type": "asset",
+          "key": "logo",
+          "pos": 1,
+          "filetypes": [
+            "images"
+          ],
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "client",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "featuredProducts",
+      "display_name": null,
+      "created_at": "2023-03-23T16:34:21.019Z",
+      "updated_at": "2023-04-07T13:34:46.691Z",
+      "id": 3649320,
+      "schema": {
+        "text": {
+          "type": "richtext",
+          "pos": 0
+        },
+        "products": {
+          "type": "text",
+          "pos": 1
+        },
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "required": true,
+          "maximum": 1,
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "featuredProducts",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "featuredWork",
+      "display_name": "",
+      "created_at": "2023-03-28T13:03:26.107Z",
+      "updated_at": "2023-03-30T21:01:48.647Z",
+      "id": 3682974,
+      "schema": {
+        "text": {
+          "type": "richtext"
+        },
+        "work": {
+          "type": "options",
+          "source": "internal_stories",
+          "filter_content_type": [
+            "work"
+          ],
+          "required": true,
+          "min_options": "1"
+        },
+        "section": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "featuredWork",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "global",
+      "display_name": null,
+      "created_at": "2023-04-07T11:08:10.422Z",
+      "updated_at": "2023-04-07T11:14:28.207Z",
+      "id": 3762118,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "header"
+          ],
+          "maximum": 1,
+          "required": false
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "global",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "header",
+      "display_name": null,
+      "created_at": "2023-04-07T11:13:13.641Z",
+      "updated_at": "2023-04-07T14:40:20.147Z",
+      "id": 3762162,
+      "schema": {
+        "navigation": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "link"
+          ]
+        },
+        "cta": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "link"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "header",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "image",
+      "display_name": null,
+      "created_at": "2023-03-27T13:03:09.220Z",
+      "updated_at": "2023-03-30T21:00:18.752Z",
+      "id": 3674209,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "required": true,
+          "filetypes": [
+            "images"
+          ],
+          "pos": 0
+        },
+        "ratio": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "8266d288-bfd7-433f-b7fe-48604a93fe34",
+              "name": "1x1",
+              "value": "ratio_1x1"
+            },
+            {
+              "_uid": "ad7d74af-bdb0-4905-9072-c8953e854309",
+              "value": "ratio_16x9",
+              "name": "16x9"
+            },
+            {
+              "_uid": "8166fd85-0d41-4585-9a71-9cbb2a6f024d",
+              "value": "ratio_21x9",
+              "name": "21x9"
+            }
+          ],
+          "pos": 1,
+          "exclude_empty_option": true
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "pos": 2
+        },
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "required": true,
+          "pos": 3,
+          "maximum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "image",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "link",
+      "display_name": null,
+      "created_at": "2023-04-07T11:11:35.605Z",
+      "updated_at": "2023-04-07T14:39:38.744Z",
+      "id": 3762157,
+      "schema": {
+        "label": {
+          "type": "text",
+          "pos": 0,
+          "no_translate": false
+        },
+        "link": {
+          "type": "multilink",
+          "required": true,
+          "email_link_type": true,
+          "show_anchor": true,
+          "restrict_content_types": true,
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "link",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2023-03-17T13:03:56.284Z",
+      "updated_at": "2023-03-26T17:41:31.822Z",
+      "id": 3600348,
+      "schema": {
+        "hero": {
+          "type": "bloks",
+          "pos": 0
+        },
+        "contentBlocks": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "section",
+      "display_name": null,
+      "created_at": "2023-03-26T17:37:06.112Z",
+      "updated_at": "2023-03-30T21:00:51.351Z",
+      "id": 3667869,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "95c548b8-6a6d-4dd8-84c3-53864f98fc16",
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "_uid": "ca7dafd8-f61e-419b-8ea9-43a6b7bd9d2c",
+              "value": "light",
+              "name": "Light"
+            }
+          ],
+          "default_value": "light",
+          "required": true,
+          "exclude_empty_option": true
+        },
+        "spacing": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "d1335d90-d627-44af-9966-32b490dbeebc",
+              "name": "Small",
+              "value": "small"
+            },
+            {
+              "_uid": "5540565e-9fe7-44db-a896-273c4971c166",
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "_uid": "1fcea037-6d7a-4a75-93bd-294c2bd90a6c",
+              "value": "large",
+              "name": "Large"
+            }
+          ],
+          "default_value": "medium",
+          "required": true,
+          "exclude_empty_option": true
+        },
+        "slug": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "section",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "service",
+      "display_name": null,
+      "created_at": "2023-03-27T22:47:22.365Z",
+      "updated_at": "2023-03-28T07:21:18.894Z",
+      "id": 3678019,
+      "schema": {
+        "text": {
+          "type": "richtext"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "service",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "text",
+      "display_name": null,
+      "created_at": "2023-03-26T17:33:23.136Z",
+      "updated_at": "2023-03-30T21:00:26.720Z",
+      "id": 3667856,
+      "schema": {
+        "text": {
+          "type": "richtext"
+        },
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "required": true,
+          "maximum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "text",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": "",
+      "icon": "",
+      "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "textImage",
+      "display_name": null,
+      "created_at": "2023-03-30T14:38:03.115Z",
+      "updated_at": "2023-03-30T21:45:48.716Z",
+      "id": 3705960,
+      "schema": {
+        "text": {
+          "type": "richtext",
+          "pos": 0
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2
+        },
+        "ratio": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 3,
+          "options": [
+            {
+              "_uid": "d26846df-e3a9-4ee4-8ca4-7ea885447267",
+              "name": "1x1",
+              "value": "ratio_1x1"
+            },
+            {
+              "_uid": "ce56251a-1d7b-4a3e-bfd8-827c3083ef30",
+              "value": "ratio_16x9",
+              "name": "16x9"
+            },
+            {
+              "_uid": "5dd31502-83db-4464-bd8d-3a8203fcdcf5",
+              "value": "ratio_21x9",
+              "name": "21x9"
+            }
+          ],
+          "exclude_empty_option": true
+        },
+        "layout": {
+          "type": "option",
+          "options": [
+            {
+              "_uid": "b11b6b1d-720d-4018-ae2a-4b2dd3e263a0",
+              "name": "text-media",
+              "value": "textMedia"
+            },
+            {
+              "_uid": "4431b684-9215-4a0b-87b0-4deaec2bbb68",
+              "value": "mediaText",
+              "name": "media-text"
+            }
+          ],
+          "exclude_empty_option": true,
+          "required": true,
+          "default_value": "textMedia",
+          "pos": 4,
+          "use_uuid": true
+        },
+        "alignment": {
+          "type": "option",
+          "pos": 5,
+          "required": true,
+          "description": "Vertical alignment of the blocks",
+          "options": [
+            {
+              "_uid": "27619116-8b9a-40c3-a175-97330bbfd0e9",
+              "name": "start",
+              "value": "start"
+            },
+            {
+              "_uid": "11101b5b-b223-44c4-9b6d-9630027cbe03",
+              "value": "center",
+              "name": "center"
+            },
+            {
+              "_uid": "d3f86bac-15da-4645-a418-c8d71140260e",
+              "value": "end",
+              "name": "end"
+            }
+          ],
+          "default_value": "start",
+          "use_uuid": true,
+          "exclude_empty_option": true
+        },
+        "section": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "maximum": 1,
+          "pos": 6
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "textImage",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "work",
+      "display_name": null,
+      "created_at": "2023-03-22T10:51:09.660Z",
+      "updated_at": "2023-03-28T15:00:51.483Z",
+      "id": 3637566,
+      "schema": {
+        "hero": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "b73e6527-a688-4f12-a41a-c368117e6441"
+          ],
+          "maximum": 1
+        },
+        "contentBlocks": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
+          ],
+          "pos": 1
+        },
+        "client": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": [
+            "client"
+          ],
+          "pos": 2,
+          "required": true
+        },
+        "services": {
+          "type": "options",
+          "source": "internal_stories",
+          "filter_content_type": [
+            "service"
+          ],
+          "required": true,
+          "pos": 3
+        },
+        "thumbnail": {
+          "type": "asset",
+          "pos": 4,
+          "filetypes": [
+            "images"
+          ],
+          "required": true
+        },
+        "tab-a8dded72-753e-49d5-a443-f934db6e9f5d": {
+          "display_name": "Settings",
+          "keys": [
+            "thumbnail",
+            "services",
+            "client"
+          ],
+          "pos": 5,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "work",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    }
+  ]
+}
