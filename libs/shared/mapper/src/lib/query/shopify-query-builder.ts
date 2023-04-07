@@ -1,6 +1,6 @@
 import { ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
-import { collectionFields, productFields } from '@deardigital/shared/queries';
 import { removeForbiddenIdChars } from '@deardigital/shared/utilities';
+import { collectionFields, productFields } from "@deardigital/shared/queries";
 
 export function shopifyLinkedDataQueryBuilder(data: ShopifyCollectionsProductsInterface): string {
   const collections = data.collections
