@@ -1,15 +1,14 @@
-import { TechRadarInterface, TechRadarItemInterface } from '@deardigital/shared/interfaces';
+import { DepartmentConstant, DepartmentType } from '@deardigital/shared/constants';
+import { TechRadarInterface } from '@deardigital/shared/interfaces';
 import { fetchTechRadar } from '@deardigital/shared/services';
 import { radar_visualization } from '@deardigital/shared/utilities';
 import { useStoryblokState } from '@storyblok/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useEffect, useState } from 'react';
-import { i18n } from '../next-i18next.config';
-import { Button, ButtonGroup } from 'react-bootstrap';
-import { DepartmentConstant, DepartmentType } from '@deardigital/shared/constants';
-import { filter } from 'd3';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import { i18n } from '../next-i18next.config';
 
 export interface HomeProps {
   data: TechRadarInterface;

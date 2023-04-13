@@ -1,5 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 const Document: FC = (): JSX.Element => {
   return (
