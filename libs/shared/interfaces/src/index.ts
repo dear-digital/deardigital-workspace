@@ -16,6 +16,7 @@ export * from './lib/product/product';
 export * from './lib/section';
 export * from './lib/service/service';
 export * from './lib/shopify/shopify';
+export * from './lib/tech-radar/tech-radar';
 export * from './lib/work/work';
 export * from './lib/work/work-post';
 

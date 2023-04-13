@@ -157,6 +157,26 @@ export interface ServiceStoryblok {
   [k: string]: any;
 }
 
+export interface TechnologyStoryblok {
+  name: string;
+  description?: any;
+  quadrant: "0" | "1" | "2" | "3";
+  ring: "0" | "1" | "2" | "3";
+  moved: "1" | "-1" | "0";
+  department?: ("" | "SPY" | "DM" | "ODOO")[];
+  _uid: string;
+  component: "technology";
+  [k: string]: any;
+}
+
+export interface TechRadarStoryblok {
+  title?: string;
+  technologies?: TechnologyStoryblok[];
+  _uid: string;
+  component: "techRadar";
+  [k: string]: any;
+}
+
 export interface TextStoryblok {
   text?: any;
   section: SectionStoryblok[];

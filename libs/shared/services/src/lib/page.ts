@@ -9,7 +9,7 @@ export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, prev
 
   const requests = paths.map((path) =>
     getStoryblokApi().get(path, {
-      token: process.env['STORYBLOK_API_TOKEN'],
+      token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
       version: preview ? 'draft' : 'published',
       resolve_relations: resolveRelations,
     })

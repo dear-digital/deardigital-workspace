@@ -51,7 +51,11 @@
               {
                 "sourceTag": "scope:web",
                 "onlyDependOnLibsWithTags": ["scope:web", "scope:shared"]
-              }
+              },
+              {
+                "sourceTag": "scope:tech-radar",
+                "onlyDependOnLibsWithTags": ["scope:tech-radar", "scope:shared"]
+              },
             ]
           }
         ]

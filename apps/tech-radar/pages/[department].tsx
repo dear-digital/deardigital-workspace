@@ -1,5 +1,5 @@
 import { TechRadarInterface, TechRadarItemInterface } from '@deardigital/shared/interfaces';
-import { fetchPagePaths, fetchTechRadar } from '@deardigital/shared/services';
+import { fetchTechRadar } from '@deardigital/shared/services';
 import { radar_visualization } from '@deardigital/shared/utilities';
 import { useStoryblokState } from '@storyblok/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -23,10 +23,10 @@ export function Index({ data }: HomeProps) {
 
   function filterItemsByDepartment(filterValue: FilterValue) {
     if (filterValue === null) {
-      return router.replace('/', undefined, { shallow: false })
+      return router.push('/',)
     }
 
-    return router.replace(`/${filterValue}`, undefined, { shallow: false })
+    return router.push(`/${filterValue}`)
   }
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export function Index({ data }: HomeProps) {
       print_layout: true,
       links_in_new_tabs: true,
       // zoomed_quadrant: 0,
-      entries: data.items,
+      entries: data.items.filter(item => item.department.includes(router.query.department as DepartmentType)),
     });
   }, []);
 
@@ -80,11 +80,23 @@ export function Index({ data }: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  return {
+    fallback: 'blocking',
+    paths: Object.keys(DepartmentConstant).map(department => ({
+      locale: locales[0],
+      params: { department },
+    })),
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale, params, preview }) => {
+  const department = params.department as DepartmentType;
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await fetchTechRadar(undefined, true),
+      data: await fetchTechRadar(department, true),
     },
     revalidate: 3600,
   };

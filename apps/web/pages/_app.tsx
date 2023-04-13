@@ -6,11 +6,9 @@ import { SSRProvider } from 'react-bootstrap';
 import { appWithTranslation } from 'next-i18next';
 import i18n from '../next-i18next.config';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
-// import { contentBlocks } from '@deardigital/shared/ui';
 
 storyblokInit({
-  accessToken: process.env.STORYBLOK_API_TOKEN,
-  // bridge: process.env.NODE_ENV !== "production",
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,
   use: [apiPlugin],
   apiOptions: {
     cache: {
