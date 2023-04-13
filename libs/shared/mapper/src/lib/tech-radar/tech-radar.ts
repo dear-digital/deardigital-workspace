@@ -20,6 +20,7 @@ function mapTechnology(technology: TechnologyStoryblok): TechRadarItemInterface 
   return {
     id: technology._uid,
     label: technology.name,
+    description: technology.description,
     quadrant: +technology.quadrant,
     ring: +technology.ring,
     active: true,

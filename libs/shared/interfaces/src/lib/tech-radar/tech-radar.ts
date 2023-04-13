@@ -1,4 +1,5 @@
 import { DepartmentType } from '@deardigital/shared/constants';
+import { ISbRichtext } from '@storyblok/react';
 
 export interface TechRadarInterface {
   title: string;
@@ -11,6 +12,7 @@ export interface TechRadarItemInterface {
   quadrant: number;
   ring: number;
   label: string;
+  description?: ISbRichtext;
   active: boolean;
   moved: number;
   department: DepartmentType[];
