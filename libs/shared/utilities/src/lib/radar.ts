@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import * as d3 from "d3";
 
 // The MIT License (MIT)
@@ -22,7 +24,6 @@ import * as d3 from "d3";
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// @ts-nocheck
 export function radar_visualization(config) {
 
   // custom random number generator, to make random sequence reproducible
