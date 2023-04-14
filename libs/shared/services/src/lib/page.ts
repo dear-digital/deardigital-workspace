@@ -27,8 +27,9 @@ export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, prev
   }
 
   const getLinkedData = contentBlocksLinkedData(page.data.story);
+  const hasLinkedData = getLinkedData?.collections?.length || getLinkedData?.products?.length;
 
-  if (!getLinkedData || isEmpty(getLinkedData?.collections) || isEmpty(getLinkedData?.products)) {
+  if (!hasLinkedData) {
     return pageMapper(page.data.story, metaMapper(page.data, globals.data.story));
   }
 
