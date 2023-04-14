@@ -3,7 +3,7 @@ import { getStoryblokApi } from '@storyblok/react';
 import { resolveRelations } from './resolve-relations';
 import { shopifyClient } from './shopify';
 import { PageTypeType } from '@deardigital/shared/constants';
-import isEmpty = require('lodash.isempty');
+import isEmpty from 'lodash.isempty';
 
 export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, preview: boolean) => {
   const paths = [`cdn/stories/${pageType}${slug}`, "cdn/stories/global"];
