@@ -6,6 +6,7 @@ import { useStoryblokState } from '@storyblok/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../../next-i18next.config';
+import { useEffect } from 'react';
 
 /* eslint-disable-next-line */
 export interface SlugProps {
@@ -16,7 +17,6 @@ export function Slug({ data }: SlugProps) {
   useStoryblokState(data as any);
 
   return <div>
-    <h1>Test deploy</h1>
     <PageView {...data} />
   </div>;
 }
@@ -24,14 +24,14 @@ export function Slug({ data }: SlugProps) {
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths = [];
 
-  locales.forEach(async (locale) => {
+  for (const locale of locales) {
     const res = await fetchPagePaths(PageTypeConstant.page, locale, true);
     paths.push(...res);
-  });
+  }
 
   return {
-    fallback: 'blocking',
-    paths: [],
+    fallback: false,
+    paths,
   };
 };
 

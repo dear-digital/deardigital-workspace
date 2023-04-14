@@ -5,7 +5,7 @@ import { shopifyClient } from './shopify';
 import { PageTypeType } from '@deardigital/shared/constants';
 
 export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, preview: boolean) => {
-  const paths = [`cdn/stories${pageType}${slug}`, "cdn/stories/global"];
+  const paths = [`cdn/stories/${pageType}${slug}`, "cdn/stories/global"];
 
   const requests = paths.map((path) =>
     getStoryblokApi().get(path, {

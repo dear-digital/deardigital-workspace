@@ -1,9 +1,9 @@
 export const PageTypeConstant = {
-    home: "/",
-    client: "/client/",
-    page: "/page/",
-    service: "/service/",
-    work: "/work/",
+    home: "",
+    client: "client/",
+    page: "page/",
+    service: "service/",
+    work: "work/",
 } as const;
 
 type ObjectValues<T> = T[keyof T];
