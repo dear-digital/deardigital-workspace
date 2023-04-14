@@ -3,6 +3,7 @@ import { getStoryblokApi } from '@storyblok/react';
 import { resolveRelations } from './resolve-relations';
 import { shopifyClient } from './shopify';
 import { PageTypeType } from '@deardigital/shared/constants';
+import isEmpty = require('lodash.isempty');
 
 export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, preview: boolean) => {
   const paths = [`cdn/stories/${pageType}${slug}`, "cdn/stories/global"];
@@ -27,13 +28,12 @@ export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, prev
 
   const getLinkedData = contentBlocksLinkedData(page.data.story);
 
-  if (!getLinkedData) {
+  if (!getLinkedData || isEmpty(getLinkedData?.collections) || isEmpty(getLinkedData?.products)) {
     return pageMapper(page.data.story, metaMapper(page.data, globals.data.story));
   }
 
   const query = shopifyLinkedDataQueryBuilder(getLinkedData);
   const shopifyRes = await shopifyClient.request(query);
-
 
   return pageMapper(page.data.story, metaMapper(page.data, globals.data.story, shopifyRes))
 }
