@@ -28,7 +28,7 @@ export function Header(props: HeaderProps) {
                 {props.header.navigation.map((item, key) => <NavigationLink key={key} {...item} />)}
               </ul>
             )}
-          {props.header.cta && (
+          {props.header?.cta && (
               <div className="my-3 my-lg-0 ms-lg-5">
                 <LinkRenderer {...props.header.cta} />
               </div>

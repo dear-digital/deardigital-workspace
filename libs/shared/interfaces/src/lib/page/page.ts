@@ -3,6 +3,6 @@ import { GlobalInterface } from '../global/global';
 
 export interface PageInterface {
     id: number;
-    globals: GlobalInterface,
+    globals: GlobalInterface | null,
     contentBlocks: ContentBlockInterface[];
 }

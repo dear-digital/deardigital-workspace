@@ -1,8 +1,7 @@
 export const PageTypeConstant = {
-    home: "",
     client: "client/",
     page: "page/",
-    service: "service/",
+    services: "services/",
     work: "work/",
 } as const;
 

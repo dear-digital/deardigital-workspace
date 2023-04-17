@@ -1,40 +1,21 @@
-import { contentBlocksLinkedData, metaMapper, pageMapper, shopifyLinkedDataQueryBuilder } from '@deardigital/shared/mapper';
-import { getStoryblokApi } from '@storyblok/react';
+import { PageInterface } from '@deardigital/shared/interfaces';
+import { pageMapper } from '@deardigital/shared/mapper';
+import { MetaType, PageStoryblok } from '@deardigital/shared/schema';
+import { StoryblokStory } from 'storyblok-generate-ts';
+import { FetchDataService } from './fetch';
 import { resolveRelations } from './resolve-relations';
-import { shopifyClient } from './shopify';
-import { PageTypeType } from '@deardigital/shared/constants';
-import isEmpty from 'lodash.isempty';
+import { PageTypeConstant } from '@deardigital/shared/constants';
 
-export const fetchPageBySlug = async (pageType: PageTypeType, slug: string, preview: boolean) => {
-  const paths = [`cdn/stories/${pageType}${slug}`, "cdn/stories/global"];
-
-  const requests = paths.map((path) =>
-    getStoryblokApi().get(path, {
-      token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
-      version: preview ? 'draft' : 'published',
-      resolve_relations: resolveRelations,
+export class FetchPageBySlug extends FetchDataService<StoryblokStory<PageStoryblok>, PageInterface> {
+  constructor(slug: string) {
+    super({
+      queries: [{ path: `cdn/stories/${PageTypeConstant.page}${slug}` }],
+      globals: true,
+      resolveRelations: resolveRelations,
     })
-  );
-
-  const [page, globals] = await Promise.all(requests);
-
-  if (!page) {
-    throw new Error(`Page with slug: ${slug} could not be fetched`)
   }
 
-  if (!globals) {
-    throw new Error(`Globals could not be fetched`)
+  mapper(page: StoryblokStory<PageStoryblok>, meta: MetaType) {
+    return pageMapper(page, meta)
   }
-
-  const getLinkedData = contentBlocksLinkedData(page.data.story);
-  const hasLinkedData = getLinkedData?.collections?.length || getLinkedData?.products?.length;
-
-  if (!hasLinkedData) {
-    return pageMapper(page.data.story, metaMapper(page.data, globals.data.story));
-  }
-
-  const query = shopifyLinkedDataQueryBuilder(getLinkedData);
-  const shopifyRes = await shopifyClient.request(query);
-
-  return pageMapper(page.data.story, metaMapper(page.data, globals.data.story, shopifyRes))
 }

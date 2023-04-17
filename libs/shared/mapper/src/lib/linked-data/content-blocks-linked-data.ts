@@ -12,7 +12,7 @@ const componentMapping = new Map<
 ]);
 
 export function contentBlocksLinkedData(page: StoryblokStory<PageStoryblok>): ShopifyCollectionsProductsInterface | null {
-  const blocks = page.content?.contentBlocks;
+  const blocks = page?.content?.contentBlocks;
 
   if (!blocks || isEmpty(blocks)) {
     return null;

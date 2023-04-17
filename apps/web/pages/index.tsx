@@ -1,11 +1,10 @@
 import { PageInterface } from '@deardigital/shared/interfaces';
-import { fetchPageBySlug } from "@deardigital/shared/services";
+import { FetchPageBySlug } from "@deardigital/shared/services";
 import { PageView } from '@deardigital/shared/ui';
 import { useStoryblokState } from '@storyblok/react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../next-i18next.config';
-import { PageTypeConstant } from '@deardigital/shared/constants';
 
 export interface HomeProps {
   data: PageInterface
@@ -35,7 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await fetchPageBySlug(PageTypeConstant.home, slug, true),
+      data: await new FetchPageBySlug(slug).fetch(true),
     },
     revalidate: 3600,
   };

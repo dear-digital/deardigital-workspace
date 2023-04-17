@@ -1,15 +1,17 @@
+import { PageTypeConstant } from '@deardigital/shared/constants';
 import { PagePathMapper } from '@deardigital/shared/mapper';
 import { getStoryblokApi } from '@storyblok/react';
-import { resolveRelations } from './resolve-relations';
 
 export const fetchPagePaths = async (pageType: string, locale: string, preview: boolean) => {
   const path = "cdn/stories";
+
+  const excluding_slugs = Object.values(PageTypeConstant).map((item) => `${PageTypeConstant.page}${item.replace(/\/$/, "")}`).join(',');
 
   const pages = await getStoryblokApi().get(path, {
     token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
     version: preview ? 'draft' : 'published',
     starts_with: pageType,
-    resolve_relations: resolveRelations,
+    excluding_slugs,
   })
 
   if (!pages) {

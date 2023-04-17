@@ -1,12 +1,14 @@
 import { ServiceInterface } from '@deardigital/shared/interfaces';
+import { MetaType, ServiceStoryblok } from '@deardigital/shared/schema';
+import { StoryblokStory } from 'storyblok-generate-ts';
 
 
-export function servicesMapper(items: any[]): ServiceInterface[] {
-  return items.map(item => serviceMapper(item));
+export function servicesMapper(pages: StoryblokStory<ServiceStoryblok>[], meta: MetaType): ServiceInterface[] {
+  return pages?.map(item => serviceMapper(item, meta)) ?? [];
 }
 
-export function serviceMapper(item: any): ServiceInterface {
+export function serviceMapper(page: StoryblokStory<ServiceStoryblok>, meta: MetaType): ServiceInterface {
   return {
-    name: item.name,
+    title: page?.name,
   }
 }
