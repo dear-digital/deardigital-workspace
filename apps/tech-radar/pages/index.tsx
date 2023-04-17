@@ -1,10 +1,10 @@
 import { TechRadarInterface } from '@deardigital/shared/interfaces';
-import { fetchTechRadar } from '@deardigital/shared/services';
 import { TechRadar } from '@deardigital/shared/ui';
 import { useStoryblokState } from '@storyblok/react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../next-i18next.config';
+import { fetchTechRadar } from '@deardigital/shared/services';
 
 export interface HomeProps {
   data: TechRadarInterface;
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await fetchTechRadar(undefined, true),
+      data: await fetchTechRadar(undefined),
     },
     revalidate: 3600,
   };

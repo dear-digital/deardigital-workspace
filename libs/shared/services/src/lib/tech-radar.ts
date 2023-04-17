@@ -1,24 +1,23 @@
-import { techRadarMapper } from '@deardigital/shared/mapper';
-import { getStoryblokApi } from '@storyblok/react';
-import { resolveRelations } from './resolve-relations';
 import { DepartmentType } from '@deardigital/shared/constants';
+import { techRadarMapper } from '@deardigital/shared/mapper';
+import { Client } from '@notionhq/client';
 
-export const fetchTechRadar = async (department: DepartmentType | undefined, preview: boolean) => {
-  const paths = ["cdn/stories/tech-radar"];
+export const fetchTechRadar = async (department: DepartmentType | undefined) => {
+  const techRadarDBId = "5343a61a717c45109f41fcad47c8ffa1";
+  const databases = [techRadarDBId];
+  const notion = new Client({ auth: process.env['NEXT_PUBLIC_NOTION_API_TOKEN'] });
 
-  const requests = paths.map((path) =>
-    getStoryblokApi().get(path, {
-      token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
-      version: preview ? 'draft' : 'published',
-      resolve_relations: resolveRelations,
+  const requests = databases.map((db) =>
+    notion.databases.query({
+      database_id: db,
     })
   );
 
-  const [page] = await Promise.all(requests);
+  const [techRadar] = await Promise.all(requests);
 
-  if (!page) {
-    throw new Error(`Tech radar could not be fetched`)
+  if (!techRadar) {
+    throw new Error(`Tech radar could not be fetched from Notion`)
   }
 
-  return techRadarMapper(page.data.story, department)
+  return techRadarMapper(techRadar, department)
 }

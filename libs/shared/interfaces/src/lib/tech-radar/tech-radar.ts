@@ -9,10 +9,10 @@ export interface TechRadarInterface {
 
 export interface TechRadarItemInterface {
   id: string;
+  url: string;
   quadrant: number;
   ring: number;
   label: string;
-  description?: ISbRichtext;
   active: boolean;
   moved: number;
   department: DepartmentType[];

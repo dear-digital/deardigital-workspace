@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@notionhq/client": "^2.2.4",
     "@nrwl/next": "15.8.6",
     "@storyblok/react": "^2.0.15",
     "@tanstack/react-query": "^4.28.0",
