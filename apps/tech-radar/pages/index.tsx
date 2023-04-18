@@ -1,9 +1,8 @@
 import { fetchTechRadar } from '@deardigital/shared/services';
 import { TechRadar } from '@deardigital/shared/ui';
-import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query';
+import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
 import { i18n } from '../next-i18next.config';
 
 export function Index() {
