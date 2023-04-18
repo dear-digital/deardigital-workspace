@@ -8,9 +8,9 @@ export function techRadarMapper(notion: QueryDatabaseResponse, department?: Depa
 
 
   return {
-    title: 'page.name',
+    title: 'Tech Radar',
     // version: `Version: ${convertISODateToMMYYYY(page.published_at)}`,
-    version: `Version:`,
+    version: `Version: 04.2023`,
     items: filteredItems.filter(item => typeof item !== 'undefined')
   };
 }
@@ -24,7 +24,7 @@ function mapTechnology(technology: any): TechRadarItemInterface {
     ring: mapRing(technology.properties['ring'].select?.name),
     active: true,
     moved: mapMoved(technology.properties['moved'].select?.name),
-    url: technology.url,
+    link: technology.url,
   }
 };
 

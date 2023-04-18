@@ -9,7 +9,7 @@ export interface TechRadarInterface {
 
 export interface TechRadarItemInterface {
   id: string;
-  url: string;
+  link: string;
   quadrant: number;
   ring: number;
   label: string;
