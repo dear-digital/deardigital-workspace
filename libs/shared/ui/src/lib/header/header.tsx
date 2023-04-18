@@ -7,7 +7,9 @@ import NavigationLink from '../navigation/navigation-link';
 import LinkRenderer from '../link/link-renderer.component';
 
 /* eslint-disable-next-line */
-export interface HeaderProps extends GlobalInterface { }
+export interface HeaderProps {
+  globals: GlobalInterface | null;
+ }
 
 export function Header(props: HeaderProps) {
   const [togglerClassname, setTogglerClassname] = useState("toggler-default");
@@ -22,15 +24,15 @@ export function Header(props: HeaderProps) {
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="main-navigation">
-          {props.header &&
+          {props.globals?.header &&
             (
               <ul className="navbar-nav ms-auto">
-                {props.header.navigation.map((item, key) => <NavigationLink key={key} {...item} />)}
+                {props.globals.header.navigation.map((item, key) => <NavigationLink key={key} {...item} />)}
               </ul>
             )}
-          {props.header?.cta && (
+          {props?.globals?.header?.cta && (
               <div className="my-3 my-lg-0 ms-lg-5">
-                <LinkRenderer {...props.header.cta} />
+                <LinkRenderer {...props.globals.header.cta} />
               </div>
             )}
         </Navbar.Collapse>

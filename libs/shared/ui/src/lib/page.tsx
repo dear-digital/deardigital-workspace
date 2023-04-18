@@ -5,7 +5,7 @@ import Header from './header/header';
 export function PageView({ globals, contentBlocks }: PageInterface) {
   return (
     <main>
-      <Header {...globals}  />
+      <Header globals={globals}  />
       <ContentBlocks contentBlocks={contentBlocks} />
     </main>
   );
