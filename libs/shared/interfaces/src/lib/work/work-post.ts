@@ -1,11 +1,11 @@
-import { Client } from '../client/client';
+import { ClientInterface } from '../client/client';
 import { MediaInterface } from '../media';
 import { ServiceInterface } from '../service/service';
 
 export interface WorkPostInterface {
     title: string;
     slug: string;
-    client: Client;
+    client: ClientInterface;
     services: ServiceInterface[];
     thumbnail: MediaInterface | null;
 }

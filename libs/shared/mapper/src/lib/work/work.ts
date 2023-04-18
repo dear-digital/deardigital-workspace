@@ -1,9 +1,9 @@
 import { WorkPostInterface } from '@deardigital/shared/interfaces';
-import { MetaType, ServiceStoryblok, WorkStoryblok } from '@deardigital/shared/schema';
-import { servicesMapper } from '../service/service';
-import { imageMapper } from '../image';
-import { clientMapper } from '../client/client';
+import { ClientStoryblok, MetaType, ServiceStoryblok, WorkStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
+import { clientMapper } from '../client/client';
+import { imageMapper } from '../image';
+import { servicesMapper } from '../service/service';
 
 export function worksMapper(pages: StoryblokStory<WorkStoryblok>[], meta: MetaType): WorkPostInterface[] {
   return pages.map((item) => workMapper(item, meta))
@@ -17,7 +17,7 @@ export function workMapper(page: StoryblokStory<WorkStoryblok>, meta: MetaType):
     title: page.name,
     slug: page.slug,
     services: servicesMapper(services, meta),
-    client: clientMapper(client),
+    client: clientMapper(client as StoryblokStory<ClientStoryblok>),
     thumbnail: imageMapper(page.content.thumbnail)
   }
 }
