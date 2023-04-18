@@ -1,28 +1,27 @@
-import { TechRadarInterface } from '@deardigital/shared/interfaces';
+import { fetchTechRadar } from '@deardigital/shared/services';
 import { TechRadar } from '@deardigital/shared/ui';
-import { useStoryblokState } from '@storyblok/react';
+import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
 import { i18n } from '../next-i18next.config';
-import { fetchTechRadar } from '@deardigital/shared/services';
 
-export interface HomeProps {
-  data: TechRadarInterface;
-}
-
-export function Index({ data }: HomeProps) {
-  useStoryblokState(data as any);
-
+export function Index() {
   return (
-    <TechRadar {...data} />
+    <TechRadar />
   );
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery(['tech-radar', locale], () =>
+    fetchTechRadar(undefined)
+  );
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await fetchTechRadar(undefined),
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: 3600,
   };
