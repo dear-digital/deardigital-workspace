@@ -13,18 +13,6 @@ export interface HomeProps {
 export function Index({ data }: HomeProps) {
   useStoryblokState(data as any);
 
-  // useEffect(() => {
-  //   if (window !== undefined) {
-  //     const sbBridge = new window.StoryblokBridge();
-  //     console.log("sbBridge");
-  //     sbBridge.on(["input"], function (event) {
-  //       console.log(event);
-  //       location.reload();
-  //       // router.reload()
-  //     });
-  //   }
-  // })
-
   return <PageView {...data} />;
 }
 
