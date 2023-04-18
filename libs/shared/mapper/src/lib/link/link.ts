@@ -1,4 +1,4 @@
-import { LinkTypeConstant } from '@deardigital/shared/constants';
+import { LINK_TYPES } from '@deardigital/shared/constants';
 import { LinkInterface } from '@deardigital/shared/interfaces';
 import { MultilinkStoryblok } from '@deardigital/shared/schema';
 
@@ -20,7 +20,7 @@ export function linkMapper(link: MultilinkStoryblok, label?: string): LinkInterf
 
 function mapPage(link: MultilinkStoryblok, label?: string): LinkInterface {
   return {
-    type: LinkTypeConstant.page,
+    type: LINK_TYPES.page,
     link: link.story?.slug ?? "",
     label: label ?? link.story?.name ?? "",
   };
@@ -28,7 +28,7 @@ function mapPage(link: MultilinkStoryblok, label?: string): LinkInterface {
 
 function mapUrl(link: MultilinkStoryblok, label?: string): LinkInterface {
   return {
-    type: LinkTypeConstant.web,
+    type: LINK_TYPES.web,
     link: link.url ?? "",
     label: label ?? "",
     target: link?.['target'] ?? "_self",
@@ -37,7 +37,7 @@ function mapUrl(link: MultilinkStoryblok, label?: string): LinkInterface {
 
 function mapEmail(link: MultilinkStoryblok, label?: string): LinkInterface {
   return {
-    type: LinkTypeConstant.email,
+    type: LINK_TYPES.email,
     link: link.email ?? "",
     label: label ?? link.email ?? "",
   };

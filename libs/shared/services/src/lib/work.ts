@@ -1,4 +1,4 @@
-import { PageTypeConstant } from '@deardigital/shared/constants';
+import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { WorkPostInterface } from '@deardigital/shared/interfaces';
 import { workMapper, worksMapper } from '@deardigital/shared/mapper';
 import { MetaType, WorkStoryblok } from '@deardigital/shared/schema';
@@ -9,7 +9,7 @@ import { resolveRelations } from './resolve-relations';
 export class FetchWork extends FetchDataService<StoryblokStory<WorkStoryblok>[], WorkPostInterface[]> {
   constructor() {
     super({
-      queries: [{ path: `cdn/stories/`, starts_with: PageTypeConstant.services }],
+      queries: [{ path: `cdn/stories/`, starts_with: PAGE_TYPES.services }],
       globals: true,
       resolveRelations: resolveRelations,
     })
@@ -23,7 +23,7 @@ export class FetchWork extends FetchDataService<StoryblokStory<WorkStoryblok>[],
 export class FetchWorkBySlug extends FetchDataService<StoryblokStory<WorkStoryblok>, WorkPostInterface> {
   constructor(slug: string) {
     super({
-      queries: [{ path: `cdn/stories/${PageTypeConstant.work}${slug}` }],
+      queries: [{ path: `cdn/stories/${PAGE_TYPES.work}${slug}` }],
       globals: true,
       resolveRelations: resolveRelations,
     })

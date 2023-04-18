@@ -1,11 +1,11 @@
-import { TextImageLayoutConstant, TextImageLayoutType } from '@deardigital/shared/constants';
+import { TEXT_IMAGE_LAYOUTS, TextImageLayoutType } from '@deardigital/shared/constants';
 
 export function textImageLayoutMapper(type: string): TextImageLayoutType {
-  if (!type) return TextImageLayoutConstant.textMedia;
+  if (!type) return TEXT_IMAGE_LAYOUTS.textMedia;
 
   const mapping = new Map<string, TextImageLayoutType>([
-    ['textMedia', TextImageLayoutConstant.textMedia],
-    ['mediaText', TextImageLayoutConstant.mediaText],
+    ['textMedia', TEXT_IMAGE_LAYOUTS.textMedia],
+    ['mediaText', TEXT_IMAGE_LAYOUTS.mediaText],
   ]);
 
   const layout = mapping.get(type);

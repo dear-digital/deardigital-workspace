@@ -2,14 +2,14 @@ import { ContentTextImageInterface } from '@deardigital/shared/interfaces';
 import { renderRichText, storyblokEditable } from '@storyblok/react';
 import Section from '../section/section';
 import ImageRenderer from '../image-renderer/image-renderer';
-import { TextImageLayoutConstant } from '@deardigital/shared/constants';
+import { TEXT_IMAGE_LAYOUTS } from '@deardigital/shared/constants';
 
 /* eslint-disable-next-line */
 export interface ContentTextImageProps extends ContentTextImageInterface { }
 
 export function ContentTextImage(props: ContentTextImageProps) {
-  const imageCss = props.layout === TextImageLayoutConstant.mediaText ? 'order-0' : 'order-1';
-  const textCss = props.layout === TextImageLayoutConstant.mediaText ? 'order-1' : 'order-0';
+  const imageCss = props.layout === TEXT_IMAGE_LAYOUTS.mediaText ? 'order-0' : 'order-1';
+  const textCss = props.layout === TEXT_IMAGE_LAYOUTS.mediaText ? 'order-1' : 'order-0';
 
   return (
     <Section {...props.section}>

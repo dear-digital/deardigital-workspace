@@ -1,4 +1,4 @@
-import { PageTypeConstant } from '@deardigital/shared/constants';
+import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { ServiceInterface } from '@deardigital/shared/interfaces';
 import { serviceMapper, servicesMapper } from '@deardigital/shared/mapper';
 import { MetaType, ServiceStoryblok } from '@deardigital/shared/schema';
@@ -9,7 +9,7 @@ import { resolveRelations } from './resolve-relations';
 export class FetchServices extends FetchDataService<StoryblokStory<ServiceStoryblok>[], ServiceInterface[]> {
   constructor() {
     super({
-      queries: [{ path: 'cdn/stories', starts_with: PageTypeConstant.services }],
+      queries: [{ path: 'cdn/stories', starts_with: PAGE_TYPES.services }],
       globals: true,
       resolveRelations: resolveRelations,
     })
@@ -23,7 +23,7 @@ export class FetchServices extends FetchDataService<StoryblokStory<ServiceStoryb
 export class FetchServiceBySlug extends FetchDataService<StoryblokStory<ServiceStoryblok>, ServiceInterface> {
   constructor(slug: string) {
     super({
-      queries: [{ path: `cdn/stories/${PageTypeConstant.services}/${slug}` }],
+      queries: [{ path: `cdn/stories/${PAGE_TYPES.services}/${slug}` }],
       globals: false,
       resolveRelations: resolveRelations,
     })

@@ -1,4 +1,4 @@
-export const LinkTypeConstant = {
+export const LINK_TYPES = {
     email: "email",
     page: "page",
     phone: "phone",
@@ -6,4 +6,4 @@ export const LinkTypeConstant = {
 } as const;
 
 type ObjectValues<T> = T[keyof T];
-export type LinkTypeType = ObjectValues<typeof LinkTypeConstant>
+export type LinkTypeType = ObjectValues<typeof LINK_TYPES>

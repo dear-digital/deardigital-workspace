@@ -1,12 +1,12 @@
-import { SectionThemesConstant, SectionThemeType } from '@deardigital/shared/constants';
+import { SECTION_THEMES, SectionThemeType } from '@deardigital/shared/constants';
 
 const themeMapping = new Map<string, SectionThemeType>([
-  ['light', SectionThemesConstant.light],
-  ['dark', SectionThemesConstant.dark],
+  ['light', SECTION_THEMES.light],
+  ['dark', SECTION_THEMES.dark],
 ]);
 
 export function themeMapper(block: string): SectionThemeType {
-  if (!block) return SectionThemesConstant.light;
+  if (!block) return SECTION_THEMES.light;
 
   const theme = themeMapping.get(block);
   if (!theme) {

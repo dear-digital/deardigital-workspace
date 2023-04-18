@@ -1,4 +1,4 @@
-import { DepartmentConstant, DepartmentType } from '@deardigital/shared/constants';
+import { DEPARTMENTS, DepartmentType } from '@deardigital/shared/constants';
 import { TechRadarInterface } from '@deardigital/shared/interfaces';
 import { fetchTechRadar } from '@deardigital/shared/services';
 import { radar_visualization } from '@deardigital/shared/utilities';
@@ -76,7 +76,7 @@ export function TechRadar(props: TechRadarProps) {
           <button className='btn btn-primary btn-small' onClick={() => onChange(undefined)}>All</button>
 
             <div className="btn-group" role="group" aria-label="Basic example">
-              {DepartmentConstant.map((department, key) =>
+              {DEPARTMENTS.map((department, key) =>
                 <button key={key} className='btn btn-primary btn-small' onClick={() => onChange(department)}>{department}</button>
               )}
             </div>

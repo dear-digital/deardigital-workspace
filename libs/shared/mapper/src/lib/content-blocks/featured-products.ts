@@ -1,9 +1,9 @@
-import { ContentFeaturedProductsInterface } from '@deardigital/shared/interfaces';
+import { ContentFeaturedProducts } from '@deardigital/shared/interfaces';
 import { FeaturedProductsStoryblok, MetaType } from '@deardigital/shared/schema';
 import { productsByMetaMapper } from '../products/products';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockFeaturedProducts(content: FeaturedProductsStoryblok, meta: MetaType): ContentFeaturedProductsInterface {
+export function mapContentBlockFeaturedProducts(content: FeaturedProductsStoryblok, meta: MetaType): ContentFeaturedProducts {
   const products = content?.products?.split(",") ?? [];
   return {
     // @ts-ignore

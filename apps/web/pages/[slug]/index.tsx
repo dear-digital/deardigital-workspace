@@ -1,4 +1,4 @@
-import { PageTypeConstant } from '@deardigital/shared/constants';
+import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { PageInterface } from '@deardigital/shared/interfaces';
 import { FetchPageBySlug, fetchPagePaths } from '@deardigital/shared/services';
 import { PageView } from '@deardigital/shared/ui';
@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths = [];
 
   for (const locale of locales) {
-    const res = await fetchPagePaths(PageTypeConstant.page, locale, true);
+    const res = await fetchPagePaths(PAGE_TYPES.page, locale, true);
     paths.push(...res);
   }
 

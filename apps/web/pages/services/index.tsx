@@ -5,7 +5,7 @@ import { useStoryblokState } from '@storyblok/react';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../../next-i18next.config';
-import { PageTypeConstant } from '@deardigital/shared/constants';
+import { PAGE_TYPES } from '@deardigital/shared/constants';
 
 export interface HomeProps {
   data: PageInterface
@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview }
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
       services: await new FetchServices().fetch(true),
-      data: await new FetchPageBySlug(PageTypeConstant.services).fetch(true),
+      data: await new FetchPageBySlug(PAGE_TYPES.services).fetch(true),
     },
     revalidate: 3600,
   };

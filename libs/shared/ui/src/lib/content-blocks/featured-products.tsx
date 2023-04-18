@@ -1,10 +1,10 @@
-import { ContentFeaturedProductsInterface } from '@deardigital/shared/interfaces';
+import { ContentFeaturedProducts } from '@deardigital/shared/interfaces';
 import { renderRichText, storyblokEditable } from '@storyblok/react';
 import ProductCard from '../product/product-card';
 import Section from '../section/section';
 
 /* eslint-disable-next-line */
-export interface ContentFeaturedProductsProps extends ContentFeaturedProductsInterface { }
+export interface ContentFeaturedProductsProps extends ContentFeaturedProducts { }
 
 export function ContentFeaturedProducts(props: ContentFeaturedProductsProps) {
   return (

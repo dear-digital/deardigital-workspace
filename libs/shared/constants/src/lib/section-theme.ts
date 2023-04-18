@@ -1,16 +1,16 @@
-import { BackgroundsConstant } from './background';
-import { ColorsConstant } from './color';
+import { BACKGROUNDS } from './background';
+import { COLORS } from './color';
 
-export const SectionThemesConstant = {
+export const SECTION_THEMES = {
   light: {
-    color: ColorsConstant.light,
-    background: BackgroundsConstant.light,    
+    color: COLORS.light,
+    background: BACKGROUNDS.light,
   },
   dark: {
-    color: ColorsConstant.dark,
-    background: BackgroundsConstant.dark,    
-  } 
+    color: COLORS.dark,
+    background: BACKGROUNDS.dark,
+  }
 } as const;
 
 type ObjectValues<T> = T[keyof T];
-export type SectionThemeType = ObjectValues<typeof SectionThemesConstant>
+export type SectionThemeType = ObjectValues<typeof SECTION_THEMES>

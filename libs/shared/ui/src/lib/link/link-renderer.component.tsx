@@ -1,4 +1,4 @@
-import { LinkTypeConstant, LinkTypeType } from '@deardigital/shared/constants';
+import { LINK_TYPES, LinkTypeType } from '@deardigital/shared/constants';
 import { LinkInterface, MappingFunction } from '@deardigital/shared/interfaces';
 import Link from 'next/link';
 
@@ -11,8 +11,8 @@ const componentMapping = new Map<
   LinkTypeType,
   MappingFunction<LinkRendererProps, JSX.Element>
 >([
-  [LinkTypeConstant.page, (props) => <Link {...props} href={props.link}>{props.children ?? props.label}</Link>],
-  [LinkTypeConstant.web, (props) => <a {...props} href={props.link}>{props.children ?? props.label}</a>],
+  [LINK_TYPES.page, (props) => <Link {...props} href={props.link}>{props.children ?? props.label}</Link>],
+  [LINK_TYPES.web, (props) => <a {...props} href={props.link}>{props.children ?? props.label}</a>],
 ]);
 
 export function LinkRenderer(props: LinkRendererProps) {

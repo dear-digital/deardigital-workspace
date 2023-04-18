@@ -1,8 +1,2 @@
-export const DepartmentConstant = {
-  SPY: "SPY",
-  DM: "DM",
-  ODOO: "ODOO",
-} as const;
-
-type ObjectValues<T> = T[keyof T];
-export type DepartmentType = ObjectValues<typeof DepartmentConstant>
+export const DEPARTMENTS = ["SPY", "DM", "ODOO"] as const;
+export type DepartmentType = typeof DEPARTMENTS[number];

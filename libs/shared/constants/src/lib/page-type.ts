@@ -1,4 +1,4 @@
-export const PageTypeConstant = {
+export const PAGE_TYPES = {
     client: "client/",
     page: "page/",
     services: "services/",
@@ -6,4 +6,4 @@ export const PageTypeConstant = {
 } as const;
 
 type ObjectValues<T> = T[keyof T];
-export type PageTypeType = ObjectValues<typeof PageTypeConstant>
+export type PageTypeType = ObjectValues<typeof PAGE_TYPES>
