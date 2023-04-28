@@ -5,6 +5,7 @@ import { radar_visualization } from '@deardigital/shared/utilities';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useGetEmployees } from './tech-radar-hook';
 
 /* eslint-disable-next-line */
 export interface TechRadarProps { }
@@ -12,15 +13,7 @@ export interface TechRadarProps { }
 export function TechRadar(props: TechRadarProps) {
   const { locale } = useRouter();
   const [activeFilter, setActiveFilter] = useState<DepartmentType>();
-  const { data } = useQuery(['tech-radar', locale], () => fetchTechRadar(undefined), {
-    select: (data: TechRadarInterface) => {
-      if (activeFilter) {
-        data.items = data.items.filter(item => item.department.includes(activeFilter));
-      }
-
-      return data;
-    }
-  });
+  const { data } = useGetEmployees(activeFilter);
 
   useEffect(() => {
     if (data) {
@@ -53,7 +46,7 @@ export function TechRadar(props: TechRadarProps) {
         entries: data.items,
       });
     }
-  }, [data]);
+  }, [data, activeFilter]);
 
   function onChange(value: DepartmentType | undefined) {
     if (value === activeFilter) {

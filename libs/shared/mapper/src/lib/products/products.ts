@@ -6,7 +6,7 @@ import { removeForbiddenIdChars } from '@deardigital/shared/utilities';
 export function productsByMetaMapper(items: string[], meta: MetaType): ProductPostInterface[] {
   const products = [] as ProductPostInterface[];
   items.forEach(item => {
-    const product = meta.products[removeForbiddenIdChars(item)]
+    const product = meta.products?.[removeForbiddenIdChars(item)]
     if (product) {
       products.push(productMapper(product));
     }

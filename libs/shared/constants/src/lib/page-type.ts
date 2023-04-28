@@ -1,7 +1,10 @@
 export const PAGE_TYPES = {
-    client: "client/",
+    home: "home",
     page: "page/",
+    blog: "blog/",
+    client: "client/",
     services: "services/",
+    podcast: "podcast/",
     work: "work/",
 } as const;
 

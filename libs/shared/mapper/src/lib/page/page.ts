@@ -5,10 +5,9 @@ import { contentBlocksMapper } from '../content-blocks';
 
 export function pageMapper(page: StoryblokStory<PageStoryblok>, meta: MetaType): PageInterface {
   return {
-    id: page.id,
     globals: meta.globals,
-    // breadcrumbs: breadcrumbMapper(res.renderNavigation, page?.slug),
     contentBlocks: contentBlocksMapper(page.content.contentBlocks, meta),
+    // breadcrumbs: breadcrumbMapper(res.renderNavigation, page?.slug),
     // disclaimerNavigation: navigationMapper(disclaimerNav),
     // heroBlock: heroBlocksMapper(page?.hero, meta),
     // locations: mapLocation(res.locations, meta.domain),

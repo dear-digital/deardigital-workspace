@@ -364,7 +364,7 @@ export enum BlogSortKeysShopify {
 }
 
 /**
- * The store's branding configuration.
+ * The store's [branding configuration](https://help.shopify.com/en/manual/promoting-marketing/managing-brand-assets).
  *
  */
 export type BrandShopify = {
@@ -4208,7 +4208,8 @@ export type MediaImageShopify = MediaShopify & NodeShopify & {
 };
 
 /**
- * A menu used for navigation within a storefront.
+ * A [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) representing a hierarchy
+ * of hyperlinks (items).
  *
  */
 export type MenuShopify = NodeShopify & {
@@ -5966,7 +5967,11 @@ export type QueryRootShopify = {
   collectionByHandle?: Maybe<CollectionShopify>;
   /** List of the shop’s collections. */
   collections: CollectionConnectionShopify;
-  /** Find a customer by its access token. */
+  /**
+   * The customer associated with the given access token. Tokens are obtained by using the
+   * [`customerAccessTokenCreate` mutation](https://shopify.dev/docs/api/storefront/latest/mutations/customerAccessTokenCreate).
+   *
+   */
   customer?: Maybe<CustomerShopify>;
   /** Returns the localized experiences configured for the shop. */
   localization: LocalizationShopify;
@@ -5977,7 +5982,10 @@ export type QueryRootShopify = {
    *
    */
   locations: LocationConnectionShopify;
-  /** A storefront menu. */
+  /**
+   * Retrieve a [navigation menu](https://help.shopify.com/manual/online-store/menus-and-links) by its handle.
+   *
+   */
   menu?: Maybe<MenuShopify>;
   /** Fetch a specific Metaobject by one of its unique identifiers. */
   metaobject?: Maybe<MetaobjectShopify>;

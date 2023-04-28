@@ -1,16 +1,15 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
-import { PageInterface } from '@deardigital/shared/interfaces';
-import { FetchPageBySlug, FetchServiceBySlug, FetchServices, fetchPagePaths } from '@deardigital/shared/services';
+import { ServiceInterface } from '@deardigital/shared/interfaces';
+import { FetchServiceBySlug, fetchPagePaths } from '@deardigital/shared/services';
 import { PageView } from '@deardigital/shared/ui';
 import { useStoryblokState } from '@storyblok/react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../../next-i18next.config';
-import { useEffect } from 'react';
 
 /* eslint-disable-next-line */
 export interface SlugProps {
-  data: PageInterface
+  data: ServiceInterface
 }
 
 export function Slug({ data }: SlugProps) {

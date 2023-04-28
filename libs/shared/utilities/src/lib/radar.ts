@@ -258,49 +258,37 @@ export function radar_visualization(config) {
     }
   }
 
-  function legend_transform(quadrant, ring, index = null) {
-    var dx = ring < 2 ? 0 : 140;
-    var dy = (index == null ? -16 : index * 12);
-    if (ring % 2 === 1) {
-      dy = dy + 36 + segmented[quadrant][ring - 1].length * 12;
-    }
-    return translate(
-      legend_offset[quadrant].x + dx,
-      legend_offset[quadrant].y + dy
-    );
-  }
-
   // draw title and legend (only in print layout)
-  if (config.print_layout) {
+  // if (config.print_layout) {
 
-    // title
-    radar.append("text")
-      .attr("transform", translate(title_offset.x, title_offset.y))
-      .text(config.title)
-      .style("font-family", "Arial, Helvetica")
-      .style("font-size", "30")
-      .style("font-weight", "bold")
+  //   // title
+  //   radar.append("text")
+  //     .attr("transform", translate(title_offset.x, title_offset.y))
+  //     .text(config.title)
+  //     .style("font-family", "Arial, Helvetica")
+  //     .style("font-size", "30")
+  //     .style("font-weight", "bold")
 
-    // date
-    radar
-      .append("text")
-      .attr("transform", translate(title_offset.x, title_offset.y + 20))
-      .text(config.date || "")
-      .style("font-family", "Arial, Helvetica")
-      .style("font-size", "14")
-      .style("fill", "#999")
+  //   // date
+  //   radar
+  //     .append("text")
+  //     .attr("transform", translate(title_offset.x, title_offset.y + 20))
+  //     .text(config.date || "")
+  //     .style("font-family", "Arial, Helvetica")
+  //     .style("font-size", "14")
+  //     .style("fill", "#999")
 
-    // footer
-    radar.append("text")
-      .attr("transform", translate(footer_offset.x, footer_offset.y))
-      .text("▲ moved up     ▼ moved down")
-      .attr("xml:space", "preserve")
-      .style("font-family", "Arial, Helvetica")
-      .style("font-size", "10px");
+  //   // footer
+  //   radar.append("text")
+  //     .attr("transform", translate(footer_offset.x, footer_offset.y))
+  //     .text("▲ moved up     ▼ moved down")
+  //     .attr("xml:space", "preserve")
+  //     .style("font-family", "Arial, Helvetica")
+  //     .style("font-size", "10px");
 
-    // filter
-    radar.append("text")
-  }
+  //   // filter
+  //   radar.append("text")
+  // }
 
   // layer for entries
   var rink = radar.append("g")
@@ -351,11 +339,38 @@ export function radar_visualization(config) {
   }
 
   // draw blips on radar
-  var blips = rink.selectAll(".blip").data(config.entries).enter()
-    .append("g")
-    .attr("class", "blip")
-    .on("mouseover", function (d) { showBubble(d); })
-    .on("mouseout", function (d) { hideBubble(d); })
+  const blips = rink.selectAll(".blip")
+    .data(config.entries, (d) => d.id) // Use a key function to match existing elements
+    .join(
+        (enter) => {
+            // Create new elements for entering data
+            return enter.append("g")
+                .attr("class", "blip")
+                .on("mouseover", (d) => showBubble(d))
+                .on("mouseout", (d) => hideBubble(d));
+        },
+        (update) => {
+            // Update existing elements with new data
+            return update;
+        },
+        (exit) => {
+            // Remove elements that no longer have data
+            return exit.remove();
+        }
+    );
+
+  // var blips = rink.selectAll(".blip").data(config.entries).enter()
+  //   .append("g")
+  //   .attr("class", "blip")
+  //   .on("mouseover", function (d) { showBubble(d); })
+  //   .on("mouseout", function (d) { hideBubble(d); })
+
+  // const blips = rink.selectAll(".blip")
+  //   .data(config.entries)
+  //   .join("g")
+  //   .attr("class", "blip")
+  //   .on("mouseover", showBubble)
+  //   .on("mouseout", hideBubble);
 
   // configure each blip
   blips.each(function (d) {

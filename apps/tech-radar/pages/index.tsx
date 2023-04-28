@@ -13,7 +13,7 @@ export function Index() {
 
 export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['tech-radar', locale], () =>
+  await queryClient.prefetchQuery(['tech-radar'], () =>
     fetchTechRadar(undefined)
   );
 

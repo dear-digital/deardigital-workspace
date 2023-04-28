@@ -1,7 +1,10 @@
-import { contentBlocksLinkedData, metaMapper, shopifyLinkedDataQueryBuilder } from '@deardigital/shared/mapper';
+import { contentBlocksLinkedData, globalsMapper } from '@deardigital/shared/mapper';
 import { MetaType } from '@deardigital/shared/schema';
 import { getStoryblokApi } from '@storyblok/react';
-import { shopifyClient } from './shopify';
+import { getMetaServices } from './meta-services';
+import { getMetaShopifyData } from './shopify';
+import { getMetaBlog } from './meta-blog';
+import { getMetaPodcast } from './meta-podcast';
 
 interface FetchServiceInteface {
   queries: FetchServiceQueryInterface[];
@@ -12,9 +15,10 @@ interface FetchServiceInteface {
 interface FetchServiceQueryInterface {
   path: string,
   starts_with?: string;
+  is_startpage?: 0 | 1 | undefined;
 }
 
-export abstract class FetchDataService<UResponse, TData> {
+export abstract class FetchDataService<T> {
   private queries: FetchServiceQueryInterface[];
   private globals: boolean;
   private resolveRelations: string[];
@@ -27,12 +31,13 @@ export abstract class FetchDataService<UResponse, TData> {
     this.fetchGlobals()
   }
 
-  protected abstract mapper(page: UResponse, meta: MetaType): TData;
+  protected abstract mapper(data: any, meta: MetaType): T;
 
-  public async fetch(preview: boolean): Promise<TData> {
-    const requests = this.queries.map(({ path, starts_with }) =>
+  public async fetch(preview: boolean): Promise<T> {
+    const requests = this.queries.map(({ path, starts_with, is_startpage }) =>
       getStoryblokApi().get(path, {
         ...(starts_with && { starts_with: starts_with }),
+        ...(is_startpage !== undefined && { is_startpage: is_startpage }),
         token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
         version: preview ? 'draft' : 'published',
         resolve_relations: this.resolveRelations,
@@ -49,17 +54,19 @@ export abstract class FetchDataService<UResponse, TData> {
       throw new Error(`Globals could not be fetched`)
     }
 
-    const getLinkedData = contentBlocksLinkedData(page.data.story);
-    const hasLinkedData = getLinkedData?.collections?.length || getLinkedData?.products?.length;
+    const meta: MetaType = {
+      globals: globalsMapper(globals?.data.story),
+      rels: page.data.rels,
+      products: {},
+    };
 
-    if (!hasLinkedData) {
-      return this.mapper(page.data.story, metaMapper(page.data, globals?.data.story));
-    }
+    const getLinkedData = contentBlocksLinkedData(page.data?.story);
+    await getMetaBlog(preview, getLinkedData, meta);
+    await getMetaPodcast(preview, getLinkedData, meta);
+    await getMetaShopifyData(getLinkedData, meta);
+    await getMetaServices(preview, getLinkedData, meta);
 
-    const query = shopifyLinkedDataQueryBuilder(getLinkedData);
-    const shopifyRes = await shopifyClient.request(query);
-
-    return this.mapper(page.data.story, metaMapper(page.data, globals?.data.story, shopifyRes))
+    return this.mapper(page.data, meta)
   }
 
   private fetchGlobals(): void {

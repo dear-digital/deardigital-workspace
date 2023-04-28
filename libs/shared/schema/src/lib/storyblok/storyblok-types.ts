@@ -11,6 +11,33 @@ export interface AssetStoryblok {
   [k: string]: any;
 }
 
+export interface BlogStoryblok {
+  description?: string;
+  thumbnail: AssetStoryblok;
+  hero?: never[];
+  contentBlocks?: (
+    | BlogsStoryblok
+    | FeaturedProductsStoryblok
+    | FeaturedWorkStoryblok
+    | ImageStoryblok
+    | PodcastsStoryblok
+    | ServicesStoryblok
+    | TextStoryblok
+    | TextImageStoryblok
+  )[];
+  _uid: string;
+  component: "blog";
+  [k: string]: any;
+}
+
+export interface BlogsStoryblok {
+  text?: any;
+  section: SectionStoryblok[];
+  _uid: string;
+  component: "blogs";
+  [k: string]: any;
+}
+
 export interface ClientStoryblok {
   name?: string;
   logo: AssetStoryblok;
@@ -129,15 +156,45 @@ export interface LinkStoryblok {
 export interface PageStoryblok {
   hero?: any[];
   contentBlocks?: (
+    | BlogsStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
+    | PodcastsStoryblok
+    | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
   )[];
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface PodcastStoryblok {
+  description?: string;
+  thumbnail: AssetStoryblok;
+  hero?: never[];
+  contentBlocks?: (
+    | BlogsStoryblok
+    | FeaturedProductsStoryblok
+    | FeaturedWorkStoryblok
+    | ImageStoryblok
+    | PodcastsStoryblok
+    | ServicesStoryblok
+    | TextStoryblok
+    | TextImageStoryblok
+  )[];
+  _uid: string;
+  component: "podcast";
+  [k: string]: any;
+}
+
+export interface PodcastsStoryblok {
+  text?: any;
+  section: SectionStoryblok[];
+  _uid: string;
+  component: "podcasts";
   [k: string]: any;
 }
 
@@ -151,29 +208,29 @@ export interface SectionStoryblok {
 }
 
 export interface ServiceStoryblok {
-  text?: any;
+  description?: string;
+  thumbnail: AssetStoryblok;
+  hero?: never[];
+  contentBlocks?: (
+    | BlogsStoryblok
+    | FeaturedProductsStoryblok
+    | FeaturedWorkStoryblok
+    | ImageStoryblok
+    | PodcastsStoryblok
+    | ServicesStoryblok
+    | TextStoryblok
+    | TextImageStoryblok
+  )[];
   _uid: string;
   component: "service";
   [k: string]: any;
 }
 
-export interface TechnologyStoryblok {
-  name: string;
-  description?: any;
-  quadrant: "0" | "1" | "2" | "3";
-  ring: "0" | "1" | "2" | "3";
-  moved: "1" | "-1" | "0";
-  department?: ("" | "SPY" | "DM" | "ODOO")[];
+export interface ServicesStoryblok {
+  text?: any;
+  section: SectionStoryblok[];
   _uid: string;
-  component: "technology";
-  [k: string]: any;
-}
-
-export interface TechRadarStoryblok {
-  title?: string;
-  technologies?: TechnologyStoryblok[];
-  _uid: string;
-  component: "techRadar";
+  component: "services";
   [k: string]: any;
 }
 
@@ -200,9 +257,12 @@ export interface TextImageStoryblok {
 export interface WorkStoryblok {
   hero?: never[];
   contentBlocks?: (
+    | BlogsStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
+    | PodcastsStoryblok
+    | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
   )[];

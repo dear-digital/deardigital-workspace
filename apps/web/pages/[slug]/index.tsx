@@ -8,11 +8,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../../next-i18next.config';
 
 /* eslint-disable-next-line */
-export interface SlugProps {
+export interface PageProps {
   data: PageInterface
 }
 
-export function Slug({ data }: SlugProps) {
+export function Slug({ data }: PageProps) {
   useStoryblokState(data as any);
 
   return <PageView {...data} />;
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview }
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await new FetchPageBySlug(slug).fetch(true),
+      data: await new FetchPageBySlug(PAGE_TYPES.page, slug).fetch(true),
     },
     revalidate: 3600,
   };

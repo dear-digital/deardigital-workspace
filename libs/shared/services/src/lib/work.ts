@@ -1,35 +1,21 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
-import { WorkPostInterface } from '@deardigital/shared/interfaces';
-import { workMapper, worksMapper } from '@deardigital/shared/mapper';
-import { MetaType, WorkStoryblok } from '@deardigital/shared/schema';
-import { StoryblokStory } from 'storyblok-generate-ts';
-import { FetchDataService } from './fetch';
+import { workCardsMapper } from '@deardigital/shared/mapper';
+import { getStoryblokApi } from '@storyblok/react';
 import { resolveRelations } from './resolve-relations';
 
-export class FetchWork extends FetchDataService<StoryblokStory<WorkStoryblok>[], WorkPostInterface[]> {
-  constructor() {
-    super({
-      queries: [{ path: `cdn/stories/`, starts_with: PAGE_TYPES.services }],
-      globals: true,
-      resolveRelations: resolveRelations,
-    })
+export async function fetchWork(preview: boolean) {
+  const path = "cdn/stories";
+  const work = await getStoryblokApi().get(path, {
+    token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
+    version: preview ? 'draft' : 'published',
+    starts_with: PAGE_TYPES.work,
+    resolve_relations: resolveRelations,
+    is_startpage: 0,
+  })
+
+  if (!work) {
+    throw new Error(`Services could not be fetched`)
   }
 
-  mapper(page: StoryblokStory<WorkStoryblok>[], meta: MetaType) {
-    return worksMapper(page, meta);
-  }
-}
-
-export class FetchWorkBySlug extends FetchDataService<StoryblokStory<WorkStoryblok>, WorkPostInterface> {
-  constructor(slug: string) {
-    super({
-      queries: [{ path: `cdn/stories/${PAGE_TYPES.work}${slug}` }],
-      globals: true,
-      resolveRelations: resolveRelations,
-    })
-  }
-
-  mapper(page: StoryblokStory<WorkStoryblok>, meta: MetaType) {
-    return workMapper(page, meta)
-  }
+  return workCardsMapper(work.data.stories);
 }

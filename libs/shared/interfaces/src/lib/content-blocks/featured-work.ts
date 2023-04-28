@@ -1,10 +1,10 @@
 import { ISbRichtext } from '@storyblok/react';
 import { SectionInterface } from '../section';
 import { StoryblockStoryBaseInterface } from '../storyblok-story';
-import { WorkPostInterface } from '../work/work-post';
+import { WorkCardInterface } from '../work/work-card';
 
 export interface ContentFeaturedWorkInterface extends StoryblockStoryBaseInterface {
   text: ISbRichtext;
-  work: WorkPostInterface[];
+  work: WorkCardInterface[];
   section: SectionInterface;
 }

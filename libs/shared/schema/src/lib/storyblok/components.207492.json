@@ -1,6 +1,108 @@
 {
   "components": [
     {
+      "name": "blog",
+      "display_name": null,
+      "created_at": "2023-04-28T16:58:15.443Z",
+      "updated_at": "2023-04-28T17:36:49.794Z",
+      "id": 3906382,
+      "schema": {
+        "description": {
+          "type": "textarea",
+          "pos": 0
+        },
+        "thumbnail": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "required": true,
+          "asset_folder_id": 235003,
+          "pos": 1
+        },
+        "hero": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "b73e6527-a688-4f12-a41a-c368117e6441"
+          ],
+          "required": false,
+          "maximum": 1
+        },
+        "contentBlocks": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
+          ],
+          "pos": 3
+        },
+        "tab-be5488a9-a14c-42d4-a93c-f89a993d4149": {
+          "display_name": "Settings",
+          "keys": [
+            "thumbnail",
+            "description"
+          ],
+          "pos": 4,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "blogs",
+      "display_name": null,
+      "created_at": "2023-04-28T17:22:53.518Z",
+      "updated_at": "2023-04-28T17:23:01.123Z",
+      "id": 3906425,
+      "schema": {
+        "text": {
+          "type": "richtext",
+          "key": "text",
+          "pos": 0
+        },
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "maximum": 1,
+          "required": true,
+          "key": "Section",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blogs",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Content Blocks"
+    },
+    {
       "name": "client",
       "display_name": null,
       "created_at": "2023-03-28T07:52:00.676Z",
@@ -288,12 +390,14 @@
       "name": "page",
       "display_name": null,
       "created_at": "2023-03-17T13:03:56.284Z",
-      "updated_at": "2023-03-26T17:41:31.822Z",
+      "updated_at": "2023-04-14T14:38:56.517Z",
       "id": 3600348,
       "schema": {
         "hero": {
           "type": "bloks",
-          "pos": 0
+          "pos": 0,
+          "required": false,
+          "maximum": 1
         },
         "contentBlocks": {
           "type": "bloks",
@@ -317,6 +421,108 @@
       "component_group_uuid": null,
       "color": null,
       "icon": null
+    },
+    {
+      "name": "podcast",
+      "display_name": null,
+      "created_at": "2023-04-28T17:37:03.613Z",
+      "updated_at": "2023-04-28T17:38:18.254Z",
+      "id": 3906499,
+      "schema": {
+        "description": {
+          "type": "textarea",
+          "pos": 0
+        },
+        "thumbnail": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "required": true,
+          "asset_folder_id": 235006,
+          "pos": 1
+        },
+        "hero": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "b73e6527-a688-4f12-a41a-c368117e6441"
+          ],
+          "required": false,
+          "maximum": 1
+        },
+        "contentBlocks": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
+          ],
+          "pos": 3
+        },
+        "tab-be5488a9-a14c-42d4-a93c-f89a993d4149": {
+          "display_name": "Settings",
+          "keys": [
+            "thumbnail",
+            "description"
+          ],
+          "pos": 4,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "podcast",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "podcasts",
+      "display_name": null,
+      "created_at": "2023-04-28T17:42:47.463Z",
+      "updated_at": "2023-04-28T17:42:59.832Z",
+      "id": 3906501,
+      "schema": {
+        "text": {
+          "type": "richtext",
+          "key": "text",
+          "pos": 0
+        },
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "maximum": 1,
+          "required": true,
+          "key": "Section",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "podcasts",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Content Blocks"
     },
     {
       "name": "section",
@@ -388,11 +594,52 @@
       "name": "service",
       "display_name": null,
       "created_at": "2023-03-27T22:47:22.365Z",
-      "updated_at": "2023-03-28T07:21:18.894Z",
+      "updated_at": "2023-04-28T16:57:37.768Z",
       "id": 3678019,
       "schema": {
-        "text": {
-          "type": "richtext"
+        "description": {
+          "type": "textarea",
+          "pos": 0
+        },
+        "thumbnail": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "required": true,
+          "asset_folder_id": 235000,
+          "pos": 1
+        },
+        "hero": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "b73e6527-a688-4f12-a41a-c368117e6441"
+          ],
+          "required": false,
+          "maximum": 1
+        },
+        "contentBlocks": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
+          ],
+          "pos": 3
+        },
+        "tab-be5488a9-a14c-42d4-a93c-f89a993d4149": {
+          "display_name": "Settings",
+          "keys": [
+            "thumbnail",
+            "description"
+          ],
+          "pos": 4,
+          "type": "tab"
         }
       },
       "image": null,
@@ -408,130 +655,28 @@
       "icon": null
     },
     {
-      "name": "technology",
+      "name": "services",
       "display_name": null,
-      "created_at": "2023-04-12T21:44:56.170Z",
-      "updated_at": "2023-04-12T22:29:37.185Z",
-      "id": 3797984,
+      "created_at": "2023-04-28T09:57:30.649Z",
+      "updated_at": "2023-04-28T11:45:56.141Z",
+      "id": 3904265,
       "schema": {
-        "name": {
-          "type": "text",
-          "pos": 0,
-          "key": "name",
-          "required": true
-        },
-        "description": {
+        "text": {
           "type": "richtext",
-          "pos": 1,
-          "key": "description"
+          "key": "text",
+          "pos": 0
         },
-        "quadrant": {
-          "type": "option",
-          "use_uuid": true,
-          "options": [
-            {
-              "_uid": "406deba6-c393-4664-8c3f-190e1fad3567",
-              "name": "Languages",
-              "value": "0"
-            },
-            {
-              "_uid": "249d1904-13d5-493a-987c-6396782fd5ff",
-              "value": "1",
-              "name": "Platforms"
-            },
-            {
-              "_uid": "182995a0-7026-45bf-8815-5eb46844611a",
-              "value": "2",
-              "name": "Tools"
-            },
-            {
-              "_uid": "bcfb946a-cd9f-46d7-ad4b-9d7c5c5a38a9",
-              "value": "3",
-              "name": "Frameworks"
-            }
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
           ],
-          "exclude_empty_option": true,
-          "default_value": "0",
+          "maximum": 1,
           "required": true,
-          "key": "quadrants",
-          "pos": 2
-        },
-        "ring": {
-          "type": "option",
-          "use_uuid": true,
-          "required": true,
-          "options": [
-            {
-              "_uid": "9ee1cffe-82c2-401b-95a1-8c6f90d8e927",
-              "name": "Adopt",
-              "value": "0"
-            },
-            {
-              "_uid": "a297ffdb-1b76-4550-80fe-48d975cf80dc",
-              "value": "1",
-              "name": "Trail"
-            },
-            {
-              "_uid": "1b124e6e-bc54-45ac-b00d-747e54888b77",
-              "value": "2",
-              "name": "Assess"
-            },
-            {
-              "_uid": "035c4a19-555f-408c-a83d-7c47bc3115aa",
-              "value": "3",
-              "name": "Hold"
-            }
-          ],
-          "exclude_empty_option": true,
-          "default_value": "0",
-          "key": "ring",
-          "pos": 3
-        },
-        "moved": {
-          "type": "option",
-          "use_uuid": true,
-          "required": true,
-          "options": [
-            {
-              "_uid": "175d65ab-269e-4715-9e9c-bd53e38895b3",
-              "name": "Up",
-              "value": "1"
-            },
-            {
-              "_uid": "cbae57c8-4701-4235-bae9-2abffe5e4782",
-              "value": "-1",
-              "name": "Down"
-            },
-            {
-              "_uid": "a682f841-b3c7-49c8-8aed-d53a8ed06190",
-              "value": "0",
-              "name": "Same"
-            }
-          ],
-          "default_value": "0",
-          "exclude_empty_option": true
-        },
-        "department": {
-          "type": "options",
-          "required": false,
-          "options": [
-            {
-              "_uid": "fe874b33-987d-4e94-b88b-140aa8f374b1",
-              "name": "SPY",
-              "value": "SPY"
-            },
-            {
-              "_uid": "db583d56-dd0d-4349-8fd0-edc578a48c27",
-              "value": "DM",
-              "name": "DM"
-            },
-            {
-              "_uid": "8361b1e3-7362-4ddb-9cac-de8b78945d58",
-              "value": "ODOO",
-              "name": "ODOO"
-            }
-          ],
-          "description": "Which department uses this technology? Leave empty if applies to all of them."
+          "key": "Section",
+          "pos": 1
         }
       },
       "image": null,
@@ -541,44 +686,11 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "technology",
-      "component_group_uuid": "4368c96e-4555-4641-99ba-3406dbaba0e7",
+      "real_name": "services",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
       "color": null,
       "icon": null,
-      "component_group_name": "Tech Radar"
-    },
-    {
-      "name": "techRadar",
-      "display_name": null,
-      "created_at": "2023-04-12T21:39:50.651Z",
-      "updated_at": "2023-04-12T21:52:51.680Z",
-      "id": 3797981,
-      "schema": {
-        "title": {
-          "type": "text"
-        },
-        "technologies": {
-          "type": "bloks",
-          "required": false,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": [
-            "technology"
-          ]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": true,
-      "preview_tmpl": null,
-      "is_nestable": false,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "techRadar",
-      "component_group_uuid": "4368c96e-4555-4641-99ba-3406dbaba0e7",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Tech Radar"
+      "component_group_name": "Content Blocks"
     },
     {
       "name": "text",
@@ -727,7 +839,7 @@
       "name": "work",
       "display_name": null,
       "created_at": "2023-03-22T10:51:09.660Z",
-      "updated_at": "2023-03-28T15:00:51.483Z",
+      "updated_at": "2023-04-28T16:41:59.458Z",
       "id": 3637566,
       "schema": {
         "hero": {
@@ -776,7 +888,8 @@
           "filetypes": [
             "images"
           ],
-          "required": true
+          "required": true,
+          "asset_folder_id": 234999
         },
         "tab-a8dded72-753e-49d5-a443-f934db6e9f5d": {
           "display_name": "Settings",

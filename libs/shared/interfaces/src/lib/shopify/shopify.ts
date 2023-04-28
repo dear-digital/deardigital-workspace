@@ -1,4 +1,7 @@
 export interface ShopifyCollectionsProductsInterface {
-    collections: Array<string>;
-    products: Array<string>;
+  blog: boolean;
+  collections: Set<string>;
+  podcast: boolean;
+  products: Set<string>;
+  services: boolean;
 }
