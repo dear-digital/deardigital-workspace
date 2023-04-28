@@ -12,6 +12,7 @@ const componentMapping = new Map<
   ['featuredProducts', (...args) => mapProduct(args[0] as FeaturedProductsStoryblok, args[1])],
   ['podcasts', (...args) => mapPodcast(args[1])],
   ['services', (...args) => mapService(args[1])],
+  ['works', (...args) => mapWork(args[1])],
 ]);
 
 export function contentBlocksLinkedData(page: StoryblokStory<PageStoryblok>): ShopifyCollectionsProductsInterface {
@@ -23,6 +24,7 @@ export function contentBlocksLinkedData(page: StoryblokStory<PageStoryblok>): Sh
     podcast: false,
     products: new Set(),
     services: false,
+    work: false,
   };
 
   if (!blocks || isEmpty(blocks)) {
@@ -66,4 +68,8 @@ function mapProduct(block: FeaturedProductsStoryblok, data: ShopifyCollectionsPr
 
 function mapService(data: ShopifyCollectionsProductsInterface) {
   data.services = true;
+}
+
+function mapWork(data: ShopifyCollectionsProductsInterface) {
+  data.work = true;
 }

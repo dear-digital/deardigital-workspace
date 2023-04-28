@@ -2,7 +2,7 @@ import { ContentBlogInterface } from '@deardigital/shared/interfaces';
 import { BlogsStoryblok, MetaType } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockBlogs(content: BlogsStoryblok, meta: MetaType): ContentBlogInterface {
+export function mapContentBlockBlog(content: BlogsStoryblok, meta: MetaType): ContentBlogInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

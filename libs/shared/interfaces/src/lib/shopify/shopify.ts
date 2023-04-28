@@ -4,4 +4,5 @@ export interface ShopifyCollectionsProductsInterface {
   podcast: boolean;
   products: Set<string>;
   services: boolean;
+  work: boolean;
 }

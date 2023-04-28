@@ -4,7 +4,7 @@ import { StoryblokStory } from 'storyblok-generate-ts';
 import { imageMapper } from '../image';
 
 
-export function serviceCardsMapper(services: StoryblokStory<ServiceStoryblok>[]): ServiceCardInterface[] {
+export function serviceCardsMapper(services?: StoryblokStory<ServiceStoryblok>[]): ServiceCardInterface[] {
   return services?.map(item => serviceCardMapper(item)) ?? [];
 }
 
@@ -12,6 +12,6 @@ export function serviceCardMapper(page: StoryblokStory<ServiceStoryblok>): Servi
   return {
     title: page?.name ?? '',
     slug: page?.full_slug,
-    thumbnail: imageMapper(page.content.thumbnail)
+    thumbnail: imageMapper(page?.content.thumbnail)
   }
 }

@@ -21,7 +21,7 @@ export function linkMapper(link: MultilinkStoryblok, label?: string): LinkInterf
 function mapPage(link: MultilinkStoryblok, label?: string): LinkInterface {
   return {
     type: LINK_TYPES.page,
-    link: link.story?.slug ?? "",
+    link: `/${link.story?.slug ?? link.cached_url ?? ""}`,
     label: label ?? link.story?.name ?? "",
   };
 }

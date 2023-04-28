@@ -10,6 +10,7 @@ export * from './lib/content-blocks/podcasts';
 export * from './lib/content-blocks/services';
 export * from './lib/content-blocks/text';
 export * from './lib/content-blocks/text-image';
+export * from './lib/content-blocks/work';
 export * from './lib/global/global';
 export * from './lib/header/header';
 export * from './lib/link/link';

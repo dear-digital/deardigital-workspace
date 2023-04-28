@@ -6,5 +6,6 @@ import { ContentPodcastInterface } from './podcasts';
 import { ContentServicesInterface } from './services';
 import { ContentTextInterface } from './text';
 import { ContentTextImageInterface } from './text-image';
+import { ContentWorkInterface } from './work';
 
-export type ContentBlockInterface = ContentBlogInterface | ContentFeaturedWorkInterface | ContentFeaturedProductsInterface | ContentImageInterface | ContentPodcastInterface | ContentServicesInterface | ContentTextImageInterface | ContentTextInterface;
+export type ContentBlockInterface = ContentBlogInterface | ContentFeaturedWorkInterface | ContentFeaturedProductsInterface | ContentImageInterface | ContentPodcastInterface | ContentServicesInterface | ContentTextImageInterface | ContentTextInterface | ContentWorkInterface;

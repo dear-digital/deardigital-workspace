@@ -4,7 +4,7 @@ import { StoryblokStory } from 'storyblok-generate-ts';
 import { linkMapper } from '../link/link';
 
 export function globalsMapper(globals: StoryblokStory<GlobalStoryblok>): GlobalInterface | null {
-  if(!globals) return null;
+  if (!globals) return null;
 
   return {
     // @ts-ignore

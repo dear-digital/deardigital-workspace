@@ -3,9 +3,11 @@ import { ClientStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 
 
-export function clientMapper(item: StoryblokStory<ClientStoryblok>): ClientInterface {
+export function clientMapper(client?: StoryblokStory<ClientStoryblok>): ClientInterface | null {
+  if(!client) return null;
+
   return {
-    name: item?.name ?? '',
+    name: client.name,
     // logo: imageMapper(item.)
   }
 }

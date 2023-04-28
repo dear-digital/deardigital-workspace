@@ -1,7 +1,7 @@
 import { ContentBlockInterface, MappingContentBlocksFunction } from '@deardigital/shared/interfaces';
-import { BlogsStoryblok, FeaturedProductsStoryblok, FeaturedWorkStoryblok, ImageStoryblok, MetaType, PageStoryblok, PodcastsStoryblok, ServicesStoryblok, TextImageStoryblok, TextStoryblok } from '@deardigital/shared/schema';
+import { BlogsStoryblok, FeaturedProductsStoryblok, FeaturedWorkStoryblok, ImageStoryblok, MetaType, PageStoryblok, PodcastsStoryblok, ServicesStoryblok, TextImageStoryblok, TextStoryblok, WorksStoryblok } from '@deardigital/shared/schema';
 import isEmpty from 'lodash.isempty';
-import { mapContentBlockBlogs } from './blog';
+import { mapContentBlockBlog } from './blog';
 import { mapContentBlockFeaturedProducts } from './featured-products';
 import { mapContentBlockFeaturedWork } from './featured-work';
 import { mapContentBlockImage } from './image';
@@ -9,10 +9,11 @@ import { mapContentBlockPodcast } from './podcast';
 import { mapContentBlockServices } from './services';
 import { mapContentBlockText } from './text';
 import { mapContentBlockTextImage } from './text-image';
+import { mapContentBlockWork } from './work';
 
 const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, MetaType, ContentBlockInterface>
 >([
-  ['blogs', (block, meta) => mapContentBlockBlogs(block as BlogsStoryblok, meta)],
+  ['blogs', (block, meta) => mapContentBlockBlog(block as BlogsStoryblok, meta)],
   ['featuredProducts', (block, meta) => mapContentBlockFeaturedProducts(block as FeaturedProductsStoryblok, meta)],
   ['featuredWork', (block, meta) => mapContentBlockFeaturedWork(block as FeaturedWorkStoryblok, meta)],
   ['image', (block) => mapContentBlockImage(block as ImageStoryblok)],
@@ -20,6 +21,7 @@ const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, M
   ['services', (block, meta) => mapContentBlockServices(block as ServicesStoryblok, meta)],
   ['textImage', (block) => mapContentBlockTextImage(block as TextImageStoryblok)],
   ['text', (block) => mapContentBlockText(block as TextStoryblok)],
+  ['works', (block, meta) => mapContentBlockWork(block as WorksStoryblok, meta)],
 ]);
 
 export function contentBlocksMapper(

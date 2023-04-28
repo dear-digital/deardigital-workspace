@@ -1,4 +1,4 @@
-import { BlogCardInterface, GlobalInterface, PodcastCardInterface, ServiceCardInterface } from '@deardigital/shared/interfaces'
+import { BlogCardInterface, GlobalInterface, PodcastCardInterface, ServiceCardInterface, WorkCardInterface } from '@deardigital/shared/interfaces'
 import { ProductShopify } from './shopify/shopify-types'
 
 export type MetaType = {
@@ -10,4 +10,5 @@ export type MetaType = {
     }[],
     products: { [id: string]: ProductShopify}
     podcast?: PodcastCardInterface[],
+    work?: WorkCardInterface[],
 }

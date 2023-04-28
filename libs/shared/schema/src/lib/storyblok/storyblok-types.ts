@@ -24,6 +24,7 @@ export interface BlogStoryblok {
     | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
+    | WorksStoryblok
   )[];
   _uid: string;
   component: "blog";
@@ -164,6 +165,7 @@ export interface PageStoryblok {
     | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
+    | WorksStoryblok
   )[];
   _uid: string;
   component: "page";
@@ -184,6 +186,7 @@ export interface PodcastStoryblok {
     | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
+    | WorksStoryblok
   )[];
   _uid: string;
   component: "podcast";
@@ -220,6 +223,7 @@ export interface ServiceStoryblok {
     | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
+    | WorksStoryblok
   )[];
   _uid: string;
   component: "service";
@@ -265,11 +269,20 @@ export interface WorkStoryblok {
     | ServicesStoryblok
     | TextStoryblok
     | TextImageStoryblok
+    | WorksStoryblok
   )[];
   client: StoryblokStory<ClientStoryblok> | string;
   services: (StoryblokStory<ServiceStoryblok> | string)[];
   thumbnail: AssetStoryblok;
   _uid: string;
   component: "work";
+  [k: string]: any;
+}
+
+export interface WorksStoryblok {
+  text?: any;
+  section: SectionStoryblok[];
+  _uid: string;
+  component: "works";
   [k: string]: any;
 }

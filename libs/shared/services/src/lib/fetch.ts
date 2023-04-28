@@ -1,10 +1,11 @@
 import { contentBlocksLinkedData, globalsMapper } from '@deardigital/shared/mapper';
 import { MetaType } from '@deardigital/shared/schema';
 import { getStoryblokApi } from '@storyblok/react';
-import { getMetaServices } from './meta-services';
-import { getMetaShopifyData } from './shopify';
 import { getMetaBlog } from './meta-blog';
 import { getMetaPodcast } from './meta-podcast';
+import { getMetaServices } from './meta-services';
+import { getMetaWork } from './meta-work';
+import { getMetaShopifyData } from './shopify';
 
 interface FetchServiceInteface {
   queries: FetchServiceQueryInterface[];
@@ -65,6 +66,7 @@ export abstract class FetchDataService<T> {
     await getMetaPodcast(preview, getLinkedData, meta);
     await getMetaShopifyData(getLinkedData, meta);
     await getMetaServices(preview, getLinkedData, meta);
+    await getMetaWork(preview, getLinkedData, meta);
 
     return this.mapper(page.data, meta)
   }
