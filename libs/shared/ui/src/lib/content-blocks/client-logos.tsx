@@ -1,13 +1,14 @@
-import { ContentBlogInterface } from '@deardigital/shared/interfaces';
+import { ContentClientLogosInterface } from '@deardigital/shared/interfaces';
 import { renderRichText, storyblokEditable } from '@storyblok/react';
 import BlogCard from '../blog/blog-card';
 import Section from '../section/section';
+import ImageRenderer from '../image-renderer/image-renderer';
 
 /* eslint-disable-next-line */
-export interface ContentBlogsProps extends ContentBlogInterface { }
+export interface ContentClientLogosProps extends ContentClientLogosInterface { }
 
-export function ContentBlog(props: ContentBlogsProps) {
-  if (!props.blog) {
+export function ContentClientLogos(props: ContentClientLogosProps) {
+  if (!props.clients) {
     return null
   }
 
@@ -20,9 +21,9 @@ export function ContentBlog(props: ContentBlogsProps) {
           </div>
         )}
         <div className="row">
-          {props.blog && props.blog.length > 0 && props.blog.map((blog, key) => (
-            <div key={key} className="col-12 col-md-6 col-lg-4">
-              <BlogCard {...blog} />
+          {props.clients && props.clients.length > 0 && props.clients.map((client, key) => (
+            <div key={key} className="col-4 col-sm-3 col-md-2">
+              {client.logo && <ImageRenderer image={client.logo} />}
             </div>
           ))}
         </div>
@@ -31,4 +32,4 @@ export function ContentBlog(props: ContentBlogsProps) {
   );
 }
 
-export default ContentBlog;
+export default ContentClientLogos;

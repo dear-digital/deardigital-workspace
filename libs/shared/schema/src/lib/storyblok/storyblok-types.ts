@@ -17,6 +17,7 @@ export interface BlogStoryblok {
   hero?: never[];
   contentBlocks?: (
     | BlogsStoryblok
+    | ClientLogosStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -44,6 +45,15 @@ export interface ClientStoryblok {
   logo: AssetStoryblok;
   _uid: string;
   component: "client";
+  [k: string]: any;
+}
+
+export interface ClientLogosStoryblok {
+  text?: any;
+  clients: (StoryblokStory<ClientStoryblok> | string)[];
+  section: SectionStoryblok[];
+  _uid: string;
+  component: "clientLogos";
   [k: string]: any;
 }
 
@@ -158,6 +168,7 @@ export interface PageStoryblok {
   hero?: any[];
   contentBlocks?: (
     | BlogsStoryblok
+    | ClientLogosStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -179,6 +190,7 @@ export interface PodcastStoryblok {
   hero?: never[];
   contentBlocks?: (
     | BlogsStoryblok
+    | ClientLogosStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -216,6 +228,7 @@ export interface ServiceStoryblok {
   hero?: never[];
   contentBlocks?: (
     | BlogsStoryblok
+    | ClientLogosStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -235,6 +248,14 @@ export interface ServicesStoryblok {
   section: SectionStoryblok[];
   _uid: string;
   component: "services";
+  [k: string]: any;
+}
+
+export interface TechnologyStoryblok {
+  name?: string;
+  logo: AssetStoryblok;
+  _uid: string;
+  component: "technology";
   [k: string]: any;
 }
 
@@ -262,6 +283,7 @@ export interface WorkStoryblok {
   hero?: never[];
   contentBlocks?: (
     | BlogsStoryblok
+    | ClientLogosStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok

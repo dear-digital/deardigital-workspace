@@ -3,6 +3,7 @@ export * from './lib/blog/blog-card';
 export * from './lib/client/client';
 export * from './lib/content-blocks';
 export * from './lib/content-blocks/blog';
+export * from './lib/content-blocks/client-logos';
 export * from './lib/content-blocks/featured-products';
 export * from './lib/content-blocks/featured-work';
 export * from './lib/content-blocks/image';
