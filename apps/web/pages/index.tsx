@@ -7,15 +7,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../next-i18next.config';
 import { usePagePreview } from '@deardigital/shared/hooks';
 
-export function Index() {
-  const isPreview = true;
-  const { data } = useQuery([PAGE_TYPES.home], () => new FetchPageBySlug(PAGE_TYPES.home, '').fetch(isPreview));
+export function Index({ preview }) {
+  const { data } = useQuery([PAGE_TYPES.home], () => new FetchPageBySlug(PAGE_TYPES.home, '').fetch(preview));
   usePagePreview()
 
   return <PageView {...data} />;
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
+export const getStaticProps: GetStaticProps = async ({ locale, preview = false }) => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery([PAGE_TYPES.home], () => new FetchPageBySlug(PAGE_TYPES.home, '').fetch(preview));
 
@@ -23,6 +22,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview }) => {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
       dehydratedState: dehydrate(queryClient),
+      preview
     },
     revalidate: 3600,
   };

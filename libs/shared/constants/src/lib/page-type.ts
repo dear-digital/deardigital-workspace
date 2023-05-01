@@ -6,6 +6,7 @@ export const PAGE_TYPES = {
     services: "services/",
     podcast: "podcast/",
     work: "work/",
+    root: "",
 } as const;
 
 type ObjectValues<T> = T[keyof T];
