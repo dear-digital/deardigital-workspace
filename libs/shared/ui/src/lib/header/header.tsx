@@ -15,7 +15,7 @@ export function Header(props: HeaderProps) {
   const [togglerClassname, setTogglerClassname] = useState("toggler-default");
 
   return (
-    <Navbar expand="lg" variant="light" bg="white" className="border-bottom border-light py-0" onToggle={() => setTogglerClassname("")} {...storyblokEditable(props as any)}>
+    <Navbar expand="lg" variant="light" bg="white" className="border-bottom border-light py-0" onToggle={() => setTogglerClassname("")} {...(props._editable ? {...storyblokEditable(props as any)} : {})}>
       <div className="container">
         <Link className="navbar-brand" href="/">
           dear digital

@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview }
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await new FetchPageBySlug(PAGE_TYPES.work, '').fetch(true),
+      data: await new FetchPageBySlug(PAGE_TYPES.work, '').fetch(preview),
     },
     revalidate: 3600,
   };

@@ -5,6 +5,7 @@ export const resolveRelations = [
   'featuredWork.work.services',
   'work.client',
   'work.services',
+  'works.client',
 ];
 
 export const resolveRelationsQueryParams = resolveRelations.join(',');

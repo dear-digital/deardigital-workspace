@@ -8,7 +8,7 @@ import { sectionMapper } from '../section';
 export function mapContentBlockTextImage(content: TextImageStoryblok): ContentTextImageInterface {
   return {
     // @ts-ignore
-    _editable: content._editable,
+    _editable: content._editable ?? null,
     _uid: content._uid,
     component: content.component,
     text: content.text ?? null,

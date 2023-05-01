@@ -1,5 +1,5 @@
-import { ContentBlogInterface } from '@deardigital/shared/interfaces';
-import { BlogsStoryblok, MetaType } from '@deardigital/shared/schema';
+import { ContentBlogInterface, MetaType } from '@deardigital/shared/interfaces';
+import { BlogsStoryblok } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
 export function mapContentBlockBlog(content: BlogsStoryblok, meta: MetaType): ContentBlogInterface {

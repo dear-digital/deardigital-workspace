@@ -1,12 +1,12 @@
 import '@deardigital/shared/ui-styles';
+import { apiPlugin, storyblokInit } from '@storyblok/react';
 import { DehydratedState, Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 import { FC, useState } from 'react';
 import { SSRProvider } from 'react-bootstrap';
-import { appWithTranslation } from 'next-i18next';
 import i18n from '../next-i18next.config';
-import { storyblokInit, apiPlugin } from '@storyblok/react';
-import { ContentText } from '@deardigital/shared/ui';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,
@@ -16,7 +16,7 @@ storyblokInit({
       clear: "auto",
       type: "memory",
     },
-  }
+  },
 });
 
 function CustomApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
@@ -38,6 +38,7 @@ function CustomApp({ Component, pageProps }: AppProps<{ dehydratedState: Dehydra
         <SSRProvider>
           <Component {...pageProps} />
         </SSRProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>
     </QueryClientProvider>
   );

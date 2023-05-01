@@ -1,17 +1,15 @@
-import { ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
-import { MetaType } from '@deardigital/shared/schema';
+import { BlogCardInterface, ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
 import { fetchBlog } from './blog';
 
-export async function getMetaBlog(preview: boolean, linkedData: ShopifyCollectionsProductsInterface, meta: MetaType): Promise<MetaType> {
-  if(!linkedData.blog) {
-    return meta;
+export async function getMetaBlog(preview: boolean, linkedData: ShopifyCollectionsProductsInterface): Promise<BlogCardInterface[] | null> {
+  if (!linkedData.blog) {
+    return null;
   }
 
   const blog = await fetchBlog(preview);
-  if(!blog) {
-    return meta;
+  if (!blog) {
+    return null;
   }
 
-  meta.blog = blog;
-  return meta;
+  return blog;
 }

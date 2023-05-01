@@ -1,5 +1,5 @@
-import { ProductPostInterface } from '@deardigital/shared/interfaces';
-import { MetaType, ProductShopify } from '@deardigital/shared/schema';
+import { MetaType, ProductPostInterface } from '@deardigital/shared/interfaces';
+import { ProductShopify } from '@deardigital/shared/schema';
 import { removeForbiddenIdChars } from '@deardigital/shared/utilities';
 
 

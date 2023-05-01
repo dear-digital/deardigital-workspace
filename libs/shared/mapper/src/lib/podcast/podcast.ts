@@ -1,5 +1,5 @@
-import { PodcastInterface } from '@deardigital/shared/interfaces';
-import { MetaType, PodcastStoryblok } from '@deardigital/shared/schema';
+import { MetaType, PodcastInterface } from '@deardigital/shared/interfaces';
+import { PodcastStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { contentBlocksMapper } from '../content-blocks';
 import { imageMapper } from '../image';

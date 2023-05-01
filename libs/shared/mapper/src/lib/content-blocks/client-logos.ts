@@ -1,5 +1,5 @@
-import { ContentClientLogosInterface } from '@deardigital/shared/interfaces';
-import { ClientLogosStoryblok, MetaType } from '@deardigital/shared/schema';
+import { ContentClientLogosInterface, MetaType } from '@deardigital/shared/interfaces';
+import { ClientLogosStoryblok } from '@deardigital/shared/schema';
 import { clientsMapper } from '../client/client';
 import { sectionMapper } from '../section';
 

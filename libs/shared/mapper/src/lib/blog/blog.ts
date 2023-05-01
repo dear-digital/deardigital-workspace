@@ -1,5 +1,5 @@
-import { BlogInterface } from '@deardigital/shared/interfaces';
-import { BlogStoryblok, MetaType } from '@deardigital/shared/schema';
+import { BlogInterface, MetaType } from '@deardigital/shared/interfaces';
+import { BlogStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { contentBlocksMapper } from '../content-blocks';
 import { imageMapper } from '../image';

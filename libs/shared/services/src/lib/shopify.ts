@@ -1,6 +1,6 @@
-import { ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
+import { MetaType, ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
 import { shopifyLinkedDataQueryBuilder } from '@deardigital/shared/mapper';
-import { MetaType, getSdk } from '@deardigital/shared/schema';
+import { getSdk } from '@deardigital/shared/schema';
 import { GraphQLClient } from 'graphql-request';
 
 const endpoint = process.env['NEXT_PUBLIC_SHOPIFY_STOREFRONT_API_ENDPOINT'] as string;

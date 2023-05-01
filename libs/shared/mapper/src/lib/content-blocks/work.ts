@@ -1,5 +1,5 @@
-import { ContentWorkInterface } from '@deardigital/shared/interfaces';
-import { MetaType, WorksStoryblok } from '@deardigital/shared/schema';
+import { ContentWorkInterface, MetaType } from '@deardigital/shared/interfaces';
+import { WorksStoryblok } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
 export function mapContentBlockWork(content: WorksStoryblok, meta: MetaType): ContentWorkInterface {

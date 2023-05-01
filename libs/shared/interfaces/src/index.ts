@@ -17,6 +17,7 @@ export * from './lib/header/header';
 export * from './lib/link/link';
 export * from './lib/mapping-function';
 export * from './lib/media';
+export * from './lib/meta/meta';
 export * from './lib/page/page';
 export * from './lib/path/path';
 export * from './lib/podcast/podcast';

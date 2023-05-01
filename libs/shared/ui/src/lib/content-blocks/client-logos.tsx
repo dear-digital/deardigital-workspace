@@ -14,7 +14,7 @@ export function ContentClientLogos(props: ContentClientLogosProps) {
 
   return (
     <Section {...props.section}>
-      <div className="container" {...storyblokEditable(props as any)}>
+      <div className="container" {...(props._editable ? {...storyblokEditable(props as any)} : {})}>
         {props.text && (
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />

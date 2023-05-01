@@ -1,5 +1,6 @@
 export * from './lib/blog/blog';
 export * from './lib/blog/blog-card';
+export * from './lib/content-blocks/index';
 export * from './lib/global/global';
 export * from './lib/linked-data/content-blocks-linked-data';
 export * from './lib/meta/meta';

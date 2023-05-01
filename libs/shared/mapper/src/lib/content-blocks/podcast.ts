@@ -1,5 +1,5 @@
-import { ContentPodcastInterface } from '@deardigital/shared/interfaces';
-import { MetaType, PodcastsStoryblok } from '@deardigital/shared/schema';
+import { ContentPodcastInterface, MetaType } from '@deardigital/shared/interfaces';
+import { PodcastsStoryblok } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
 export function mapContentBlockPodcast(content: PodcastsStoryblok, meta: MetaType): ContentPodcastInterface {

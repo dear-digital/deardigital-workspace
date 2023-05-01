@@ -1,16 +1,13 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { PodcastInterface } from '@deardigital/shared/interfaces';
 import { blogMapper } from '@deardigital/shared/mapper';
-import { MetaType } from '@deardigital/shared/schema';
-import { FetchDataService } from './fetch';
-import { resolveRelations } from './resolve-relations';
+import { MetaType } from '@deardigital/shared/interfaces';
+import { FetchStoryService } from './fetch-story';
 
-export class FetchPodcastBySlug extends FetchDataService<PodcastInterface> {
+export class FetchPodcastBySlug extends FetchStoryService<PodcastInterface> {
   constructor(slug: string = '') {
     super({
-      queries: [{ path: `cdn/stories/${PAGE_TYPES.podcast}${slug}` }],
-      globals: true,
-      resolveRelations: resolveRelations,
+      query: { path: `cdn/stories/${PAGE_TYPES.podcast}${slug}` },
     })
   }
 

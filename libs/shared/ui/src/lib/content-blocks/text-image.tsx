@@ -13,7 +13,7 @@ export function ContentTextImage(props: ContentTextImageProps) {
 
   return (
     <Section {...props.section}>
-      <div className="container" {...storyblokEditable(props as any)}>
+      <div className="container" {...(props._editable ? {...storyblokEditable(props as any)} : {})}>
         <div className={`row gy-6 gy-md-7 gy-lg-8 ${props.verticalAlign}`}>
           <div className={`col-12 col-lg-6 ${imageCss}`}>
             {props.image && <ImageRenderer image={props.image} className="img-fluid rounded-3" />}

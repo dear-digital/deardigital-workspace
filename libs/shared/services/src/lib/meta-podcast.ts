@@ -1,17 +1,15 @@
-import { ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
-import { MetaType } from '@deardigital/shared/schema';
+import { PodcastCardInterface, ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
 import { fetchPodcast } from './podcast';
 
-export async function getMetaPodcast(preview: boolean, linkedData: ShopifyCollectionsProductsInterface, meta: MetaType): Promise<MetaType> {
+export async function getMetaPodcast(preview: boolean, linkedData: ShopifyCollectionsProductsInterface): Promise<PodcastCardInterface[] | null> {
   if (!linkedData.podcast) {
-    return meta;
+    return null;
   }
 
   const podcast = await fetchPodcast(preview);
   if (!podcast) {
-    return meta;
+    return null;
   }
 
-  meta.podcast = podcast;
-  return meta;
+  return podcast;
 }

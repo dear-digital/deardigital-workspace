@@ -1,17 +1,15 @@
-import { ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
-import { MetaType } from '@deardigital/shared/schema';
+import { ServiceCardInterface, ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
 import { fetchServices } from './services';
 
-export async function getMetaServices(preview: boolean, linkedData: ShopifyCollectionsProductsInterface, meta: MetaType): Promise<MetaType> {
+export async function getMetaServices(preview: boolean, linkedData: ShopifyCollectionsProductsInterface): Promise<ServiceCardInterface[] | null> {
   if(!linkedData.services) {
-    return meta;
+    return null;
   }
 
   const services = await fetchServices(preview);
   if(!services) {
-    return meta;
+    return null;
   }
 
-  meta.services = services;
-  return meta;
+  return services;
 }

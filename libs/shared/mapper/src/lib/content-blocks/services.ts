@@ -1,5 +1,5 @@
-import { ContentServicesInterface } from '@deardigital/shared/interfaces';
-import { MetaType, ServicesStoryblok } from '@deardigital/shared/schema';
+import { ContentServicesInterface, MetaType } from '@deardigital/shared/interfaces';
+import { ServicesStoryblok } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
 export function mapContentBlockServices(content: ServicesStoryblok, meta: MetaType): ContentServicesInterface {

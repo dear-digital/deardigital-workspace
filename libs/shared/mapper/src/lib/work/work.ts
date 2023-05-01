@@ -1,5 +1,5 @@
-import { WorkInterface } from '@deardigital/shared/interfaces';
-import { ClientStoryblok, MetaType, ServiceStoryblok, WorkStoryblok } from '@deardigital/shared/schema';
+import { MetaType, WorkInterface } from '@deardigital/shared/interfaces';
+import { ClientStoryblok, ServiceStoryblok, WorkStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { clientMapper } from '../client/client';
 import { contentBlocksMapper } from '../content-blocks';
@@ -26,9 +26,9 @@ export function workMapper(page: StoryblokStory<WorkStoryblok>, meta: MetaType):
 }
 
 export function getWorkClient(client: StoryblokStory<ClientStoryblok> | string, meta?: MetaType): StoryblokStory<ClientStoryblok> | undefined {
-  if(typeof client === 'string') {
-    const item = meta?.rels.find(item => item.uuid === client) as StoryblokStory<ClientStoryblok> | undefined
-    if(item) {
+  if (typeof client === 'string') {
+    const item = meta?.rels?.find((item: { uuid: string; }) => item.uuid === client) as StoryblokStory<ClientStoryblok> | undefined
+    if (item) {
       return item;
     }
   }
@@ -38,12 +38,15 @@ export function getWorkClient(client: StoryblokStory<ClientStoryblok> | string, 
 
 export function getWorkServices(services: (StoryblokStory<ServiceStoryblok> | string)[], meta?: MetaType): StoryblokStory<ServiceStoryblok>[] {
   const isStringArray = Array.isArray(services) && services.every((item) => typeof item === 'string');
-  if(isStringArray) {
+  if (isStringArray) {
     return services?.reduce((arr, val) => {
-      if(!meta) {
+      if (!meta) {
         return arr;
       }
-      const service = meta.rels.find(item => item.uuid === val) as StoryblokStory<ServiceStoryblok>;
+      const service = meta.rels?.find((item: { uuid: string; }) => item.uuid === val) as StoryblokStory<ServiceStoryblok>;
+      if (!service) {
+        return arr;
+      }
       arr.push(service);
       return arr;
     }, [] as StoryblokStory<ServiceStoryblok>[]);

@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@deardigital/shared/constants": ["libs/shared/constants/src/index.ts"],
+      "@deardigital/shared/hooks": ["libs/shared/hooks/src/index.ts"],
       "@deardigital/shared/interfaces": ["libs/shared/interfaces/src/index.ts"],
       "@deardigital/shared/mapper": ["libs/shared/mapper/src/index.ts"],
       "@deardigital/shared/queries": ["libs/shared/queries/src/index.ts"],

@@ -1,7 +1,6 @@
 import { MappingConnectedDataFunctionInterface, ShopifyCollectionsProductsInterface } from '@deardigital/shared/interfaces';
 import { FeaturedProductsStoryblok, PageStoryblok } from '@deardigital/shared/schema';
 import isEmpty from 'lodash.isempty';
-import { StoryblokStory } from 'storyblok-generate-ts';
 
 const componentMapping = new Map<
   string,
@@ -9,15 +8,13 @@ const componentMapping = new Map<
 >([
   ['blogs', (...args) => mapBlog(args[1])],
   // ['ContentCollection', (...args) => mapCollection(args[0] as ContentBlock, args[1], args[2])],
-  ['featuredProducts', (...args) => mapProduct(args[0] as FeaturedProductsStoryblok, args[1])],
+  // ['featuredProducts', (...args) => mapProduct(args[0] as FeaturedProductsStoryblok, args[1])],
   ['podcasts', (...args) => mapPodcast(args[1])],
   ['services', (...args) => mapService(args[1])],
   ['works', (...args) => mapWork(args[1])],
 ]);
 
-export function contentBlocksLinkedData(page: StoryblokStory<PageStoryblok>): ShopifyCollectionsProductsInterface {
-  const blocks = page?.content?.contentBlocks;
-
+export function contentBlocksLinkedData(contentBlocks: PageStoryblok["contentBlocks"]): ShopifyCollectionsProductsInterface {
   const items: ShopifyCollectionsProductsInterface = {
     blog: false,
     collections: new Set(),
@@ -27,11 +24,11 @@ export function contentBlocksLinkedData(page: StoryblokStory<PageStoryblok>): Sh
     work: false,
   };
 
-  if (!blocks || isEmpty(blocks)) {
+  if (!contentBlocks || isEmpty(contentBlocks)) {
     return items;
   }
 
-  for (const block of blocks) {
+  for (const block of contentBlocks) {
     if (!block.component) {
       throw new Error('Content block cannot be mapped because component is undefined.');
     }

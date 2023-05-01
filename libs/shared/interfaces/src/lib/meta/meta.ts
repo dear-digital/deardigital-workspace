@@ -1,14 +1,14 @@
 import { BlogCardInterface, GlobalInterface, PodcastCardInterface, ServiceCardInterface, WorkCardInterface } from '@deardigital/shared/interfaces'
-import { ProductShopify } from './shopify/shopify-types'
+import { ProductShopify } from '@deardigital/shared/schema'
 
 export type MetaType = {
     globals: GlobalInterface | null,
-    services?: ServiceCardInterface[],
-    blog?: BlogCardInterface[],
-    rels: {
+    services?: ServiceCardInterface[] | null,
+    blog?: BlogCardInterface[] | null,
+    rels?: {
       uuid: string
-    }[],
+    }[] | null,
     products: { [id: string]: ProductShopify}
-    podcast?: PodcastCardInterface[],
-    work?: WorkCardInterface[],
+    podcast?: PodcastCardInterface[] | null,
+    work?: WorkCardInterface[] | null,
 }

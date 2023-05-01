@@ -5,7 +5,7 @@ const contentSecurityPolicy = `
   style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
   style-src 'self' 'unsafe-inline';
   font-src 'self' https://fonts.gstatic.com;
-  script-src-elem' 'self' 'unsafe-inline' appp.storyblok.com;
+  script-src-elem 'self' 'unsafe-inline' https://app.storyblok.com;
 `;
 
 module.exports = contentSecurityPolicy;
