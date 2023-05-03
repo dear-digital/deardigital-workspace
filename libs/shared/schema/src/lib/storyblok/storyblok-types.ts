@@ -27,6 +27,7 @@ export interface BlogStoryblok {
     | TextStoryblok
     | TextImageStoryblok
     | WorksStoryblok
+    | YoutubeStoryblok
   )[];
   _uid: string;
   component: "blog";
@@ -187,6 +188,7 @@ export interface PageStoryblok {
     | TextStoryblok
     | TextImageStoryblok
     | WorksStoryblok
+    | YoutubeStoryblok
   )[];
   _uid: string;
   component: "page";
@@ -211,6 +213,7 @@ export interface PodcastStoryblok {
     | TextStoryblok
     | TextImageStoryblok
     | WorksStoryblok
+    | YoutubeStoryblok
   )[];
   _uid: string;
   component: "podcast";
@@ -250,6 +253,7 @@ export interface ServiceStoryblok {
     | TextStoryblok
     | TextImageStoryblok
     | WorksStoryblok
+    | YoutubeStoryblok
   )[];
   _uid: string;
   component: "service";
@@ -306,6 +310,7 @@ export interface WorkStoryblok {
     | TextStoryblok
     | TextImageStoryblok
     | WorksStoryblok
+    | YoutubeStoryblok
   )[];
   client: StoryblokStory<ClientStoryblok> | string;
   services: (StoryblokStory<ServiceStoryblok> | string)[];
@@ -320,5 +325,15 @@ export interface WorksStoryblok {
   section: SectionStoryblok[];
   _uid: string;
   component: "works";
+  [k: string]: any;
+}
+
+export interface YoutubeStoryblok {
+  title: string;
+  container: boolean;
+  youtube: MultilinkStoryblok;
+  section: SectionStoryblok[];
+  _uid: string;
+  component: "youtube";
   [k: string]: any;
 }

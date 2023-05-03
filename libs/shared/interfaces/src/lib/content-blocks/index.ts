@@ -9,5 +9,6 @@ import { ContentServicesInterface } from './services';
 import { ContentTextInterface } from './text';
 import { ContentTextImageInterface } from './text-image';
 import { ContentWorkInterface } from './work';
+import { ContentYoutubeInterface } from './youtube';
 
-export type ContentBlockInterface = ContentBlogInterface | ContentClientLogosInterface | ContentFeaturedPodcastInterface | ContentFeaturedProductsInterface | ContentFeaturedWorkInterface | ContentImageInterface | ContentPodcastInterface | ContentServicesInterface | ContentTextImageInterface | ContentTextInterface | ContentWorkInterface;
+export type ContentBlockInterface = ContentBlogInterface | ContentClientLogosInterface | ContentFeaturedPodcastInterface | ContentFeaturedProductsInterface | ContentFeaturedWorkInterface | ContentImageInterface | ContentPodcastInterface | ContentServicesInterface | ContentTextImageInterface | ContentTextInterface | ContentWorkInterface | ContentYoutubeInterface;

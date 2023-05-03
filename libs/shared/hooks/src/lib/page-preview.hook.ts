@@ -22,7 +22,6 @@ export function usePagePreview({ pageType, slug, preview }: PagePreviewHooksProp
   const isVisualEditor = query?._storyblok !== undefined;
   const isPreview = isVisualEditor || preview;
   const story = useStoryblok(`/${pageType}${slug}`, { version: getPreviewParam(isPreview) }, { resolveRelations: resolveRelations });
-  console.log(story)
 
   useEffect(() => {
     async function fetchData() {

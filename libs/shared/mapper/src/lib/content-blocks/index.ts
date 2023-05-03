@@ -1,5 +1,5 @@
 import { ContentBlockInterface, MappingContentBlocksFunction, MetaType } from '@deardigital/shared/interfaces';
-import { BlogsStoryblok, ClientLogosStoryblok, FeaturedPodcastStoryblok, FeaturedProductsStoryblok, FeaturedWorkStoryblok, ImageStoryblok, PageStoryblok, PodcastsStoryblok, ServicesStoryblok, TextImageStoryblok, TextStoryblok, WorksStoryblok } from '@deardigital/shared/schema';
+import { BlogsStoryblok, ClientLogosStoryblok, FeaturedPodcastStoryblok, FeaturedProductsStoryblok, FeaturedWorkStoryblok, ImageStoryblok, PageStoryblok, PodcastsStoryblok, ServicesStoryblok, TextImageStoryblok, TextStoryblok, WorksStoryblok, YoutubeStoryblok } from '@deardigital/shared/schema';
 import isEmpty from 'lodash.isempty';
 import { mapContentBlockBlog } from './blog';
 import { mapContentBlockClientLogos } from './client-logos';
@@ -12,6 +12,7 @@ import { mapContentBlockServices } from './services';
 import { mapContentBlockText } from './text';
 import { mapContentBlockTextImage } from './text-image';
 import { mapContentBlockWork } from './work';
+import { mapContentBlockYoutube } from './youtube';
 
 const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, MetaType, ContentBlockInterface>
 >([
@@ -26,6 +27,7 @@ const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, M
   ['textImage', (block) => mapContentBlockTextImage(block as TextImageStoryblok)],
   ['text', (block) => mapContentBlockText(block as TextStoryblok)],
   ['works', (block, meta) => mapContentBlockWork(block as WorksStoryblok, meta)],
+  ['youtube', (block, meta) => mapContentBlockYoutube(block as YoutubeStoryblok, meta)],
 ]);
 
 export function contentBlocksMapper(

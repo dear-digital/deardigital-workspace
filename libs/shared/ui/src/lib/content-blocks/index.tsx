@@ -1,4 +1,4 @@
-import { ContentBlockInterface, ContentBlogInterface, ContentClientLogosInterface, ContentFeaturedPodcastInterface, ContentFeaturedProductsInterface, ContentFeaturedWorkInterface, ContentImageInterface, ContentPodcastInterface, ContentServicesInterface, ContentTextImageInterface, ContentTextInterface, ContentWorkInterface, MappingFunction } from '@deardigital/shared/interfaces';
+import { ContentBlockInterface, ContentBlogInterface, ContentClientLogosInterface, ContentFeaturedPodcastInterface, ContentFeaturedProductsInterface, ContentFeaturedWorkInterface, ContentImageInterface, ContentPodcastInterface, ContentServicesInterface, ContentTextImageInterface, ContentTextInterface, ContentWorkInterface, ContentYoutubeInterface, MappingFunction } from '@deardigital/shared/interfaces';
 import ContentBlog from './blogs';
 import ContentClientLogos from './client-logos';
 import ContentFeaturedPodcast from './featured-podcast';
@@ -10,6 +10,7 @@ import ContentServices from './services';
 import ContentText from './text';
 import ContentTextImage from './text-image';
 import ContentWork from './works';
+import ContentYoutube from './youtube';
 
 /* eslint-disable-next-line */
 export interface ContentBlocksProps {
@@ -31,6 +32,7 @@ const componentMapping = new Map<
   ['textImage', (props) => <ContentTextImage key={props._uid} {...(props as ContentTextImageInterface)} />],
   ['text', (props) => <ContentText key={props._uid} {...(props as ContentTextInterface)} />],
   ['works', (props) => <ContentWork key={props._uid} {...(props as ContentWorkInterface)} />],
+  ['youtube', (props) => <ContentYoutube key={props._uid} {...(props as ContentYoutubeInterface)} />],
 ]);
 
 export function ContentBlocks({ contentBlocks = [] }: ContentBlocksProps) {

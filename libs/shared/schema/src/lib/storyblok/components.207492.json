@@ -1108,6 +1108,54 @@
       "color": null,
       "icon": null,
       "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "youtube",
+      "display_name": null,
+      "created_at": "2023-05-03T15:54:35.551Z",
+      "updated_at": "2023-05-03T16:01:41.777Z",
+      "id": 3921476,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "container": {
+          "type": "boolean",
+          "pos": 1,
+          "default_value": true,
+          "required": true
+        },
+        "youtube": {
+          "type": "multilink",
+          "pos": 2,
+          "required": true
+        },
+        "section": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "section"
+          ],
+          "required": true,
+          "maximum": 1,
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "youtube",
+      "component_group_uuid": "5dfe81e8-5a35-408e-bcea-a5823f89c012",
+      "color": "",
+      "icon": "",
+      "component_group_name": "Content Blocks"
     }
   ]
 }
