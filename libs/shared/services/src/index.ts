@@ -1,4 +1,5 @@
 export * from './lib/blog-by-slug';
+export * from './lib/meta';
 export * from './lib/page-by-slug';
 export * from './lib/path';
 export * from './lib/podcast-by-slug';

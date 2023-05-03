@@ -1,11 +1,10 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { contentBlocksLinkedData, pageMapper } from '@deardigital/shared/mapper';
 import { PageStoryblok } from '@deardigital/shared/schema';
-import { resolveRelations } from '@deardigital/shared/services';
+import { getMeta, resolveRelations } from '@deardigital/shared/services';
 import { getPreviewParam } from '@deardigital/shared/utilities';
 import { useStoryblok } from '@storyblok/react';
 import { useQueryClient } from '@tanstack/react-query';
-import { getMeta } from 'libs/shared/services/src/lib/meta';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { StoryblokStory } from 'storyblok-generate-ts';
