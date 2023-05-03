@@ -57,9 +57,9 @@ function mapPodcast(data: ShopifyCollectionsProductsInterface) {
 }
 
 function mapProduct(block: FeaturedProductsStoryblok, data: ShopifyCollectionsProductsInterface) {
-  const productsList = block.products?.split(',');
+  const productsList = block['products']?.split(',');
   if (productsList) {
-    productsList.reduce((acc, val) => val ? acc.add(val) : acc, data.products);
+    productsList.reduce((acc: Set<string>, val: string) => val ? acc.add(val) : acc, data.products);
   }
 }
 
