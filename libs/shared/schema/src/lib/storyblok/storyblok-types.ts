@@ -18,6 +18,7 @@ export interface BlogStoryblok {
   contentBlocks?: (
     | BlogsStoryblok
     | ClientLogosStoryblok
+    | FeaturedPodcastStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -54,6 +55,15 @@ export interface ClientLogosStoryblok {
   section: SectionStoryblok[];
   _uid: string;
   component: "clientLogos";
+  [k: string]: any;
+}
+
+export interface FeaturedPodcastStoryblok {
+  text?: any;
+  podcast: StoryblokStory<PodcastStoryblok> | string;
+  section: SectionStoryblok[];
+  _uid: string;
+  component: "featuredPodcast";
   [k: string]: any;
 }
 
@@ -169,6 +179,7 @@ export interface PageStoryblok {
   contentBlocks?: (
     | BlogsStoryblok
     | ClientLogosStoryblok
+    | FeaturedPodcastStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -185,12 +196,14 @@ export interface PageStoryblok {
 }
 
 export interface PodcastStoryblok {
+  audio?: MultilinkStoryblok;
   description?: string;
   thumbnail: AssetStoryblok;
   hero?: never[];
   contentBlocks?: (
     | BlogsStoryblok
     | ClientLogosStoryblok
+    | FeaturedPodcastStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -229,6 +242,7 @@ export interface ServiceStoryblok {
   contentBlocks?: (
     | BlogsStoryblok
     | ClientLogosStoryblok
+    | FeaturedPodcastStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok
@@ -284,6 +298,7 @@ export interface WorkStoryblok {
   contentBlocks?: (
     | BlogsStoryblok
     | ClientLogosStoryblok
+    | FeaturedPodcastStoryblok
     | FeaturedProductsStoryblok
     | FeaturedWorkStoryblok
     | ImageStoryblok

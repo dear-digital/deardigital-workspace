@@ -1,5 +1,7 @@
-import { ContentBlockInterface, ContentBlogInterface, ContentClientLogosInterface, ContentFeaturedProductsInterface, ContentFeaturedWorkInterface, ContentImageInterface, ContentPodcastInterface, ContentServicesInterface, ContentTextImageInterface, ContentTextInterface, ContentWorkInterface, MappingFunction } from '@deardigital/shared/interfaces';
+import { ContentBlockInterface, ContentBlogInterface, ContentClientLogosInterface, ContentFeaturedPodcastInterface, ContentFeaturedProductsInterface, ContentFeaturedWorkInterface, ContentImageInterface, ContentPodcastInterface, ContentServicesInterface, ContentTextImageInterface, ContentTextInterface, ContentWorkInterface, MappingFunction } from '@deardigital/shared/interfaces';
 import ContentBlog from './blogs';
+import ContentClientLogos from './client-logos';
+import ContentFeaturedPodcast from './featured-podcast';
 import ContentFeaturedProducts from './featured-products';
 import ContentFeaturedWork from './featured-work';
 import ContentImage from './image';
@@ -8,7 +10,6 @@ import ContentServices from './services';
 import ContentText from './text';
 import ContentTextImage from './text-image';
 import ContentWork from './works';
-import ContentClientLogos from './client-logos';
 
 /* eslint-disable-next-line */
 export interface ContentBlocksProps {
@@ -21,6 +22,7 @@ const componentMapping = new Map<
 >([
   ['blogs', (props) => <ContentBlog key={props._uid} {...(props as ContentBlogInterface)} />],
   ['clientLogos', (props) => <ContentClientLogos key={props._uid} {...(props as ContentClientLogosInterface)} />],
+  ['featuredPodcast', (props) => <ContentFeaturedPodcast key={props._uid} {...(props as ContentFeaturedPodcastInterface)} />],
   ['featuredProducts', (props) => <ContentFeaturedProducts key={props._uid} {...(props as ContentFeaturedProductsInterface)} />],
   ['featuredWork', (props) => <ContentFeaturedWork key={props._uid} {...(props as ContentFeaturedWorkInterface)} />],
   ['image', (props) => <ContentImage key={props._uid} {...(props as ContentImageInterface)} />],

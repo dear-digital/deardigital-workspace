@@ -1,8 +1,9 @@
 import { ContentBlockInterface, MappingContentBlocksFunction, MetaType } from '@deardigital/shared/interfaces';
-import { BlogsStoryblok, ClientLogosStoryblok, FeaturedProductsStoryblok, FeaturedWorkStoryblok, ImageStoryblok, PageStoryblok, PodcastsStoryblok, ServicesStoryblok, TextImageStoryblok, TextStoryblok, WorksStoryblok } from '@deardigital/shared/schema';
+import { BlogsStoryblok, ClientLogosStoryblok, FeaturedPodcastStoryblok, FeaturedProductsStoryblok, FeaturedWorkStoryblok, ImageStoryblok, PageStoryblok, PodcastsStoryblok, ServicesStoryblok, TextImageStoryblok, TextStoryblok, WorksStoryblok } from '@deardigital/shared/schema';
 import isEmpty from 'lodash.isempty';
 import { mapContentBlockBlog } from './blog';
 import { mapContentBlockClientLogos } from './client-logos';
+import { mapContentBlockFeaturedPodcast } from './featured-podcast';
 import { mapContentBlockFeaturedProducts } from './featured-products';
 import { mapContentBlockFeaturedWork } from './featured-work';
 import { mapContentBlockImage } from './image';
@@ -16,6 +17,7 @@ const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, M
 >([
   ['blogs', (block, meta) => mapContentBlockBlog(block as BlogsStoryblok, meta)],
   ['clientLogos', (block, meta) => mapContentBlockClientLogos(block as ClientLogosStoryblok, meta)],
+  ['featuredPodcast', (block, meta) => mapContentBlockFeaturedPodcast(block as FeaturedPodcastStoryblok)],
   ['featuredProducts', (block, meta) => mapContentBlockFeaturedProducts(block as FeaturedProductsStoryblok, meta)],
   ['featuredWork', (block, meta) => mapContentBlockFeaturedWork(block as FeaturedWorkStoryblok, meta)],
   ['image', (block) => mapContentBlockImage(block as ImageStoryblok)],

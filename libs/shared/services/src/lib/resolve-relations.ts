@@ -1,5 +1,6 @@
 export const resolveRelations = [
   'clientLogos.clients',
+  'featuredPodcast.podcast',
   'featuredWork.work',
   'featuredWork.work.client',
   'featuredWork.work.services',
