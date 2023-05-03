@@ -1,6 +1,6 @@
 import { ContentYoutubeInterface, MetaType } from '@deardigital/shared/interfaces';
 import { YoutubeStoryblok } from '@deardigital/shared/schema';
-import { getYoutubeIdFromUrl } from '@deardigital/shared/utilities';
+import { imageStoryblokMapper } from '../image/image';
 import { sectionMapper } from '../section';
 
 export function mapContentBlockYoutube(content: YoutubeStoryblok, meta: MetaType): ContentYoutubeInterface {
@@ -9,9 +9,9 @@ export function mapContentBlockYoutube(content: YoutubeStoryblok, meta: MetaType
     _editable: content._editable ?? null,
     _uid: content._uid,
     component: content.component,
-    title: content.title,
     container: content.container,
-    youtube: getYoutubeIdFromUrl(content.youtube.url) || null,
+    thumbnail: imageStoryblokMapper(content.thumbnail) || null,
+    youtube: content.youtube.url,
     section: sectionMapper(content.section?.[0]),
   };
 }

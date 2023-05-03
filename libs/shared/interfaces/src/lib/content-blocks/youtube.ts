@@ -1,9 +1,10 @@
+import { MediaInterface } from '../media';
 import { SectionInterface } from '../section';
 import { StoryblockStoryBaseInterface } from '../storyblok-story';
 
 export interface ContentYoutubeInterface extends StoryblockStoryBaseInterface {
-  title: string;
-  youtube: string | null;
   container: boolean;
+  thumbnail: MediaInterface | null;
+  youtube: string;
   section: SectionInterface;
 }

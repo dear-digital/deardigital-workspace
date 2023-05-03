@@ -1113,7 +1113,7 @@
       "name": "youtube",
       "display_name": null,
       "created_at": "2023-05-03T15:54:35.551Z",
-      "updated_at": "2023-05-03T16:01:41.777Z",
+      "updated_at": "2023-05-03T20:59:55.081Z",
       "id": 3921476,
       "schema": {
         "title": {
@@ -1132,6 +1132,14 @@
           "pos": 2,
           "required": true
         },
+        "thumbnail": {
+          "type": "asset",
+          "pos": 3,
+          "required": true,
+          "filetypes": [
+            "images"
+          ]
+        },
         "section": {
           "type": "bloks",
           "restrict_type": "",
@@ -1141,7 +1149,7 @@
           ],
           "required": true,
           "maximum": 1,
-          "pos": 3
+          "pos": 4
         }
       },
       "image": null,

@@ -6,7 +6,7 @@ const contentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   font-src 'self' https://fonts.gstatic.com;
   frame-src 'self' https://www.youtube.com;
-  script-src-elem 'self' 'unsafe-inline' https://app.storyblok.com;
+  script-src-elem 'self' 'unsafe-inline' https://app.storyblok.com https://www.youtube.com;
 `;
 
 module.exports = contentSecurityPolicy;

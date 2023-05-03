@@ -332,6 +332,7 @@ export interface YoutubeStoryblok {
   title: string;
   container: boolean;
   youtube: MultilinkStoryblok;
+  thumbnail: AssetStoryblok;
   section: SectionStoryblok[];
   _uid: string;
   component: "youtube";
