@@ -5,11 +5,11 @@ import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../next-i18next.config';
-import { usePagePreview } from '@deardigital/shared/hooks';
+import { useHomePagePreview } from '@deardigital/shared/hooks';
 
 export function Index({ preview }) {
   const { data } = useQuery([PAGE_TYPES.home], () => new FetchPageBySlug(PAGE_TYPES.home, '').fetch(preview));
-  usePagePreview()
+  useHomePagePreview()
 
   return <PageView {...data} />;
 }

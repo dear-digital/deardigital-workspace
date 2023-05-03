@@ -1,10 +1,9 @@
+import { GlobalInterface } from '@deardigital/shared/interfaces';
 import Link from 'next/link';
 import { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import { GlobalInterface } from '@deardigital/shared/interfaces';
-import { storyblokEditable } from '@storyblok/react';
-import NavigationLink from '../navigation/navigation-link';
 import LinkRenderer from '../link/link-renderer.component';
+import NavigationLink from '../navigation/navigation-link';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {

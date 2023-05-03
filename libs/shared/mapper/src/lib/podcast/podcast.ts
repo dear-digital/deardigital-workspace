@@ -2,7 +2,7 @@ import { MetaType, PodcastInterface } from '@deardigital/shared/interfaces';
 import { PodcastStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { contentBlocksMapper } from '../content-blocks';
-import { imageMapper } from '../image';
+import { imageStoryblokMapper } from '../image/image';
 
 
 export function podcastsMapper(podcasts: StoryblokStory<PodcastStoryblok>[], meta: MetaType): PodcastInterface[] {
@@ -15,6 +15,6 @@ export function podcastMapper(page: StoryblokStory<PodcastStoryblok>, meta: Meta
     slug: page?.full_slug,
     globals: meta.globals,
     contentBlocks: contentBlocksMapper(page.content.contentBlocks, meta),
-    thumbnail: imageMapper(page.content.thumbnail)
+    thumbnail: imageStoryblokMapper(page.content.thumbnail)
   }
 }

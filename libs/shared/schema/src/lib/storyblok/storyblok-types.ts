@@ -69,7 +69,6 @@ export interface FeaturedPodcastStoryblok {
 
 export interface FeaturedProductsStoryblok {
   text?: any;
-  products?: string;
   section: SectionStoryblok[];
   _uid: string;
   component: "featuredProducts";

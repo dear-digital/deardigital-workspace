@@ -15,8 +15,8 @@ export function ContentFeaturedProducts(props: ContentFeaturedProductsProps) {
             <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />
           </div>
         )}
-        <div className="row">
-          {props.products.map((product, key) => (
+        <div className="row gy-4">
+          {props.products?.map((product, key) => (
             <div key={key} className="col-12 col-md-6 col-lg-4">
               <ProductCard {...product} />
             </div>

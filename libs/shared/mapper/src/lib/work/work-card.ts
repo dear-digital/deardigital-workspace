@@ -2,7 +2,7 @@ import { MetaType, WorkCardInterface } from '@deardigital/shared/interfaces';
 import { WorkStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { clientMapper } from '../client/client';
-import { imageMapper } from '../image';
+import { imageStoryblokMapper } from '../image/image';
 import { serviceCardsMapper } from '../service/service-card';
 import { getWorkClient, getWorkServices } from './work';
 
@@ -19,7 +19,7 @@ export function workCardMapper(page: StoryblokStory<WorkStoryblok>, meta?: MetaT
     slug: page.full_slug,
     services: serviceCardsMapper(services),
     client: clientMapper(client),
-    thumbnail: imageMapper(page.content?.thumbnail)
+    thumbnail: imageStoryblokMapper(page.content?.thumbnail)
   }
 }
 

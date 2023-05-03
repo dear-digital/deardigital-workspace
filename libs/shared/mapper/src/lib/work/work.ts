@@ -3,7 +3,7 @@ import { ClientStoryblok, ServiceStoryblok, WorkStoryblok } from '@deardigital/s
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { clientMapper } from '../client/client';
 import { contentBlocksMapper } from '../content-blocks';
-import { imageMapper } from '../image';
+import { imageStoryblokMapper } from '../image/image';
 import { serviceCardsMapper } from '../service/service-card';
 
 export function worksMapper(works: StoryblokStory<WorkStoryblok>[], meta: MetaType): WorkInterface[] {
@@ -21,7 +21,7 @@ export function workMapper(page: StoryblokStory<WorkStoryblok>, meta: MetaType):
     slug: page.full_slug,
     services: serviceCardsMapper(services),
     client: clientMapper(client as StoryblokStory<ClientStoryblok>),
-    thumbnail: imageMapper(page.content.thumbnail)
+    thumbnail: imageStoryblokMapper(page.content.thumbnail)
   }
 }
 

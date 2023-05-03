@@ -23,7 +23,7 @@ export * from './lib/page/page';
 export * from './lib/path/path';
 export * from './lib/podcast/podcast';
 export * from './lib/podcast/podcast-card';
-export * from './lib/product/product';
+export * from './lib/product/product-card';
 export * from './lib/section';
 export * from './lib/service/service';
 export * from './lib/service/service-card';

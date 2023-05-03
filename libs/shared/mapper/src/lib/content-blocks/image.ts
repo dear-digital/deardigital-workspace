@@ -1,6 +1,6 @@
 import { ContentImageInterface } from '@deardigital/shared/interfaces';
 import { ImageStoryblok } from '@deardigital/shared/schema';
-import { imageMapper } from '../image';
+import { imageStoryblokMapper } from '../image/image';
 import { sectionMapper } from '../section';
 
 export function mapContentBlockImage(content: ImageStoryblok): ContentImageInterface {
@@ -10,7 +10,7 @@ export function mapContentBlockImage(content: ImageStoryblok): ContentImageInter
     _uid: content._uid,
     component: content.component,
     fullWidth: content.fullWidth ?? false,
-    image: imageMapper(content.image, content.ratio),
+    image: imageStoryblokMapper(content.image, content.ratio),
     section: sectionMapper(content.section?.[0]),
   };
 }

@@ -2,7 +2,7 @@ import { BlogInterface, MetaType } from '@deardigital/shared/interfaces';
 import { BlogStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { contentBlocksMapper } from '../content-blocks';
-import { imageMapper } from '../image';
+import { imageStoryblokMapper } from '../image/image';
 
 export function blogsMapper(blogs: StoryblokStory<BlogStoryblok>[], meta: MetaType): BlogInterface[] {
   return blogs?.map(item => blogMapper(item, meta)) ?? [];
@@ -14,6 +14,6 @@ export function blogMapper(page: StoryblokStory<BlogStoryblok>, meta: MetaType):
     slug: page?.full_slug,
     globals: meta.globals,
     contentBlocks: contentBlocksMapper(page.content.contentBlocks, meta),
-    thumbnail: imageMapper(page.content.thumbnail)
+    thumbnail: imageStoryblokMapper(page.content.thumbnail)
   }
 }

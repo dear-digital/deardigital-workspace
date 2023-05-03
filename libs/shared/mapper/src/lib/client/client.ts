@@ -1,7 +1,7 @@
 import { ClientInterface, MetaType } from '@deardigital/shared/interfaces';
 import { ClientStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
-import { imageMapper } from '../image';
+import { imageStoryblokMapper } from '../image/image';
 
 export function clientsMapper(clients: (StoryblokStory<ClientStoryblok> | string)[] | undefined, meta: MetaType): ClientInterface[] {
   return getMetaClients(clients, meta).map(item => clientMapper(item)) ?? [];
@@ -10,7 +10,7 @@ export function clientsMapper(clients: (StoryblokStory<ClientStoryblok> | string
 export function clientMapper(client: StoryblokStory<ClientStoryblok> | undefined): ClientInterface {
   return {
     name: client?.name ?? null,
-    logo: imageMapper(client?.content?.logo)
+    logo: imageStoryblokMapper(client?.content?.logo)
   }
 }
 
