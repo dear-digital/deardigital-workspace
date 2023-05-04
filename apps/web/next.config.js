@@ -5,6 +5,7 @@ const { withNx } = require('@nrwl/next/plugins/with-nx');
 const { i18n } = require('./next-i18next.config');
 const securityHeaders = require('./security-headers.config');
 const CopyPlugin = require('copy-webpack-plugin');
+const redirectConfig = require('./redirect.config');
 
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
@@ -26,6 +27,9 @@ const nextConfig = {
         headers: securityHeaders,
       },
     ];
+  },
+  async redirects() {
+    return redirectConfig;
   },
   webpack: (config) => {
     config.plugins.push(

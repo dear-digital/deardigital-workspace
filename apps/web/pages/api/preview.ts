@@ -8,16 +8,6 @@ export default async function preview(req, res) {
     return res.status(401).json({ message: 'Invalid token' });
   }
 
-  if (!req.query.slug) {
-    return res.status(400).json({ message: 'Missing slug' });
-  }
-
-  // Get graphql query based on the provided `type`
-  // const query = queryMapping.get(req.query.type as string);
-  // if (!query) {
-  //   return res.status(400).json({ message: 'Missing or invalid type' });
-  // }
-
   // Fetch the headless CMS to check if the provided `slug` exists
   const page = await fetchPagePaths(PAGE_TYPES.root, "en", true);
 
@@ -50,6 +40,10 @@ export default async function preview(req, res) {
 }
 
 function getPath(slug: string) {
+  if(!slug) {
+    return `/`;
+  }
+
   const isPageTypePage = slug.startsWith(PAGE_TYPES.page);
   if (isPageTypePage) {
     return `/${slug.replace(PAGE_TYPES.page, '')}`;
