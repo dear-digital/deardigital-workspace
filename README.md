@@ -26,3 +26,6 @@ local-ssl-proxy --source 3010 --target 4200 --cert localhost.pem --key localhost
 
 https://www.youtube.com/watch?v=fvTWZCACDVQ&ab_channel=Storyblok
 https://www.storyblok.com/docs/plugins/plugin-create-a-new-plugin
+
+## Credentials
+https://console.cloud.google.com/apis/credentials?project=deardigital-website-auth&supportedpurview=project

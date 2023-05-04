@@ -7,6 +7,8 @@ import { FC, useState } from 'react';
 import { SSRProvider } from 'react-bootstrap';
 import i18n from '../next-i18next.config';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { SessionProvider } from "next-auth/react"
+import { Session } from 'next-auth';
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,
@@ -19,7 +21,7 @@ storyblokInit({
   },
 });
 
-function CustomApp({ Component, pageProps }: AppProps<{ dehydratedState: DehydratedState }>) {
+function CustomApp({ Component, pageProps: { session, dehydratedState, ...pageProps } }: AppProps<{ dehydratedState: DehydratedState, session: Session }>) {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -34,9 +36,11 @@ function CustomApp({ Component, pageProps }: AppProps<{ dehydratedState: Dehydra
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
+      <Hydrate state={dehydratedState}>
         <SSRProvider>
-          <Component {...pageProps} />
+          <SessionProvider session={session}>
+            <Component {...pageProps} />
+            </SessionProvider>
         </SSRProvider>
         <ReactQueryDevtools initialIsOpen={false} />
       </Hydrate>

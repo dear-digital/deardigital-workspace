@@ -14,7 +14,7 @@ export interface PageProps {
 }
 
 export function Slug({ preview, slug }) {
-  const { data } = useQuery([PAGE_TYPES.page], () => new FetchPageBySlug(PAGE_TYPES.page, slug).fetch(preview));
+  const { data } = useQuery([PAGE_TYPES.page, slug], () => new FetchPageBySlug(PAGE_TYPES.page, slug).fetch(preview));
   usePagePreview({ pageType: PAGE_TYPES.page, slug, preview })
 
   return <PageView {...data} />;
@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false }) => {
   const slug = params.slug as string;
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery([PAGE_TYPES.home], () => new FetchPageBySlug(PAGE_TYPES.home, '').fetch(preview));
+  await queryClient.prefetchQuery([PAGE_TYPES.page, slug], () => new FetchPageBySlug(PAGE_TYPES.page, slug).fetch(preview));
 
   return {
     props: {
