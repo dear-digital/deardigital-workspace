@@ -4,7 +4,7 @@ import { StoryblokStory } from 'storyblok-generate-ts';
 import { sectionMapper } from '../section';
 import { workCardsMapper } from '../work/work-card';
 
-export function mapContentBlockFeaturedWork(content: FeaturedWorkStoryblok, meta: MetaType): ContentFeaturedWorkInterface {
+export function mapFeaturedWorkContent(content: FeaturedWorkStoryblok, meta: MetaType): ContentFeaturedWorkInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

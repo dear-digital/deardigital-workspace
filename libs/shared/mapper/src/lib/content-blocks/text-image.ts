@@ -5,7 +5,7 @@ import { imageStoryblokMapper } from '../image/image';
 import { textImageLayoutMapper } from '../layout/layout';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockTextImage(content: TextImageStoryblok): ContentTextImageInterface {
+export function mapTextImageContent(content: TextImageStoryblok): ContentTextImageInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

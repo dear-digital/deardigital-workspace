@@ -3,7 +3,7 @@ import { FeaturedProductsStoryblok, ShopifyProductsStoryblok } from '@deardigita
 import { productsByStoryblokMapper } from '../products/products-storyblok';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockFeaturedProducts(content: FeaturedProductsStoryblok, meta: MetaType): ContentFeaturedProductsInterface {
+export function mapFeaturedProductsContent(content: FeaturedProductsStoryblok, meta: MetaType): ContentFeaturedProductsInterface {
   const products = content?.['products'] as ShopifyProductsStoryblok;
   // const products = content?.products?.split(",") ?? [];
 

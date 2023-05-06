@@ -4,7 +4,7 @@ import { StoryblokStory } from 'storyblok-generate-ts';
 import { podcastCardMapper } from '../podcast/podcast-card';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockFeaturedPodcast(content: FeaturedPodcastStoryblok): ContentFeaturedPodcastInterface {
+export function mapFeaturedPodcastContent(content: FeaturedPodcastStoryblok): ContentFeaturedPodcastInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

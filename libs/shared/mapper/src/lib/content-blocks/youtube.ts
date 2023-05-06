@@ -3,7 +3,7 @@ import { YoutubeStoryblok } from '@deardigital/shared/schema';
 import { imageStoryblokMapper } from '../image/image';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockYoutube(content: YoutubeStoryblok, meta: MetaType): ContentYoutubeInterface {
+export function mapYoutubeContent(content: YoutubeStoryblok, meta: MetaType): ContentYoutubeInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

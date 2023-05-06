@@ -3,7 +3,7 @@ import { ClientLogosStoryblok } from '@deardigital/shared/schema';
 import { clientsMapper } from '../client/client';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockClientLogos(content: ClientLogosStoryblok, meta: MetaType): ContentClientLogosInterface {
+export function mapClientLogosContent(content: ClientLogosStoryblok, meta: MetaType): ContentClientLogosInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

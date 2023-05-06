@@ -2,7 +2,7 @@ import { ContentPodcastInterface, MetaType } from '@deardigital/shared/interface
 import { PodcastsStoryblok } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockPodcast(content: PodcastsStoryblok, meta: MetaType): ContentPodcastInterface {
+export function mapPodcastContent(content: PodcastsStoryblok, meta: MetaType): ContentPodcastInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

@@ -2,7 +2,7 @@ import { ContentWorkInterface, MetaType } from '@deardigital/shared/interfaces';
 import { WorksStoryblok } from '@deardigital/shared/schema';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockWork(content: WorksStoryblok, meta: MetaType): ContentWorkInterface {
+export function mapWorkContent(content: WorksStoryblok, meta: MetaType): ContentWorkInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,

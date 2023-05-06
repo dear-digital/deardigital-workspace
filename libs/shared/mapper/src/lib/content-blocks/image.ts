@@ -3,7 +3,7 @@ import { ImageStoryblok } from '@deardigital/shared/schema';
 import { imageStoryblokMapper } from '../image/image';
 import { sectionMapper } from '../section';
 
-export function mapContentBlockImage(content: ImageStoryblok): ContentImageInterface {
+export function mapImageContent(content: ImageStoryblok): ContentImageInterface {
   return {
     // @ts-ignore
     _editable: content._editable ?? null,
