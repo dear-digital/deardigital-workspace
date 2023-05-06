@@ -196,6 +196,15 @@ export interface PageStoryblok {
   [k: string]: any;
 }
 
+export interface PersonStoryblok {
+  name: string;
+  role?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: "person";
+  [k: string]: any;
+}
+
 export interface PodcastStoryblok {
   audio?: MultilinkStoryblok;
   description?: string;
@@ -215,6 +224,8 @@ export interface PodcastStoryblok {
     | WorksStoryblok
     | YoutubeStoryblok
   )[];
+  guest: PersonStoryblok[];
+  host: StoryblokStory<TeamStoryblok> | string;
   _uid: string;
   component: "podcast";
   [k: string]: any;
@@ -265,6 +276,15 @@ export interface ServicesStoryblok {
   section: SectionStoryblok[];
   _uid: string;
   component: "services";
+  [k: string]: any;
+}
+
+export interface TeamStoryblok {
+  name: string;
+  role: string;
+  image: AssetStoryblok;
+  _uid: string;
+  component: "team";
   [k: string]: any;
 }
 
@@ -329,10 +349,9 @@ export interface WorksStoryblok {
 }
 
 export interface YoutubeStoryblok {
-  title: string;
-  container: boolean;
   youtube: MultilinkStoryblok;
   thumbnail: AssetStoryblok;
+  container: boolean;
   section: SectionStoryblok[];
   _uid: string;
   component: "youtube";

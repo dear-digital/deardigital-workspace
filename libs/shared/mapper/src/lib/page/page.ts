@@ -1,7 +1,7 @@
 import { MetaType, PageInterface } from '@deardigital/shared/interfaces';
 import { PageStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
-import { contentBlocksMapper } from '../content-blocks';
+import { contentBlocksMapper } from '../content-blocks/content-blocks';
 
 export function pageMapper(page: StoryblokStory<PageStoryblok>, meta: MetaType): PageInterface {
   return {

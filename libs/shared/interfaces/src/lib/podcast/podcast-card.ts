@@ -1,3 +1,3 @@
 import { PodcastInterface } from './podcast';
 
-export type PodcastCardInterface = Pick<PodcastInterface, "title" | "slug" | "thumbnail">;
+export type PodcastCardInterface = Pick<PodcastInterface, "audio" | "host" | "description" | "guest" | "title" | "slug" | "thumbnail">;

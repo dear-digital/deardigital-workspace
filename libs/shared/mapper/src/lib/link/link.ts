@@ -9,7 +9,11 @@ const mapLinkTypeToLinkInterface = new Map<string, (link: MultilinkStoryblok, la
   ["email", mapEmail],
 ]);
 
-export function linkMapper(link: MultilinkStoryblok, label?: string): LinkInterface {
+export function linkMapper(link?: MultilinkStoryblok, label?: string): LinkInterface | null {
+  if (!link) {
+    return null
+  }
+
   const mapper = mapLinkTypeToLinkInterface.get(link.linktype ?? "");
   if (!mapper) {
     throw new Error(`Link type "${link.linktype}" not supported`);

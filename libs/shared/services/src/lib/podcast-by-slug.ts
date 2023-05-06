@@ -1,7 +1,6 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
-import { PodcastInterface } from '@deardigital/shared/interfaces';
-import { blogMapper } from '@deardigital/shared/mapper';
-import { MetaType } from '@deardigital/shared/interfaces';
+import { MetaType, PodcastInterface } from '@deardigital/shared/interfaces';
+import { podcastMapper } from '@deardigital/shared/mapper';
 import { FetchStoryService } from './fetch-story';
 
 export class FetchPodcastBySlug extends FetchStoryService<PodcastInterface> {
@@ -12,6 +11,6 @@ export class FetchPodcastBySlug extends FetchStoryService<PodcastInterface> {
   }
 
   mapper(data: any, meta: MetaType) {
-    return blogMapper(data.story, meta)
+    return podcastMapper(data.story, meta)
   }
 }

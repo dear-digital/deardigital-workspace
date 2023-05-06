@@ -7,6 +7,7 @@ export const resolveRelations = [
   'work.client',
   'work.services',
   'works.client',
+  'podcast.host',
 ];
 
 export const resolveRelationsQueryParams = resolveRelations.join(',');

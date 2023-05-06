@@ -1,7 +1,7 @@
 import { BlogInterface, MetaType } from '@deardigital/shared/interfaces';
 import { BlogStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
-import { contentBlocksMapper } from '../content-blocks';
+import { contentBlocksMapper } from '../content-blocks/content-blocks';
 import { imageStoryblokMapper } from '../image/image';
 
 export function blogsMapper(blogs: StoryblokStory<BlogStoryblok>[], meta: MetaType): BlogInterface[] {

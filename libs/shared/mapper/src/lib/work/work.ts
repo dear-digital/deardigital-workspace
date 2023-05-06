@@ -2,7 +2,7 @@ import { MetaType, WorkInterface } from '@deardigital/shared/interfaces';
 import { ClientStoryblok, ServiceStoryblok, WorkStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { clientMapper } from '../client/client';
-import { contentBlocksMapper } from '../content-blocks';
+import { contentBlocksMapper } from '../content-blocks/content-blocks';
 import { imageStoryblokMapper } from '../image/image';
 import { serviceCardsMapper } from '../service/service-card';
 

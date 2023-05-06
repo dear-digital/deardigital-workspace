@@ -539,10 +539,43 @@
       "icon": null
     },
     {
+      "name": "person",
+      "display_name": null,
+      "created_at": "2023-05-04T19:07:37.992Z",
+      "updated_at": "2023-05-04T19:10:11.842Z",
+      "id": 3928047,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "role": {
+          "type": "text"
+        },
+        "image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "person",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "podcast",
       "display_name": null,
       "created_at": "2023-04-28T17:37:03.613Z",
-      "updated_at": "2023-04-29T07:27:41.340Z",
+      "updated_at": "2023-05-04T19:15:15.147Z",
       "id": 3906499,
       "schema": {
         "audio": {
@@ -590,10 +623,31 @@
           "keys": [
             "thumbnail",
             "description",
-            "audio"
+            "audio",
+            "guest",
+            "host"
           ],
           "pos": 5,
           "type": "tab"
+        },
+        "guest": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "person"
+          ],
+          "maximum": 1
+        },
+        "host": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": [
+            "team"
+          ]
         }
       },
       "image": null,
@@ -813,6 +867,41 @@
       "color": null,
       "icon": null,
       "component_group_name": "Content Blocks"
+    },
+    {
+      "name": "team",
+      "display_name": null,
+      "created_at": "2023-05-04T19:13:03.673Z",
+      "updated_at": "2023-05-05T14:03:05.273Z",
+      "id": 3928080,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "role": {
+          "type": "text",
+          "required": true
+        },
+        "image": {
+          "type": "asset",
+          "required": true,
+          "filetypes": [
+            "images"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "team",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
     },
     {
       "name": "technology",
@@ -1113,32 +1202,27 @@
       "name": "youtube",
       "display_name": null,
       "created_at": "2023-05-03T15:54:35.551Z",
-      "updated_at": "2023-05-03T20:59:55.081Z",
+      "updated_at": "2023-05-03T21:44:24.675Z",
       "id": 3921476,
       "schema": {
-        "title": {
-          "type": "text",
-          "pos": 0,
-          "required": true
-        },
-        "container": {
-          "type": "boolean",
-          "pos": 1,
-          "default_value": true,
-          "required": true
-        },
         "youtube": {
           "type": "multilink",
-          "pos": 2,
+          "pos": 0,
           "required": true
         },
         "thumbnail": {
           "type": "asset",
-          "pos": 3,
+          "pos": 1,
           "required": true,
           "filetypes": [
             "images"
           ]
+        },
+        "container": {
+          "type": "boolean",
+          "pos": 2,
+          "default_value": true,
+          "required": true
         },
         "section": {
           "type": "bloks",
@@ -1149,7 +1233,7 @@
           ],
           "required": true,
           "maximum": 1,
-          "pos": 4
+          "pos": 3
         }
       },
       "image": null,
