@@ -9,8 +9,8 @@ export function teamsMapper(persons: StoryblokStory<TeamStoryblok>[]): TeamInter
 
 export function teamMapper(team: StoryblokStory<TeamStoryblok>): TeamInterface {
   return {
-    name: team.content.name,
-    role: team.content.role ?? null,
-    image: imageStoryblokMapper(team.content.image),
+    name: team.content?.name ?? '',
+    role: team.content?.role ?? null,
+    image: imageStoryblokMapper(team.content?.image),
   };
 }
