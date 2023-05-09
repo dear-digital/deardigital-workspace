@@ -575,7 +575,7 @@
       "name": "podcast",
       "display_name": null,
       "created_at": "2023-04-28T17:37:03.613Z",
-      "updated_at": "2023-05-04T19:15:15.147Z",
+      "updated_at": "2023-05-06T06:43:55.518Z",
       "id": 3906499,
       "schema": {
         "audio": {
@@ -596,39 +596,15 @@
           "asset_folder_id": 235006,
           "pos": 2
         },
-        "hero": {
-          "type": "bloks",
-          "pos": 3,
-          "restrict_type": "groups",
-          "restrict_components": true,
-          "component_whitelist": [],
-          "component_group_whitelist": [
-            "b73e6527-a688-4f12-a41a-c368117e6441"
+        "host": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": [
+            "team"
           ],
-          "required": false,
-          "maximum": 1
-        },
-        "contentBlocks": {
-          "type": "bloks",
-          "restrict_type": "groups",
-          "restrict_components": true,
-          "component_whitelist": [],
-          "component_group_whitelist": [
-            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
-          ],
-          "pos": 4
-        },
-        "tab-be5488a9-a14c-42d4-a93c-f89a993d4149": {
-          "display_name": "Settings",
-          "keys": [
-            "thumbnail",
-            "description",
-            "audio",
-            "guest",
-            "host"
-          ],
-          "pos": 5,
-          "type": "tab"
+          "pos": 3
         },
         "guest": {
           "type": "bloks",
@@ -638,16 +614,18 @@
           "component_whitelist": [
             "person"
           ],
-          "maximum": 1
+          "maximum": 1,
+          "pos": 4
         },
-        "host": {
-          "type": "option",
-          "use_uuid": true,
-          "required": true,
-          "source": "internal_stories",
-          "filter_content_type": [
-            "team"
-          ]
+        "contentBlocks": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "5dfe81e8-5a35-408e-bcea-a5823f89c012"
+          ],
+          "pos": 5
         }
       },
       "image": null,

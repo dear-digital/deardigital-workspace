@@ -209,7 +209,8 @@ export interface PodcastStoryblok {
   audio?: MultilinkStoryblok;
   description?: string;
   thumbnail: AssetStoryblok;
-  hero?: never[];
+  host: StoryblokStory<TeamStoryblok> | string;
+  guest: PersonStoryblok[];
   contentBlocks?: (
     | BlogsStoryblok
     | ClientLogosStoryblok
@@ -224,8 +225,6 @@ export interface PodcastStoryblok {
     | WorksStoryblok
     | YoutubeStoryblok
   )[];
-  guest: PersonStoryblok[];
-  host: StoryblokStory<TeamStoryblok> | string;
   _uid: string;
   component: "podcast";
   [k: string]: any;
