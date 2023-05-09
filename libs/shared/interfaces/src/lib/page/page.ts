@@ -4,6 +4,6 @@ import { HeroBlockInterface } from '../hero-blocks/hero-blocks';
 
 export interface PageInterface {
   globals: GlobalInterface | null,
-  hero: HeroBlockInterface,
+  hero: HeroBlockInterface | null,
   contentBlocks: ContentBlockInterface[];
 }

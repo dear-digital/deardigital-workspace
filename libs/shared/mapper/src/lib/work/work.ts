@@ -3,6 +3,7 @@ import { ClientStoryblok, ServiceStoryblok, WorkStoryblok } from '@deardigital/s
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { clientMapper } from '../client/client';
 import { contentBlocksMapper } from '../content-blocks/content-blocks';
+import { heroBlocksMapper } from '../hero-blocks/hero-blocks';
 import { imageStoryblokMapper } from '../image/image';
 import { serviceCardsMapper } from '../service/service-card';
 
@@ -16,6 +17,7 @@ export function workMapper(page: StoryblokStory<WorkStoryblok>, meta: MetaType):
 
   return {
     globals: meta.globals,
+    hero: heroBlocksMapper(page.content.hero, meta),
     contentBlocks: contentBlocksMapper(page.content.contentBlocks, meta),
     title: page.name,
     slug: page.full_slug,

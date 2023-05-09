@@ -4,11 +4,10 @@ import Header from './header/header';
 import HeroBlocks from './hero-blocks';
 
 export function PageView({ globals, hero, contentBlocks }: PageInterface) {
-  console.log("hero", hero);
   return (
     <main>
-      <Header globals={globals}  />
-      <HeroBlocks {...hero} />
+      <Header globals={globals} />
+      {hero && <HeroBlocks {...hero} />}
       <ContentBlocks contentBlocks={contentBlocks} />
     </main>
   );

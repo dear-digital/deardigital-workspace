@@ -1,6 +1,6 @@
 import { SECTION_THEMES, SPACINGS } from '@deardigital/shared/constants';
+import { PodcastHeroInterface } from '@deardigital/shared/interfaces';
 import { PodcastStoryblok } from '@deardigital/shared/schema';
-import { PodcastHeroInterface } from 'libs/shared/interfaces/src/lib/hero-blocks/podcast';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { podcastCardMapper } from '../podcast/podcast-card';
 

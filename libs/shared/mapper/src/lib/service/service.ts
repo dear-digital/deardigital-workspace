@@ -2,6 +2,7 @@ import { MetaType, ServiceInterface } from '@deardigital/shared/interfaces';
 import { ServiceStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { contentBlocksMapper } from '../content-blocks/content-blocks';
+import { heroBlocksMapper } from '../hero-blocks/hero-blocks';
 import { imageStoryblokMapper } from '../image/image';
 
 
@@ -14,6 +15,7 @@ export function serviceMapper(page: StoryblokStory<ServiceStoryblok>, meta: Meta
     title: page?.name ?? '',
     slug: page?.full_slug,
     globals: meta.globals,
+    hero: heroBlocksMapper(page.content.hero, meta),
     contentBlocks: contentBlocksMapper(page.content.contentBlocks, meta),
     thumbnail: imageStoryblokMapper(page.content.thumbnail)
   }
