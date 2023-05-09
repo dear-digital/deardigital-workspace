@@ -1,19 +1,15 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
-import { WorkInterface } from '@deardigital/shared/interfaces';
+import { usePagePreview } from '@deardigital/shared/hooks';
 import { FetchWorkBySlug, fetchPagePaths } from '@deardigital/shared/services';
 import { PageView } from '@deardigital/shared/ui';
-import { useStoryblokState } from '@storyblok/react';
+import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../../next-i18next.config';
 
-/* eslint-disable-next-line */
-export interface SlugProps {
-  data: WorkInterface
-}
-
-export function Slug({ data }: SlugProps) {
-  useStoryblokState(data as any);
+export function Slug({ preview, slug }) {
+  const { data } = useQuery([PAGE_TYPES.work, slug], () => new FetchWorkBySlug(slug).fetch(preview));
+  usePagePreview({ pageType: PAGE_TYPES.work, slug, preview })
 
   return <PageView {...data} />;
 }
@@ -32,13 +28,17 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale, params, preview }) => {
+export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false }) => {
   const slug = params.slug as string;
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery([PAGE_TYPES.work, slug], () => new FetchWorkBySlug(slug).fetch(preview));
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'], { i18n })),
-      data: await new FetchWorkBySlug(slug).fetch(true)
+      dehydratedState: dehydrate(queryClient),
+      preview,
+      slug
     },
     revalidate: 3600,
   };
