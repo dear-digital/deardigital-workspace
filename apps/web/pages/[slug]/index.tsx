@@ -1,17 +1,11 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { usePagePreview } from '@deardigital/shared/hooks';
-import { PageInterface } from '@deardigital/shared/interfaces';
 import { FetchPageBySlug, fetchPagePaths } from '@deardigital/shared/services';
 import { PageView } from '@deardigital/shared/ui';
 import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { i18n } from '../../next-i18next.config';
-
-/* eslint-disable-next-line */
-export interface PageProps {
-  data: PageInterface
-}
 
 export function Slug({ preview, slug }) {
   const { data } = useQuery([PAGE_TYPES.page, slug], () => new FetchPageBySlug(PAGE_TYPES.page, slug).fetch(preview));
