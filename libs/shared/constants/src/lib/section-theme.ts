@@ -4,7 +4,7 @@ import { COLORS } from './color';
 export const SECTION_THEMES = {
   light: {
     color: COLORS.light,
-    background: BACKGROUNDS.light,
+    background: BACKGROUNDS.dark,
   },
   dark: {
     color: COLORS.dark,
