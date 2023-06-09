@@ -14,6 +14,7 @@
   "private": true,
   "dependencies": {
     "@notionhq/client": "^2.2.4",
+    "@nx/next": "16.3.2",
     "@storyblok/react": "^2.0.15",
     "@tanstack/react-query": "^4.28.0",
     "@tanstack/react-query-devtools": "^4.29.6",
@@ -29,7 +30,7 @@
     "i18next-http-backend": "^2.2.0",
     "isomorphic-unfetch": "^4.0.2",
     "lodash.isempty": "^4.4.0",
-    "next": "13.3.0",
+    "next": "13.4.1",
     "next-auth": "^4.22.1",
     "next-i18next": "^13.2.2",
     "next-sitemap": "^4.0.6",
@@ -38,8 +39,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^12.2.2",
     "react-player": "^2.12.0",
-    "tslib": "^2.3.0",
-    "@nx/next": "16.3.2"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
@@ -49,6 +49,7 @@
     "@graphql-codegen/typescript-operations": "^3.0.2",
     "@nx/cypress": "16.3.2",
     "@nx/eslint-plugin": "16.3.2",
+    "@nx/jest": "16.3.2",
     "@nx/js": "16.3.2",
     "@nx/linter": "16.3.2",
     "@nx/react": "16.3.2",
@@ -68,7 +69,7 @@
     "babel-jest": "^29.4.1",
     "cypress": "12.14.0",
     "eslint": "~8.15.0",
-    "eslint-config-next": "13.1.1",
+    "eslint-config-next": "13.4.1",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "2.27.5",
@@ -80,12 +81,11 @@
     "json-schema-generator": "^2.0.6",
     "nx": "16.3.2",
     "prettier": "^2.6.2",
-    "sass": "1.55.0",
+    "sass": "1.62.1",
     "storyblok": "^3.20.0",
     "storyblok-generate-ts": "^1.13.2",
     "ts-jest": "29.1.0",
     "ts-node": "10.9.1",
-    "typescript": "5.0.4",
-    "@nx/jest": "16.3.2"
+    "typescript": "5.0.4"
   }
 }
