@@ -19,7 +19,7 @@ export function ContentBlog(props: ContentBlogsProps) {
             <div className="col-12 col-md-10 col-lg-8" dangerouslySetInnerHTML={{ __html: renderRichText(props.text) }} />
           </div>
         )}
-        <div className="row">
+        <div className="row gy-5">
           {props.blog && props.blog.length > 0 && props.blog.map((blog, key) => (
             <div key={key} className="col-12 col-md-6 col-lg-4">
               <BlogCard {...blog} />
