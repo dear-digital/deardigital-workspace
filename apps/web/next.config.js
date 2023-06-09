@@ -1,14 +1,14 @@
 //@ts-check
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { withNx } = require('@nrwl/next/plugins/with-nx');
+const { withNx } = require('@nx/next/plugins/with-nx');
 const { i18n } = require('./next-i18next.config');
 const securityHeaders = require('./security-headers.config');
 const CopyPlugin = require('copy-webpack-plugin');
 const redirectConfig = require('./redirect.config');
 
 /**
- * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
+ * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
   nx: {

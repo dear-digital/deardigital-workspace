@@ -1,12 +1,12 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nx"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
             "enforceBuildableLibDependency": true,
@@ -18,7 +18,12 @@
               },
               {
                 "sourceTag": "type:interfaces",
-                "onlyDependOnLibsWithTags": ["type:interfaces", "type:constants", "type:utilities", "type:schema"]
+                "onlyDependOnLibsWithTags": [
+                  "type:interfaces",
+                  "type:constants",
+                  "type:utilities",
+                  "type:schema"
+                ]
               },
               {
                 "sourceTag": "type:schema",
@@ -30,19 +35,46 @@
               },
               {
                 "sourceTag": "type:mappers",
-                "onlyDependOnLibsWithTags": ["type:mappers", "type:interfaces", "type:constants", "type:utilities", "type:icons", "type:schema","type:queries"]
+                "onlyDependOnLibsWithTags": [
+                  "type:mappers",
+                  "type:interfaces",
+                  "type:constants",
+                  "type:utilities",
+                  "type:icons",
+                  "type:schema",
+                  "type:queries"
+                ]
               },
               {
                 "sourceTag": "type:services",
-                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:utilities", "type:schema"]
+                "onlyDependOnLibsWithTags": [
+                  "type:services",
+                  "type:mappers",
+                  "type:interfaces",
+                  "type:constants",
+                  "type:utilities",
+                  "type:schema"
+                ]
               },
               {
                 "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": ["type:services", "type:mappers", "type:interfaces", "type:constants", "type:utilities"]
+                "onlyDependOnLibsWithTags": [
+                  "type:services",
+                  "type:mappers",
+                  "type:interfaces",
+                  "type:constants",
+                  "type:utilities"
+                ]
               },
               {
                 "sourceTag": "type:utilities",
-                "onlyDependOnLibsWithTags": ["type:utilities", "type:schema", "type:constants", "type:types", "type:interfaces"]
+                "onlyDependOnLibsWithTags": [
+                  "type:utilities",
+                  "type:schema",
+                  "type:constants",
+                  "type:types",
+                  "type:interfaces"
+                ]
               },
               {
                 "sourceTag": "scope:shared",
@@ -55,7 +87,7 @@
               {
                 "sourceTag": "scope:tech-radar",
                 "onlyDependOnLibsWithTags": ["scope:tech-radar", "scope:shared"]
-              },
+              }
             ]
           }
         ]
@@ -63,12 +95,12 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
+      "extends": ["plugin:@nx/typescript"],
       "rules": {}
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
+      "extends": ["plugin:@nx/javascript"],
       "rules": {}
     }
   ]
