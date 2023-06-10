@@ -21,4 +21,5 @@ jobs:
           npm ci
           # npx nx format:check
           # npx nx affected -t lint --parallel=3
-          npx nx affected -t build --parallel=3
+          # npx nx affected -t build --parallel=3
+          npx nx build shop --prod
