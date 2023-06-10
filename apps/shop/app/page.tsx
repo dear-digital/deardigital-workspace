@@ -5,6 +5,7 @@ export default async function Index() {
     <div>
       <h1>Homepage</h1>
       Go to <Link href="/shop">shop</Link>
+      <p>Test UAT deploy</p>
     </div>
   )
 }
