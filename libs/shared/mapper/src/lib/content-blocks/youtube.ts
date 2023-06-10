@@ -1,12 +1,11 @@
-import { ContentYoutubeInterface, MetaType } from '@deardigital/shared/interfaces';
+import { ContentYoutubeInterface } from '@deardigital/shared/interfaces';
 import { YoutubeStoryblok } from '@deardigital/shared/schema';
 import { imageStoryblokMapper } from '../image/image';
 import { sectionMapper } from '../section';
 
-export function mapYoutubeContent(content: YoutubeStoryblok, meta: MetaType): ContentYoutubeInterface {
+export function mapYoutubeContent(content: YoutubeStoryblok): ContentYoutubeInterface {
   return {
-    // @ts-ignore
-    _editable: content._editable ?? null,
+    _editable: content['_editable'] ?? null,
     _uid: content._uid,
     component: content.component,
     container: content.container,

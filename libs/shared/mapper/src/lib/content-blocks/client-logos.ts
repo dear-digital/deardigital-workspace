@@ -5,8 +5,7 @@ import { sectionMapper } from '../section';
 
 export function mapClientLogosContent(content: ClientLogosStoryblok, meta: MetaType): ContentClientLogosInterface {
   return {
-    // @ts-ignore
-    _editable: content._editable ?? null,
+    _editable: content['_editable'] ?? null,
     _uid: content._uid,
     component: content.component,
     text: content.text,

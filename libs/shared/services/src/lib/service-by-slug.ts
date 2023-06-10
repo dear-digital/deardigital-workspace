@@ -5,7 +5,7 @@ import { MetaType } from '@deardigital/shared/interfaces';
 import { FetchStoryService } from './fetch-story';
 
 export class FetchServiceBySlug extends FetchStoryService<ServiceInterface> {
-  constructor(slug: string = '') {
+  constructor(slug = '') {
     super({
       query: { path: `cdn/stories/${PAGE_TYPES.services}${slug}` },
     })

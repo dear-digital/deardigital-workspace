@@ -6,8 +6,7 @@ import { workCardsMapper } from '../work/work-card';
 
 export function mapFeaturedWorkContent(content: FeaturedWorkStoryblok, meta: MetaType): ContentFeaturedWorkInterface {
   return {
-    // @ts-ignore
-    _editable: content._editable ?? null,
+    _editable: content['_editable'] ?? null,
     _uid: content._uid,
     component: content.component,
     text: content.text,

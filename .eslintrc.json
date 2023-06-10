@@ -67,6 +67,16 @@
                 ]
               },
               {
+                "sourceTag": "type:hooks",
+                "onlyDependOnLibsWithTags": [
+                  "type:constants",
+                  "type:mappers",
+                  "type:schema",
+                  "type:services",
+                  "type:utilities"
+                ]
+              },
+              {
                 "sourceTag": "type:utilities",
                 "onlyDependOnLibsWithTags": [
                   "type:utilities",

@@ -28,9 +28,9 @@ export function radar_visualization(config) {
 
   // custom random number generator, to make random sequence reproducible
   // source: https://stackoverflow.com/questions/521295
-  var seed = 42;
+  let seed = 42;
   function random() {
-    var x = Math.sin(seed++) * 10000;
+    const x = Math.sin(seed++) * 10000;
     return x - Math.floor(x);
   }
 
@@ -71,8 +71,8 @@ export function radar_visualization(config) {
   ];
 
   function polar(cartesian) {
-    var x = cartesian.x;
-    var y = cartesian.y;
+    const x = cartesian.x;
+    const y = cartesian.y;
     return {
       t: Math.atan2(y, x),
       r: Math.sqrt(x * x + y * y)
@@ -87,8 +87,8 @@ export function radar_visualization(config) {
   }
 
   function bounded_interval(value, min, max) {
-    var low = Math.min(min, max);
-    var high = Math.max(min, max);
+    const low = Math.min(min, max);
+    const high = Math.max(min, max);
     return Math.min(Math.max(value, low), high);
   }
 
@@ -107,32 +107,32 @@ export function radar_visualization(config) {
   }
 
   function segment(quadrant, ring) {
-    var polar_min = {
+    const polar_min = {
       t: quadrants[quadrant].radial_min * Math.PI,
       r: ring === 0 ? 30 : rings[ring - 1].radius
     };
-    var polar_max = {
+    const polar_max = {
       t: quadrants[quadrant].radial_max * Math.PI,
       r: rings[ring].radius
     };
-    var cartesian_min = {
+    const cartesian_min = {
       x: 15 * quadrants[quadrant].factor_x,
       y: 15 * quadrants[quadrant].factor_y
     };
-    var cartesian_max = {
+    const cartesian_max = {
       x: rings[3].radius * quadrants[quadrant].factor_x,
       y: rings[3].radius * quadrants[quadrant].factor_y
     };
     return {
       clipx: function (d) {
-        var c = bounded_box(d, cartesian_min, cartesian_max);
-        var p = bounded_ring(polar(c), polar_min.r + 15, polar_max.r - 15);
+        const c = bounded_box(d, cartesian_min, cartesian_max);
+        const p = bounded_ring(polar(c), polar_min.r + 15, polar_max.r - 15);
         d.x = cartesian(p).x; // adjust data too!
         return d.x;
       },
       clipy: function (d) {
-        var c = bounded_box(d, cartesian_min, cartesian_max);
-        var p = bounded_ring(polar(c), polar_min.r + 15, polar_max.r - 15);
+        const c = bounded_box(d, cartesian_min, cartesian_max);
+        const p = bounded_ring(polar(c), polar_min.r + 15, polar_max.r - 15);
         d.y = cartesian(p).y; // adjust data too!
         return d.y;
       },
@@ -146,10 +146,10 @@ export function radar_visualization(config) {
   }
 
   // position each entry randomly in its segment
-  for (var i = 0; i < config.entries.length; i++) {
-    var entry = config.entries[i];
+  for (let i = 0; i < config.entries.length; i++) {
+    const entry = config.entries[i];
     entry.segment = segment(entry.quadrant, entry.ring);
-    var point = entry.segment.random();
+    const point = entry.segment.random();
     entry.x = point.x;
     entry.y = point.y;
     entry.color = entry.active || config.print_layout ?
@@ -157,25 +157,25 @@ export function radar_visualization(config) {
   }
 
   // partition entries according to segments
-  var segmented = new Array(4);
-  for (var quadrant = 0; quadrant < 4; quadrant++) {
+  const segmented = new Array(4);
+  for (let quadrant = 0; quadrant < 4; quadrant++) {
     segmented[quadrant] = new Array(4);
-    for (var ring = 0; ring < 4; ring++) {
+    for (let ring = 0; ring < 4; ring++) {
       segmented[quadrant][ring] = [];
     }
   }
-  for (var i = 0; i < config.entries.length; i++) {
-    var entry = config.entries[i];
+  for (let i = 0; i < config.entries.length; i++) {
+    const entry = config.entries[i];
     segmented[entry.quadrant][entry.ring].push(entry);
   }
 
   // assign unique sequential id to each entry
-  var id = 1;
-  for (var quadrant of [2, 3, 1, 0]) {
-    for (var ring = 0; ring < 4; ring++) {
-      var entries = segmented[quadrant][ring];
+  let id = 1;
+  for (const quadrant of [2, 3, 1, 0]) {
+    for (let ring = 0; ring < 4; ring++) {
+      const entries = segmented[quadrant][ring];
       entries.sort(function (a, b) { return a.label.localeCompare(b.label); })
-      for (var i = 0; i < entries.length; i++) {
+      for (let i = 0; i < entries.length; i++) {
         entries[i].id = "" + id++;
       }
     }
@@ -194,19 +194,19 @@ export function radar_visualization(config) {
     ].join(" ");
   }
 
-  var svg = d3.select("svg#" + config.svg_id)
+  const svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
     .attr("width", config.width)
     .attr("height", config.height);
 
-  var radar = svg.append("g");
+  const radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
     svg.attr("viewBox", viewbox(config.zoomed_quadrant));
   } else {
     radar.attr("transform", translate(config.width / 2, config.height / 2));
   }
 
-  var grid = radar.append("g");
+  const grid = radar.append("g");
 
   // draw grid lines
   grid.append("line")
@@ -222,8 +222,8 @@ export function radar_visualization(config) {
 
   // background color. Usage `.attr("filter", "url(#solid)")`
   // SOURCE: https://stackoverflow.com/a/31013492/2609980
-  var defs = grid.append("defs");
-  var filter = defs.append("filter")
+  const defs = grid.append("defs");
+  const filter = defs.append("filter")
     .attr("x", 0)
     .attr("y", 0)
     .attr("width", 1)
@@ -235,7 +235,7 @@ export function radar_visualization(config) {
     .attr("in", "SourceGraphic");
 
   // draw rings
-  for (var i = 0; i < rings.length; i++) {
+  for (let i = 0; i < rings.length; i++) {
     grid.append("circle")
       .attr("cx", 0)
       .attr("cy", 0)
@@ -291,11 +291,11 @@ export function radar_visualization(config) {
   // }
 
   // layer for entries
-  var rink = radar.append("g")
+  const rink = radar.append("g")
     .attr("id", "rink");
 
   // rollover bubble (on top of everything else)
-  var bubble = radar.append("g")
+  const bubble = radar.append("g")
     .attr("id", "bubble")
     .attr("x", 0)
     .attr("y", 0)
@@ -316,9 +316,9 @@ export function radar_visualization(config) {
 
   function showBubble(d) {
     if (d.active || config.print_layout) {
-      var tooltip = d3.select("#bubble text")
+      const tooltip = d3.select("#bubble text")
         .text(d.label);
-      var bbox = tooltip.node().getBBox();
+      const bbox = tooltip.node().getBBox();
       d3.select("#bubble")
         .attr("transform", translate(d.x - bbox.width / 2, d.y - 16))
         .style("opacity", 0.8);
@@ -333,7 +333,7 @@ export function radar_visualization(config) {
   }
 
   function hideBubble(d) {
-    var bubble = d3.select("#bubble")
+    const bubble = d3.select("#bubble")
       .attr("transform", translate(0, 0))
       .style("opacity", 0);
   }
@@ -374,10 +374,10 @@ export function radar_visualization(config) {
 
   // configure each blip
   blips.each(function (d) {
-    var blip = d3.select(this);
+    let blip = d3.select(this);
 
     // blip link
-    if (d.active && d.hasOwnProperty("link") && d.link) {
+    if (d.active && d.inc("link") && d.link) {
       blip = blip.append("a")
         .attr("xlink:href", d.link);
 

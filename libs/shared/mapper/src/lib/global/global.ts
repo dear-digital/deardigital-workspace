@@ -2,14 +2,12 @@ import { GlobalInterface, LinkInterface } from '@deardigital/shared/interfaces';
 import { GlobalStoryblok } from '@deardigital/shared/schema';
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { linkMapper } from '../link/link';
-import { Link } from 'd3';
 
 export function globalsMapper(globals?: StoryblokStory<GlobalStoryblok>): GlobalInterface | null {
   if (!globals) return null;
 
   return {
-    // @ts-ignore
-    _editable: globals.content._editable ?? null,
+    _editable: globals.content['_editable'] ?? null,
     _uid: globals.content._uid,
     component: globals.content.component,
     header: {
