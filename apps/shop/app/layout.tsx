@@ -1,3 +1,4 @@
+import { inter, roboto_mono } from './fonts';
 import './global.css';
 
 export const metadata = {
@@ -11,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
       <body>{children}</body>
     </html>
   );

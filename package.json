@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@next/font": "^13.4.4",
     "@notionhq/client": "^2.2.4",
     "@nx/next": "16.3.2",
     "@storyblok/react": "^2.0.15",
