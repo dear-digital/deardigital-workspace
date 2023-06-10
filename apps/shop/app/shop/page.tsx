@@ -3,7 +3,7 @@ import { ShopUi } from "@deardigital/shop/ui";
 /* eslint-disable-next-line */
 export interface ShopProps {}
 
-export function Shop(props: ShopProps) {
+export default async function Shop(props: ShopProps) {
   return (
     <div>
       <h1>Welcome to Shop!</h1>
@@ -11,5 +11,3 @@ export function Shop(props: ShopProps) {
     </div>
   );
 }
-
-export default Shop;
