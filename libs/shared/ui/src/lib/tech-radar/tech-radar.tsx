@@ -1,9 +1,5 @@
 import { DEPARTMENTS, DepartmentType } from '@deardigital/shared/constants';
-import { TechRadarInterface } from '@deardigital/shared/interfaces';
-import { fetchTechRadar } from '@deardigital/shared/services';
 import { radar_visualization } from '@deardigital/shared/utilities';
-import { useQuery } from '@tanstack/react-query';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useGetEmployees } from './tech-radar-hook';
 
@@ -11,7 +7,6 @@ import { useGetEmployees } from './tech-radar-hook';
 export interface TechRadarProps { }
 
 export function TechRadar(props: TechRadarProps) {
-  const { locale } = useRouter();
   const [activeFilter, setActiveFilter] = useState<DepartmentType>();
   const { data } = useGetEmployees(activeFilter);
 

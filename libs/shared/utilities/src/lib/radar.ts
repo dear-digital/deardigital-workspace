@@ -28,7 +28,7 @@ export function radar_visualization(config) {
 
   // custom random number generator, to make random sequence reproducible
   // source: https://stackoverflow.com/questions/521295
-  const seed = 42;
+  let seed = 42;
   function random() {
     const x = Math.sin(seed++) * 10000;
     return x - Math.floor(x);
@@ -175,7 +175,7 @@ export function radar_visualization(config) {
     for (let ring = 0; ring < 4; ring++) {
       const entries = segmented[quadrant][ring];
       entries.sort(function (a, b) { return a.label.localeCompare(b.label); })
-      for (const i = 0; i < entries.length; i++) {
+      for (let i = 0; i < entries.length; i++) {
         entries[i].id = "" + id++;
       }
     }
@@ -374,7 +374,7 @@ export function radar_visualization(config) {
 
   // configure each blip
   blips.each(function (d) {
-    const blip = d3.select(this);
+    let blip = d3.select(this);
 
     // blip link
     if (d.active && d.inc("link") && d.link) {
