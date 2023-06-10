@@ -24,7 +24,9 @@
       "@deardigital/shared/services": ["libs/shared/services/src/index.ts"],
       "@deardigital/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@deardigital/shared/ui-styles": ["libs/shared/ui/src/scss/screen.scss"],
-      "@deardigital/shared/utilities": ["libs/shared/utilities/src/index.ts"]
+      "@deardigital/shared/utilities": ["libs/shared/utilities/src/index.ts"],
+      "@deardigital/shop/ui": ["libs/shop/ui/src/index.ts"],
+      "@deardigital/shop/ui/server": ["libs/shop/ui/src/server.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
