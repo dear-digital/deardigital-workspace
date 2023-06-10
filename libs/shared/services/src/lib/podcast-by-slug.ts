@@ -4,7 +4,7 @@ import { podcastMapper } from '@deardigital/shared/mapper';
 import { FetchStoryService } from './fetch-story';
 
 export class FetchPodcastBySlug extends FetchStoryService<PodcastInterface> {
-  constructor(slug: string = '') {
+  constructor(slug = '') {
     super({
       query: { path: `cdn/stories/${PAGE_TYPES.podcast}${slug}` },
     })

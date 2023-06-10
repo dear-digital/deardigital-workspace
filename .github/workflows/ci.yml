@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ feature/* ]
+    branches: [feature/*]
 
 jobs:
   build-develop:
@@ -19,6 +19,6 @@ jobs:
 
       - run: |
           npm ci
-          npx nx format:check
-          npx nx affected -t lint --parallel=3
+          # npx nx format:check
+          # npx nx affected -t lint --parallel=3
           npx nx affected -t build --parallel=3

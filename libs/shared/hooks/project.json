@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/hooks/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["scope:shared", "type:hooks"],
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",

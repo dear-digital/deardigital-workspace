@@ -56,12 +56,12 @@ function mapPodcast(data: ShopifyCollectionsProductsInterface) {
   data.podcast = true;
 }
 
-function mapProduct(block: FeaturedProductsStoryblok, data: ShopifyCollectionsProductsInterface) {
-  const productsList = block['products']?.split(',');
-  if (productsList) {
-    productsList.reduce((acc: Set<string>, val: string) => val ? acc.add(val) : acc, data.products);
-  }
-}
+// function mapProduct(block: FeaturedProductsStoryblok, data: ShopifyCollectionsProductsInterface) {
+//   const productsList = block['products']?.split(',');
+//   if (productsList) {
+//     productsList.reduce((acc: Set<string>, val: string) => val ? acc.add(val) : acc, data.products);
+//   }
+// }
 
 function mapService(data: ShopifyCollectionsProductsInterface) {
   data.services = true;

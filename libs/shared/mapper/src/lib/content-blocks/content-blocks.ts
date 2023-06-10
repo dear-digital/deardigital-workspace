@@ -18,7 +18,7 @@ const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, M
 >([
   ['blogs', (block, meta) => mapContentBlockBlog(block as BlogsStoryblok, meta)],
   ['clientLogos', (block, meta) => mapClientLogosContent(block as ClientLogosStoryblok, meta)],
-  ['featuredPodcast', (block, meta) => mapFeaturedPodcastContent(block as FeaturedPodcastStoryblok)],
+  ['featuredPodcast', (block) => mapFeaturedPodcastContent(block as FeaturedPodcastStoryblok)],
   ['featuredProducts', (block, meta) => mapFeaturedProductsContent(block as FeaturedProductsStoryblok, meta)],
   ['featuredWork', (block, meta) => mapFeaturedWorkContent(block as FeaturedWorkStoryblok, meta)],
   ['image', (block) => mapImageContent(block as ImageStoryblok)],
@@ -27,7 +27,7 @@ const componentMapping = new Map<string, MappingContentBlocksFunction<unknown, M
   ['textImage', (block) => mapTextImageContent(block as TextImageStoryblok)],
   ['text', (block) => mapTextContent(block as TextStoryblok)],
   ['works', (block, meta) => mapWorkContent(block as WorksStoryblok, meta)],
-  ['youtube', (block, meta) => mapYoutubeContent(block as YoutubeStoryblok, meta)],
+  ['youtube', (block) => mapYoutubeContent(block as YoutubeStoryblok)],
 ]);
 
 export function contentBlocksMapper(

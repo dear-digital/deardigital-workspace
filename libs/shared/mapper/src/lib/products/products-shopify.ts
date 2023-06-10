@@ -1,5 +1,5 @@
 import { MetaType, ProductCardInterface } from '@deardigital/shared/interfaces';
-import { ProductShopify, ShopifyProductsStoryblok } from '@deardigital/shared/schema';
+import { ProductShopify } from '@deardigital/shared/schema';
 import { removeForbiddenIdChars } from '@deardigital/shared/utilities';
 import { imageShopifyMapper } from '../image/image';
 

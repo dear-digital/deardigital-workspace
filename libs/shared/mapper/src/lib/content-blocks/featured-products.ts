@@ -8,8 +8,7 @@ export function mapFeaturedProductsContent(content: FeaturedProductsStoryblok, m
   // const products = content?.products?.split(",") ?? [];
 
   return {
-    // @ts-ignore
-    _editable: content._editable ?? null,
+    _editable: content['_editable'] ?? null,
     _uid: content._uid,
     component: content.component,
     text: content.text ?? null,
