@@ -1,13 +1,15 @@
+'use client';
+
 import { LinkInterface } from '@deardigital/shared/interfaces';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import LinkRenderer from '../link/link-renderer.component';
 
 /* eslint-disable-next-line */
 export interface NavigationLinkProps extends LinkInterface { }
 
 export function NavigationLink(props: NavigationLinkProps) {
-  const { asPath } = useRouter();
-  const isActive = asPath.indexOf(props.link) > -1;
+  const pathname = usePathname();
+  const isActive = pathname.indexOf(props.link) > -1;
   const className = isActive ? 'nav-link active' : 'nav-link';
 
   return (

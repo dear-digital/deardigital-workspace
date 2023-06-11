@@ -1,3 +1,5 @@
+'use client';
+
 import { ContentBlockInterface, ContentBlogInterface, ContentClientLogosInterface, ContentFeaturedPodcastInterface, ContentFeaturedProductsInterface, ContentFeaturedWorkInterface, ContentImageInterface, ContentPodcastInterface, ContentServicesInterface, ContentTextImageInterface, ContentTextInterface, ContentWorkInterface, ContentYoutubeInterface, MappingFunction } from '@deardigital/shared/interfaces';
 import ContentBlog from './blogs';
 import ContentClientLogos from './client-logos';
