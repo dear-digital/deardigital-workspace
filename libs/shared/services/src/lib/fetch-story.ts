@@ -1,5 +1,5 @@
 import { MetaType } from '@deardigital/shared/interfaces';
-import { getStoryblokApi } from '@storyblok/react';
+import { getStoryblokApi } from '@storyblok/react/rsc';
 import { getMeta } from './meta';
 import { resolveRelations } from './resolve-relations';
 import { contentBlocksLinkedData } from '@deardigital/shared/mapper';
@@ -30,7 +30,7 @@ export abstract class FetchStoryService<T> {
       token: process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN'],
       version: preview ? 'draft' : 'published',
       resolve_relations: resolveRelations,
-    })
+    });
 
     if (!page) {
       throw new Error(`Stories with path ${this.query.path} could not be fetched`)
