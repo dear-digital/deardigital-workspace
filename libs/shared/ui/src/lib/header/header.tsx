@@ -1,3 +1,5 @@
+'use client';
+
 import { GlobalInterface } from '@deardigital/shared/interfaces';
 import Link from 'next/link';
 import { useState } from 'react';

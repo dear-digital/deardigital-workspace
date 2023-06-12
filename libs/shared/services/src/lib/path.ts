@@ -1,6 +1,6 @@
 import { PageTypeType } from '@deardigital/shared/constants';
 import { PagePathMapper } from '@deardigital/shared/mapper';
-import { getStoryblokApi } from '@storyblok/react';
+import { getStoryblokApi } from '@storyblok/react/rsc';
 
 export const fetchPagePaths = async (pageType: PageTypeType, locale: string, preview: boolean) => {
   const path = "cdn/stories";

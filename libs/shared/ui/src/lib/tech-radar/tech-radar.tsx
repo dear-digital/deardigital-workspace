@@ -1,3 +1,5 @@
+'use client';
+
 import { DEPARTMENTS, DepartmentType } from '@deardigital/shared/constants';
 import { radar_visualization } from '@deardigital/shared/utilities';
 import { useEffect, useState } from 'react';

@@ -1,6 +1,6 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { workCardsMapper } from '@deardigital/shared/mapper';
-import { getStoryblokApi } from '@storyblok/react';
+import { getStoryblokApi } from '@storyblok/react/rsc';
 import { resolveRelations } from './resolve-relations';
 
 export async function fetchWork(preview: boolean) {

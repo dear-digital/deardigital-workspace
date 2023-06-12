@@ -1,3 +1,5 @@
+'use client';
+
 import { ContentTextInterface } from '@deardigital/shared/interfaces';
 import { renderRichText, storyblokEditable } from '@storyblok/react';
 import Section from '../section/section';

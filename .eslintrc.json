@@ -59,6 +59,7 @@
               {
                 "sourceTag": "type:ui",
                 "onlyDependOnLibsWithTags": [
+                  "type:ui",
                   "type:services",
                   "type:mappers",
                   "type:interfaces",

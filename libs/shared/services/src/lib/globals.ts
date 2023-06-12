@@ -1,6 +1,6 @@
 import { GlobalInterface } from '@deardigital/shared/interfaces';
 import { globalsMapper } from '@deardigital/shared/mapper';
-import { getStoryblokApi } from '@storyblok/react';
+import { getStoryblokApi } from '@storyblok/react/rsc';
 
 export async function getGlobals(preview: boolean): Promise<GlobalInterface | null> {
   const globals = await getStoryblokApi().get("cdn/stories/global", {

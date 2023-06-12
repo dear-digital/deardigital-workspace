@@ -1,4 +1,4 @@
-import { getStoryblokApi } from '@storyblok/react';
+import { getStoryblokApi } from '@storyblok/react/rsc';
 
 export const fetchDatasourceBySlug = async (slug: string, locale: string, preview: boolean) => {
   const datasource = await getStoryblokApi().get(`cdn/datasource_entries?datasource=${slug}&${process.env['NEXT_PUBLIC_STORYBLOK_API_TOKEN']}`, {

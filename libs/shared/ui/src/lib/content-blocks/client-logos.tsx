@@ -1,8 +1,7 @@
 import { ContentClientLogosInterface } from '@deardigital/shared/interfaces';
 import { renderRichText, storyblokEditable } from '@storyblok/react';
-import BlogCard from '../blog/blog-card';
-import Section from '../section/section';
 import ImageRenderer from '../image-renderer/image-renderer';
+import Section from '../section/section';
 
 /* eslint-disable-next-line */
 export interface ContentClientLogosProps extends ContentClientLogosInterface { }
