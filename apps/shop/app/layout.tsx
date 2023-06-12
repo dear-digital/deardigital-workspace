@@ -2,6 +2,7 @@ import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import { inter, roboto_mono } from './fonts';
 import StoryblokBridgeLoader from "@storyblok/react/bridge-loader";
 import './global.css';
+import { StoryblokProvider } from '@deardigital/shop/ui';
 
 export const metadata = {
   title: 'Welcome to shop',
@@ -19,15 +20,15 @@ storyblokInit({
   },
 });
 
-export default function RootLayout({
-  children,
-}: {
+export default function RootLayout({ children }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
-      <body>{children}</body>
-      <StoryblokBridgeLoader />
-    </html>
+    <StoryblokProvider>
+      <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
+        <body>{children}</body>
+        <StoryblokBridgeLoader options={{}} />
+      </html>
+    </StoryblokProvider>
   );
 }
