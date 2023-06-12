@@ -1,6 +1,6 @@
 import { PAGE_TYPES } from '@deardigital/shared/constants';
 import { FetchPageBySlug } from '@deardigital/shared/services';
-import { PageView } from '@deardigital/shared/ui';
+import { PageView } from '@deardigital/shop/ui';
 
 /* eslint-disable-next-line */
 export interface ShopProps { }
